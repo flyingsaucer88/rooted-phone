@@ -1,0 +1,141 @@
+# Ambimat ecosystem SEO tracker — PHONE (crawl-only) config.
+#
+# Used by ../phone_seo.py. Pure data: no OAuth, no Search Console, no keys.
+# This is the phone-friendly counterpart to the desktop config.py — the domain
+# definitions mirror config.example.py's MULTI_DOMAIN_CONFIG so the analyses
+# (clusters, topical authority, cannibalisation) behave the same, minus GSC.
+
+domains:
+  - name: Ambimat
+    slug: ambimat
+    domain: ambimat.com
+    site_url: https://ambimat.com/
+    sitemap_url: https://ambimat.com/sitemap.xml
+    seed_keywords:
+      - IoT solutions
+      - Embedded systems
+      - Electronics manufacturing
+      - OEM electronics
+      - Industrial IoT
+      - Smart devices
+      - Hardware design
+    primary_clusters:
+      - IoT identity / OEM
+
+  - name: AmbiSecure
+    slug: ambisecure
+    domain: ambisecure.ambimat.com
+    site_url: https://ambisecure.ambimat.com/
+    sitemap_url: https://ambisecure.ambimat.com/sitemap.xml
+    seed_keywords:
+      - FIDO2
+      - WebAuthn
+      - Passkeys
+      - PIV
+      - JavaCard
+      - Secure Elements
+      - ePassport
+      - PKI
+      - X.509
+      - DESFire
+      - SCP03
+      - APDU
+      - IoT Security
+      - Device Identity
+      - Passwordless Authentication
+    primary_clusters:
+      - FIDO / WebAuthn / Passkeys
+      - PIV / FIPS 201 / Smart card
+      - JavaCard / GlobalPlatform
+      - Secure Elements / MFF2 / Embedded SE
+      - PKI / X.509 / PKCS
+      - ePassport / ICAO 9303
+      - DESFire / Transit
+      - MFA / Phishing-resistant
+
+  - name: eSIM
+    slug: esim
+    domain: esim.ambimat.com
+    site_url: https://esim.ambimat.com/
+    sitemap_url: https://esim.ambimat.com/sitemap.xml
+    seed_keywords:
+      - eSIM
+      - eUICC
+      - SGP.22
+      - SGP.32
+      - RSP
+      - remote SIM provisioning
+      - IoT SIM
+      - M2M SIM
+      - consumer eSIM
+      - iSIM
+    primary_clusters:
+      - eSIM / eUICC / SGP.22
+
+  - name: AmbiPower
+    slug: ambipower
+    domain: ambipower.ambimat.com
+    site_url: https://ambipower.ambimat.com/
+    sitemap_url: https://ambipower.ambimat.com/sitemap.xml
+    seed_keywords:
+      - smart energy
+      - energy monitoring
+      - smart metering
+      - power monitoring
+      - energy management
+      - IoT energy
+    primary_clusters:
+      - Energy / power / metering
+
+  - name: AmbiAutomation
+    slug: ambiautomation
+    domain: ambiautomation.ambimat.com
+    site_url: https://ambiautomation.ambimat.com/
+    sitemap_url: https://ambiautomation.ambimat.com/sitemap.xml
+    seed_keywords:
+      - industrial automation
+      - factory automation
+      - PLC
+      - SCADA
+      - industrial IoT
+      - machine monitoring
+    primary_clusters:
+      - Industrial automation
+
+  - name: Orders
+    slug: orders
+    domain: orders.ambimat.com
+    site_url: https://orders.ambimat.com/
+    sitemap_url: https://orders.ambimat.com/sitemap.xml
+    seed_keywords:
+      - order management
+      - online ordering
+      - ecommerce portal
+      - product catalog
+      - buy electronics online
+    primary_clusters:
+      - Ordering / ecommerce portal
+
+  - name: RoboRacer
+    slug: roboracer
+    domain: roboracer.ambimat.com
+    site_url: https://roboracer.ambimat.com/
+    sitemap_url: https://roboracer.ambimat.com/sitemap.xml
+    seed_keywords:
+      - autonomous racing
+      - RoboRacer
+      - 1:10 scale autonomous car
+      - robotic racing platform
+      - F1TENTH
+      - autonomy kit
+      - self-driving RC car
+    primary_clusters:
+      - Autonomous racing / robotics kit
+
+# Crawl politeness + phone-safety budgets. Keep max pages modest on a 2016
+# device; the crawler is polite and bounded either way.
+crawl:
+  max_pages_per_domain: 800   # FULL COVERAGE (approved 2026-07-27); largest site ~697 pages
+  request_timeout_seconds: 15
+  delay_between_requests_seconds: 0.5
+  user_agent: "Ambimat-SEO-Tracker-Phone/1.0 (+https://ambimat.com; daily crawl-only)"

@@ -1,0 +1,54 @@
+# Suspicious HTML/JS patterns often seen in injected/cloaked content.
+# One pattern per line; # = comment. Case-insensitive substring match on the RAW HTML source.
+# WARNING-level only: every one of these has legitimate uses (analytics, lazy CSS, etc.),
+# so they are reported as warnings to investigate, NOT as confirmed compromise.
+
+# --- Hidden-content CSS (classic cloaked-link/keyword-stuffing tricks) ---
+display:none
+display: none
+visibility:hidden
+visibility: hidden
+font-size:0
+font-size: 0
+opacity:0
+text-indent:-9999
+position:absolute;left:-9999
+left:-9999
+height:1px;width:1px
+width:0;height:0
+
+# --- Obfuscation / dynamic code execution ---
+base64_decode
+eval(
+eval (
+fromcharcode
+String.fromCharCode
+document.write(unescape
+document.write(atob
+unescape(
+atob(
+\x3c\x73\x63\x72\x69\x70\x74
+
+# --- Redirect injection ---
+window.location.replace
+window.location.href=
+window.location=
+location.replace(
+top.location=
+meta http-equiv="refresh"
+
+# --- PHP/webshell leftovers accidentally rendered into HTML ---
+<?php
+passthru(
+shell_exec(
+system(
+gzinflate(
+
+# --- Defacement calling-cards (appear in title/body of defaced pages) ---
+hacked by
+owned by
+defaced by
+pwned by
+h4ck3d
+was here
+greetz to

@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+
+# Downloaded binaries (APKs and similar) — don't version large/binary artifacts
+downloads/
+*.apk
+*.tmp
+*.log
+
+# Telemetry captures contain a Wi-Fi SSID, private IPs, and (in baseline_*.txt) a
+# MAC-derived IPv6 address. Do NOT commit raw captures.
+# A redacted sample is kept as committed evidence: logs/SAMPLE_telemetry_redacted.jsonl
+logs/*.jsonl
+logs/*.csv
+logs/*.txt
+!logs/SAMPLE_*.jsonl
+
+# Python bytecode / envs / tool caches
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+*.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Third-party clone (source-inspection only, not ours to version)
+external/
+
+# Site monitor reports — public-site data, but keep raw runs out of git.
+reports/site_monitor*/
+site_monitor/reports/*
+!site_monitor/reports/.gitkeep
+report_latest.*
+report_2*.json
+report_2*.md
+report_2*.html
+# Raw generated crawl dumps under evidence dirs (keep only hand-authored *SUMMARY*.md).
+reports/full_coverage_crawl_*/report_full_coverage.*

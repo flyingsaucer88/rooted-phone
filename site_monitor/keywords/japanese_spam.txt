@@ -1,0 +1,53 @@
+# Japanese-SEO-spam ("Japanese keyword hack") starter indicators.
+# One term per line. Lines starting with # are comments.
+# WARNING: matches are reported as WARNINGS (possible spam), never as a confirmed hack.
+# These words are common on hacked pages injecting Japanese gambling / counterfeit-brand /
+# pharma spam. A legitimate Japanese-language page could contain some of these, so treat any
+# hit on an English-only corporate site as a signal to investigate, not as proof.
+
+# --- Gambling / casino / betting ---
+オンラインカジノ
+カジノ
+オンラインギャンブル
+スポーツベット
+ブックメーカー
+ベッティング
+ギャンブル
+ポーカー
+スロット
+パチンコ
+賭け
+勝てる
+入金不要ボーナス
+
+# --- Counterfeit / brand-replica spam ---
+ブランドコピー
+コピー商品
+偽物
+スーパーコピー
+ロレックス
+ルイヴィトン
+グッチ
+シャネル
+エルメス
+時計 コピー
+財布 コピー
+
+# --- Pharma ---
+バイアグラ
+シアリス
+レビトラ
+精力剤
+媚薬
+
+# --- Romaji / English variants often co-injected ---
+casino
+online casino
+betting
+sportsbook
+viagra
+cialis
+levitra
+replica
+super copy
+brand copy

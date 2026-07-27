@@ -1,0 +1,56 @@
+# Suspicious SEO-spam vocabulary (pharma / casino / adult / loan / crypto / replica).
+# One term per line; # = comment. Case-insensitive substring match on visible page text.
+# Reported as WARNINGS (potential SEO spam), never as a confirmed hack — corporate copy
+# can legitimately mention some of these, so a hit is a prompt to investigate.
+
+# --- Pharma ---
+viagra
+cialis
+levitra
+sildenafil
+tadalafil
+cheap meds
+buy pills online
+no prescription
+canadian pharmacy
+erectile dysfunction pills
+
+# --- Casino / gambling ---
+online casino
+best casino
+casino bonus
+free spins
+slot machine
+sports betting
+sportsbook
+poker online
+roulette
+jackpot
+
+# --- Adult ---
+porn
+xxx
+sex cam
+escort service
+adult dating
+
+# --- Loans / payday ---
+payday loan
+quick loan
+fast cash loan
+no credit check loan
+instant approval loan
+
+# --- Crypto / get-rich spam ---
+bitcoin doubler
+crypto giveaway
+free bitcoin
+guaranteed profit
+investment bot
+forex signals free
+
+# --- Counterfeit ---
+replica watches
+replica bags
+super copy
+cheap replica

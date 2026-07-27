@@ -1,0 +1,99 @@
+# Ambimat Site Monitor — site list and crawl policy.
+# Public-crawl-based compromise indicator + SEO health report.
+# See site_monitor/README.md for the accuracy limitation (this cannot prove
+# "a hack was attempted in the last 24h" — only surface indicators visible on public pages).
+
+sites:
+  - name: Ambimat
+    base_url: https://ambimat.com
+  - name: AmbiSecure
+    base_url: https://ambisecure.ambimat.com
+  - name: AmbiAutomation
+    base_url: https://ambiautomation.ambimat.com
+  - name: Ambimat eSIM
+    base_url: https://esim.ambimat.com
+  - name: AmbiPower
+    base_url: https://ambipower.ambimat.com
+  - name: Orders
+    base_url: https://orders.ambimat.com
+  - name: RoboRacer
+    base_url: https://roboracer.ambimat.com
+
+crawl:
+  # FULL COVERAGE (approved 2026-07-27): crawl every crawlable internal page per site.
+  # Largest site (ambimat.com) has ~697 sitemap pages, so the cap is set well above that.
+  max_pages_per_site: 800
+  # Per-request timeout as (connect, read). request_timeout_seconds kept as a fallback.
+  request_timeout_seconds: 10
+  connect_timeout_seconds: 5
+  read_timeout_seconds: 10
+  # 0.5s keeps the crawl polite while making full coverage (~1100 pages across 7 sites) feasible.
+  delay_between_requests_seconds: 0.5
+  user_agent: "RootedPhoneSiteMonitor/0.1 (+Ambimat internal monitoring)"
+  respect_robots_txt: true
+  use_sitemap: true
+  check_external_links: true
+  max_external_links_per_site: 20
+  max_internal_link_checks_per_site: 300
+  # Time budgets raised so full coverage is NOT truncated, while still bounding a hung run.
+  # ambimat ~697 pages @0.5s ≈ 6 min + link checks → 20 min/site ceiling; 60 min whole-run ceiling.
+  max_seconds_per_site: 1200
+  global_max_seconds: 3600
+  # Always write partial reports and flush progress so a slow run is observable.
+  write_partial_reports: true
+  progress_flush: true
+  # Skip obviously non-HTML assets by extension (still recorded as links, not crawled).
+  skip_extensions:
+    - .jpg
+    - .jpeg
+    - .png
+    - .gif
+    - .svg
+    - .webp
+    - .ico
+    - .css
+    - .js
+    - .pdf
+    - .zip
+    - .gz
+    - .mp4
+    - .mp3
+    - .woff
+    - .woff2
+    - .ttf
+    - .eot
+    - .xml
+  # Don't download bodies larger than this (bytes) — protects phone memory.
+  max_body_bytes: 3000000
+
+alerts:
+  fail_on_status_codes: [400, 401, 403, 404, 410, 429, 500, 502, 503, 504]
+  # Substrings that, if present in an EXTERNAL link's host, are treated as suspicious.
+  suspicious_external_domains:
+    - casino
+    - pharma
+    - viagra
+    - loan
+    - crypto
+    - porn
+    - adult
+  # TLS certificate warning threshold.
+  cert_expiry_warn_days: 21
+  # External social/CDN hosts that commonly reject bot HEAD/GET (return None/403) — do NOT
+  # report these as "broken external links" (they are false positives, not site problems).
+  external_check_skip_hosts:
+    - twitter.com
+    - x.com
+    - facebook.com
+    - linkedin.com
+    - instagram.com
+    - youtube.com
+    - youtu.be
+
+security_headers:
+  # Headers we check for presence on each site's homepage (missing = warning, not alert).
+  - content-security-policy
+  - x-frame-options
+  - x-content-type-options
+  - referrer-policy
+  - strict-transport-security
