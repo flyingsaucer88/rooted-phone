@@ -296,6 +296,19 @@ class SiteCrawler:
             self._warn("parse-error", f"could not parse HTML: {e}", url)
             return
 
+        # Resolve relative links against the URL we actually landed on, not the one we
+        # requested. A page that 3xx-redirects to another host serves root-relative hrefs
+        # ("/products/") that belong to the *target* host; joining them onto the requested
+        # URL invents phantom paths on this site and reports them as broken pages.
+        base = getattr(resp, "url", None) or url
+        base_tag = soup.find("base", href=True)
+        if base_tag:
+            base = urljoin(base, base_tag["href"].strip()) or base
+        if urlparse(base).netloc != urlparse(url).netloc:
+            self._warn("offsite-redirect",
+                       f"page redirected off-host to {base}; its links resolve against that host",
+                       url)
+
         title_tag = soup.find("title")
         title = title_tag.get_text(strip=True) if title_tag else None
         description = None
@@ -318,7 +331,7 @@ class SiteCrawler:
             href = a.get("href", "").strip()
             if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
                 continue
-            full = norm_url(urljoin(url, href))
+            full = norm_url(urljoin(base, href))
             if urlparse(full).scheme not in ("http", "https"):
                 continue
             if self._same_host(full):
@@ -345,7 +358,7 @@ class SiteCrawler:
                 src = (t.get(attr) or "").strip()
                 if not src:
                     continue
-                full = urljoin(url, src)
+                full = urljoin(base, src)
                 host = urlparse(full).netloc.lower()
                 if host and host != self.host:
                     if any(sd in host for sd in self.susp_domains):
