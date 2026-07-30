@@ -1,0 +1,417 @@
+{
+  "generated_at": "2026-07-29T10:23:33+05:30",
+  "generator": "RootedPhoneSiteMonitor/0.1",
+  "limitation": "This is a PUBLIC-CRAWL-BASED compromise indicator + SEO health report. It can only detect evidence of compromise that is visible on public pages at crawl time. It CANNOT prove whether a hack was attempted in the last 24 hours — that needs server/hosting/WAF logs, Search Console alerts, or CMS security logs, which this tool does not have. All 'suspicious' findings are advisory WARNINGS to investigate, not confirmed compromise.",
+  "run_args": {
+    "max_pages": 800,
+    "global_timeout": 3600,
+    "site_timeout": 1200,
+    "check_external_links": true
+  },
+  "sites": [
+    {
+      "name": "AmbiPower",
+      "base_url": "https://ambipower.ambimat.com",
+      "final_url": "https://ambipower.ambimat.com/",
+      "reachable": true,
+      "error": null,
+      "pages_crawled": 27,
+      "timed_out": false,
+      "skipped": [
+        "1 external links skipped (bot-hostile social/CDN hosts)"
+      ],
+      "http": {
+        "status": 200,
+        "redirected_to": null
+      },
+      "security_headers": {
+        "present": [
+          "content-security-policy",
+          "x-frame-options",
+          "x-content-type-options",
+          "referrer-policy",
+          "strict-transport-security"
+        ],
+        "missing": []
+      },
+      "cert": {
+        "host": "ambipower.ambimat.com",
+        "not_after": "Sep 12 19:12:19 2026 GMT",
+        "days_to_expiry": 45
+      },
+      "alerts": [],
+      "warnings": [
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: opacity:0",
+          "url": "https://ambipower.ambimat.com/presentation/deck/"
+        }
+      ],
+      "seo": {
+        "pages_missing_title": [],
+        "pages_missing_description": [],
+        "pages_missing_h1": [],
+        "pages_missing_canonical": [],
+        "noindex_pages": [
+          "https://ambipower.ambimat.com/resources/downloads/"
+        ],
+        "duplicate_titles": {},
+        "duplicate_descriptions": {}
+      },
+      "broken_pages": [],
+      "broken_internal_links": [],
+      "broken_external_links": [],
+      "unverified_internal_links": [],
+      "unverified_external_links": [
+        {
+          "url": "https://www.facebook.com/Ambimat-Electronics-213415895353632",
+          "status": null,
+          "found_on": "https://ambipower.ambimat.com/",
+          "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        }
+      ],
+      "title_drift": [],
+      "pages": [
+        {
+          "url": "https://ambipower.ambimat.com/",
+          "status": 200,
+          "title": "AmbiPower â Smart Metering & Smart Grid Solutions for Utilities",
+          "description": "AmbiPower is the utility and metering business of Ambimat Electronics â smart metering, AMR-to-AMI and smart grid solutions for power utilities.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 681,
+          "internal_links": 52,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/products/",
+          "status": 200,
+          "title": "Products â Metering Hardware & Software | AmbiPower",
+          "description": "The AmbiPower product range: field & communication hardware and software apps for automatic meter reading, SCADA and utility field operations.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/products/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 665,
+          "internal_links": 46,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/solutions/",
+          "status": 200,
+          "title": "Solutions â Advanced Meter Reading & Smart Grid | AmbiPower",
+          "description": "AmbiPower solutions for utilities: Advanced Meter Reading (AMR to AMI) and Smart Grid â solving manual reading, billing inefficiency and grid visibility.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/solutions/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 655,
+          "internal_links": 47,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/",
+          "status": 200,
+          "title": "Resources â Technical Articles, Downloads & FAQs | AmbiPower",
+          "description": "Technical articles on metering communications, product downloads and frequently asked questions for utility engineers and evaluators.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 412,
+          "internal_links": 46,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/faqs/",
+          "status": 200,
+          "title": "Frequently Asked Questions | AmbiPower",
+          "description": "Answers to common questions about AmbiPower smart metering and smart grid products and solutions for utilities.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/faqs/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 599,
+          "internal_links": 40,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/blog/",
+          "status": 200,
+          "title": "Blog â Indian Power-Utility Insights | AmbiPower",
+          "description": "Original commentary on the Indian power-utility sector: smart metering, distribution utilities and grid modernisation. New articles are published after human review.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/blog/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 405,
+          "internal_links": 43,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/about/",
+          "status": 200,
+          "title": "About AmbiPower â An Ambimat Group Business",
+          "description": "AmbiPower is the utility and metering business of Ambimat Electronics, established in 1982 and based in Ahmedabad, India.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/about/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 466,
+          "internal_links": 41,
+          "external_links": 12
+        },
+        {
+          "url": "https://ambipower.ambimat.com/presentation/",
+          "status": 200,
+          "title": "Corporate Presentation | AmbiPower",
+          "description": "View the AmbiPower corporate presentation â how we help utilities read meters remotely, bring field data into operations, and modernise the grid.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/presentation/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 343,
+          "internal_links": 44,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/contact/",
+          "status": 200,
+          "title": "Contact AmbiPower",
+          "description": "Get in touch with the AmbiPower team to discuss smart metering and smart grid solutions, or to request a demonstration or consultation.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/contact/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 472,
+          "internal_links": 40,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/privacy/",
+          "status": 200,
+          "title": "Privacy Notice | AmbiPower",
+          "description": "How the AmbiPower website handles personal data: static hosting, direct email contact, cookie preferences, and analytics that stay off unless you accept them.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/privacy/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 469,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/products/retrofit-module/",
+          "status": 200,
+          "title": "AmbiPower Retrofit Module â Cellular Automatic Meter Reader",
+          "description": "A cellular automatic meter reader that communicates with water, gas or energy meters and a Head End System over cellular, with on-device edge processing.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/products/retrofit-module/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 571,
+          "internal_links": 48,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/products/udr-app/",
+          "status": 200,
+          "title": "AmbiPower UDR App â Mobile Utility Data Reader",
+          "description": "A mobile app that reads meters over the optical port and publishes to billing servers, capturing data offline and uploading when connectivity is available.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/products/udr-app/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 585,
+          "internal_links": 47,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/products/desu/",
+          "status": 200,
+          "title": "DESU â Data Extraction & Storage Unit | AmbiPower",
+          "description": "A middle-layer gateway that collects field-device data over multiple buses and forwards it to a SCADA cloud server over LAN or cellular.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/products/desu/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 503,
+          "internal_links": 47,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/products/rtu/",
+          "status": 200,
+          "title": "Remote Terminal Unit (RTU) | AmbiPower",
+          "description": "A modular, scalable SCADA controller connecting digital and analog field devices back to SCADA over LAN or cellular connectivity.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/products/rtu/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 466,
+          "internal_links": 47,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/products/rst-device/",
+          "status": 200,
+          "title": "RST Reset Unit â Remote Rack & RTU Reset | AmbiPower",
+          "description": "The RST Reset Unit monitors the IT-rack and RTU environment and enables remote power reset over SMS and LAN, with temperature monitoring and alerting.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/products/rst-device/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 547,
+          "internal_links": 46,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/solutions/advanced-meter-reading/",
+          "status": 200,
+          "title": "Advanced Meter Reading (AMR â AMI) | AmbiPower",
+          "description": "How AmbiPower helps utilities move from manual meter reading, through Automated Meter Reading, toward complete Advanced Metering Infrastructure.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/solutions/advanced-meter-reading/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 640,
+          "internal_links": 44,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/solutions/smart-grid/",
+          "status": 200,
+          "title": "Smart Grid Solutions | AmbiPower",
+          "description": "How AmbiPower instruments the grid â with RTU, DESU and RST devices â for real-time visibility and control across substations and feeders.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/solutions/smart-grid/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 606,
+          "internal_links": 45,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/rf-communication-for-smart-metering/",
+          "status": 200,
+          "title": "RF Communication for Smart Metering | AmbiPower",
+          "description": "How RF-mesh communication is used for automatic meter reading and smart-grid data collection.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/rf-communication-for-smart-metering/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 434,
+          "internal_links": 45,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/iot-and-metering/",
+          "status": 200,
+          "title": "IoT and Metering | AmbiPower",
+          "description": "How the Internet of Things and M2M connectivity underpin automatic meter reading.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/iot-and-metering/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 452,
+          "internal_links": 47,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/cellular-communication-for-metering/",
+          "status": 200,
+          "title": "Cellular Communication for Metering | AmbiPower",
+          "description": "Cellular options â GPRS, NB-IoT and LTE â for connecting meters to a central management system.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/cellular-communication-for-metering/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 441,
+          "internal_links": 45,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/choosing-amr-communication-technology/",
+          "status": 200,
+          "title": "Choosing an AMR Communication Technology | AmbiPower",
+          "description": "A decision guide comparing cellular and RF-mesh communication for automatic meter reading.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/choosing-amr-communication-technology/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 458,
+          "internal_links": 47,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/blog/what-are-smart-meters/",
+          "status": 200,
+          "title": "What Are Smart Meters and How Do They Work? | AmbiPower",
+          "description": "A plain-English introduction to smart meters: what they are, how they differ from traditional meters, and how meter data reaches the utility.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/blog/what-are-smart-meters/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 673,
+          "internal_links": 50,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/blog/what-is-a-smart-meter-retrofit-module/",
+          "status": 200,
+          "title": "What Is a Smart Meter Retrofit Module? | AmbiPower",
+          "description": "What a retrofit module is, how it adds automatic reading to meters already installed, and why utilities use one instead of replacing meters.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/blog/what-is-a-smart-meter-retrofit-module/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 547,
+          "internal_links": 49,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/blog/where-are-smart-meters-used/",
+          "status": 200,
+          "title": "Where Are Smart Meters Used? | AmbiPower",
+          "description": "The settings where smart meters are used â electricity, water and gas utilities, and different environments â and what shapes the choice.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/blog/where-are-smart-meters-used/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 540,
+          "internal_links": 51,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/blog/what-problems-do-smart-meters-solve/",
+          "status": 200,
+          "title": "What Problems Do Smart Meters Help Solve? | AmbiPower",
+          "description": "The operational problems smart metering can help utilities address â manual reading, billing delays and limited visibility â described honestly.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/blog/what-problems-do-smart-meters-solve/",
+          "robots_meta": "index,follow,max-image-preview:large",
+          "word_count": 571,
+          "internal_links": 50,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/resources/downloads/",
+          "status": 200,
+          "title": "Downloads | AmbiPower",
+          "description": "Product brochures and technical documents are coming soon. For current product information, contact the AmbiPower Team.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/resources/downloads/",
+          "robots_meta": "noindex,follow",
+          "word_count": 278,
+          "internal_links": 41,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambipower.ambimat.com/presentation/deck/",
+          "status": 200,
+          "title": "AmbiPower Corporate Presentation â Smart Metering & Smart Grid",
+          "description": "The AmbiPower corporate presentation: how we help utilities read meters remotely, bring field data into operations, and modernise the grid. View the full deck at ambipower.ambimat.com/presentation/.",
+          "h1_count": 1,
+          "canonical": "https://ambipower.ambimat.com/presentation/",
+          "robots_meta": null,
+          "word_count": 2637,
+          "internal_links": 0,
+          "external_links": 0
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sites_total": 1,
+    "sites_reported": 1,
+    "sites_unreachable": 0,
+    "sites_with_alerts": 0,
+    "sites_ok": 0,
+    "sites_timed_out": 0,
+    "pages_crawled": 27,
+    "broken_pages": 0,
+    "broken_links": 0,
+    "unverified_links": 1,
+    "suspicious_warnings": 1,
+    "external_links_checked": true,
+    "partial": false
+  }
+}

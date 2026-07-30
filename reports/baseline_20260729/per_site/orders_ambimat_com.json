@@ -1,0 +1,1231 @@
+{
+  "generated_at": "2026-07-29T10:25:50+05:30",
+  "generator": "RootedPhoneSiteMonitor/0.1",
+  "limitation": "This is a PUBLIC-CRAWL-BASED compromise indicator + SEO health report. It can only detect evidence of compromise that is visible on public pages at crawl time. It CANNOT prove whether a hack was attempted in the last 24 hours — that needs server/hosting/WAF logs, Search Console alerts, or CMS security logs, which this tool does not have. All 'suspicious' findings are advisory WARNINGS to investigate, not confirmed compromise.",
+  "run_args": {
+    "max_pages": 800,
+    "global_timeout": 3600,
+    "site_timeout": 1200,
+    "check_external_links": true
+  },
+  "sites": [
+    {
+      "name": "Orders",
+      "base_url": "https://orders.ambimat.com",
+      "final_url": "https://orders.ambimat.com/",
+      "reachable": true,
+      "error": null,
+      "pages_crawled": 54,
+      "timed_out": false,
+      "skipped": [
+        "11 external links skipped (bot-hostile social/CDN hosts)"
+      ],
+      "http": {
+        "status": 200,
+        "redirected_to": null
+      },
+      "security_headers": {
+        "present": [
+          "content-security-policy",
+          "x-frame-options",
+          "x-content-type-options",
+          "referrer-policy",
+          "strict-transport-security"
+        ],
+        "missing": []
+      },
+      "cert": {
+        "host": "orders.ambimat.com",
+        "not_after": "Sep 17 22:18:48 2026 GMT",
+        "days_to_expiry": 50
+      },
+      "alerts": [],
+      "warnings": [
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/cart/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/checkout/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/my-account/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/share-cart/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/privacy-policy/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/refund-and-cancellation-policy/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/shipping-policy/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/terms-and-conditions/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/electronic-manufacturing/"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://maps.google.com/maps?q=Ambimat%20Electronics&t=&z=13&ie=UTF8&iwloc=&output=embed",
+          "url": "https://orders.ambimat.com/contact/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/contact/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/roboracer-core-kit/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/elementor-hf/header/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/elementor-hf/footer/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/fido/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/pcb-board/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/shipping-policy"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility:hidden, visibility: hidden, font-size:0, font-size: 0, opacity:0, height:1px;width:1px",
+          "url": "https://orders.ambimat.com/?add-to-cart=2040"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility:hidden, visibility: hidden, font-size:0, font-size: 0, opacity:0, height:1px;width:1px",
+          "url": "https://orders.ambimat.com/?add-to-cart=15"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility:hidden, visibility: hidden, font-size:0, font-size: 0, opacity:0, height:1px;width:1px",
+          "url": "https://orders.ambimat.com/?add-to-cart=2210"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility:hidden, visibility: hidden, font-size:0, font-size: 0, opacity:0, height:1px;width:1px",
+          "url": "https://orders.ambimat.com/?add-to-cart=2211"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2210"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2211"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2040"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/my-account/lost-password/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2040"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=15"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2211"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2210"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=15"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=2040"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/fido/?add-to-cart=2210"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/fido/?add-to-cart=2211"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=15"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2040"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits&add-to-cart=2390"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2040"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2210"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2211"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, display: none, visibility: hidden, font-size:0, font-size: 0, opacity:0",
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=15"
+        }
+      ],
+      "seo": {
+        "pages_missing_title": [],
+        "pages_missing_description": [
+          "https://orders.ambimat.com/",
+          "https://orders.ambimat.com/cart/",
+          "https://orders.ambimat.com/checkout/",
+          "https://orders.ambimat.com/my-account/",
+          "https://orders.ambimat.com/share-cart/",
+          "https://orders.ambimat.com/privacy-policy/",
+          "https://orders.ambimat.com/refund-and-cancellation-policy/",
+          "https://orders.ambimat.com/shipping-policy/",
+          "https://orders.ambimat.com/terms-and-conditions/",
+          "https://orders.ambimat.com/electronic-manufacturing/",
+          "https://orders.ambimat.com/product/f1tenth-power-board/",
+          "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/",
+          "https://orders.ambimat.com/product/roboracer-power-board-1-qty/",
+          "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/",
+          "https://orders.ambimat.com/product/roboracer-core-kit/",
+          "https://orders.ambimat.com/elementor-hf/header/",
+          "https://orders.ambimat.com/elementor-hf/footer/",
+          "https://orders.ambimat.com/product-category/fido/",
+          "https://orders.ambimat.com/product-category/pcb-board/",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards",
+          "https://orders.ambimat.com/shipping-policy",
+          "https://orders.ambimat.com/?add-to-cart=2040",
+          "https://orders.ambimat.com/?add-to-cart=15",
+          "https://orders.ambimat.com/?add-to-cart=2210",
+          "https://orders.ambimat.com/?add-to-cart=2211",
+          "https://orders.ambimat.com/?add-to-cart=2390",
+          "https://orders.ambimat.com/cart/?add-to-cart=2210",
+          "https://orders.ambimat.com/cart/?add-to-cart=2390",
+          "https://orders.ambimat.com/cart/?add-to-cart=2211",
+          "https://orders.ambimat.com/cart/?add-to-cart=2040",
+          "https://orders.ambimat.com/my-account/lost-password/",
+          "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2390",
+          "https://orders.ambimat.com",
+          "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2040",
+          "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=15",
+          "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2211",
+          "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2210",
+          "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=15",
+          "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=2040",
+          "https://orders.ambimat.com/product-category/fido/?add-to-cart=2210",
+          "https://orders.ambimat.com/product-category/fido/?add-to-cart=2211",
+          "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=15",
+          "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2390",
+          "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2040",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits&add-to-cart=2390",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2040",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2210",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2211",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=15"
+        ],
+        "pages_missing_h1": [],
+        "pages_missing_canonical": [
+          "https://orders.ambimat.com/",
+          "https://orders.ambimat.com/elementor-hf/header/",
+          "https://orders.ambimat.com/elementor-hf/footer/",
+          "https://orders.ambimat.com/product-category/fido/",
+          "https://orders.ambimat.com/product-category/pcb-board/",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards",
+          "https://orders.ambimat.com"
+        ],
+        "noindex_pages": [
+          "https://orders.ambimat.com/cart/",
+          "https://orders.ambimat.com/checkout/",
+          "https://orders.ambimat.com/my-account/",
+          "https://orders.ambimat.com/?add-to-cart=2040",
+          "https://orders.ambimat.com/?add-to-cart=15",
+          "https://orders.ambimat.com/?add-to-cart=2210",
+          "https://orders.ambimat.com/?add-to-cart=2211",
+          "https://orders.ambimat.com/?add-to-cart=2390",
+          "https://orders.ambimat.com/cart/?add-to-cart=2210",
+          "https://orders.ambimat.com/cart/?add-to-cart=2390",
+          "https://orders.ambimat.com/cart/?add-to-cart=2211",
+          "https://orders.ambimat.com/cart/?add-to-cart=2040",
+          "https://orders.ambimat.com/my-account/lost-password/",
+          "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2040",
+          "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=15",
+          "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2211",
+          "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2210",
+          "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2390",
+          "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=15",
+          "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=2040",
+          "https://orders.ambimat.com/product-category/fido/?add-to-cart=2210",
+          "https://orders.ambimat.com/product-category/fido/?add-to-cart=2211",
+          "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=15",
+          "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2390",
+          "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2040",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits&add-to-cart=2390",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2040",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2210",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2211",
+          "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=15"
+        ],
+        "duplicate_titles": {
+          "ambimat electronics": [
+            "https://orders.ambimat.com/",
+            "https://orders.ambimat.com/elementor-hf/header/",
+            "https://orders.ambimat.com/elementor-hf/footer/",
+            "https://orders.ambimat.com"
+          ],
+          "cart – ambimat electronics": [
+            "https://orders.ambimat.com/cart/",
+            "https://orders.ambimat.com/checkout/",
+            "https://orders.ambimat.com/?add-to-cart=2040",
+            "https://orders.ambimat.com/?add-to-cart=15",
+            "https://orders.ambimat.com/?add-to-cart=2210",
+            "https://orders.ambimat.com/?add-to-cart=2211",
+            "https://orders.ambimat.com/?add-to-cart=2390",
+            "https://orders.ambimat.com/cart/?add-to-cart=2210",
+            "https://orders.ambimat.com/cart/?add-to-cart=2390",
+            "https://orders.ambimat.com/cart/?add-to-cart=2211",
+            "https://orders.ambimat.com/cart/?add-to-cart=2040",
+            "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2390",
+            "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2040",
+            "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=15",
+            "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=2390",
+            "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2211",
+            "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2390",
+            "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2210",
+            "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2390",
+            "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=15",
+            "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=2040",
+            "https://orders.ambimat.com/product-category/fido/?add-to-cart=2210",
+            "https://orders.ambimat.com/product-category/fido/?add-to-cart=2211",
+            "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=15",
+            "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2390",
+            "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2040",
+            "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits&add-to-cart=2390",
+            "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2040",
+            "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2210",
+            "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2211",
+            "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=15"
+          ],
+          "shipping policy – ambimat electronics": [
+            "https://orders.ambimat.com/shipping-policy/",
+            "https://orders.ambimat.com/shipping-policy"
+          ]
+        },
+        "duplicate_descriptions": {}
+      },
+      "broken_pages": [],
+      "broken_internal_links": [],
+      "broken_external_links": [
+        {
+          "url": "https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board-1-qty-rohs-compliant%2F&linkname=F1Tenth%20Power%20Board%20%28RoHS%20Compliant%20%E2%80%93%20Single%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Forders.ambimat.com%2Fshare-cart%2F&linkname=Share%20Cart",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/share-cart/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board%2F&linkname=F1tenth%20Power%20board%20%28non-RoHS%20compliant%20%E2%80%93%20Multi%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Froboracer-core-kit%2F&linkname=RoboRacer%20Core%20Kit%20%28Single%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/roboracer-core-kit/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board-rohs-com-multipliant%2F&linkname=F1Tenth%20Power%20Board%20%28RoHS%20Compliant%20%E2%80%93%20Multi%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Froboracer-core-kit%2F&linkname=RoboRacer%20Core%20Kit%20%28Single%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/roboracer-core-kit/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Forders.ambimat.com%2Fshare-cart%2F&linkname=Share%20Cart",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/share-cart/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Froboracer-power-board-1-qty%2F&linkname=F1Tenth%20Power%20Board%20%28non%20RoHS%20Compliant%20%E2%80%93%20Single%20qty%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board%2F&linkname=F1tenth%20Power%20board%20%28non-RoHS%20compliant%20%E2%80%93%20Multi%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board-rohs-com-multipliant%2F&linkname=F1Tenth%20Power%20Board%20%28RoHS%20Compliant%20%E2%80%93%20Multi%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Forders.ambimat.com%2Fmy-account%2F&linkname=My%20account",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/my-account/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board-rohs-com-multipliant%2F&linkname=F1Tenth%20Power%20Board%20%28RoHS%20Compliant%20%E2%80%93%20Multi%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board-1-qty-rohs-compliant%2F&linkname=F1Tenth%20Power%20Board%20%28RoHS%20Compliant%20%E2%80%93%20Single%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Forders.ambimat.com%2Fcart%2F&linkname=Cart",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/cart/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Forders.ambimat.com%2Fmy-account%2F&linkname=My%20account",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/my-account/"
+        },
+        {
+          "url": "https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Forders.ambimat.com%2Fproduct%2Ff1tenth-power-board-1-qty-rohs-compliant%2F&linkname=F1Tenth%20Power%20Board%20%28RoHS%20Compliant%20%E2%80%93%20Single%20Quantity%29",
+          "status": 403,
+          "found_on": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/"
+        }
+      ],
+      "unverified_internal_links": [],
+      "unverified_external_links": [
+        {
+          "url": "https://yt2.org/es/youtube-to-mp3-ALeKk00qEW0sxByTDSpzaRvl8WxdMAeMytQ1611842368056QMMlSYKLwAsWUsAfLipqwCA2ahUKEwiikKDe5L7uAhVFCuwKHUuFBoYQ8tMDegUAQCSAQCYAQCqAQdnd3Mtd2l6",
+          "status": null,
+          "found_on": "https://orders.ambimat.com/contact/",
+          "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        }
+      ],
+      "title_drift": [],
+      "pages": [
+        {
+          "url": "https://orders.ambimat.com/",
+          "status": 200,
+          "title": "Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 174,
+          "internal_links": 31,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/cart/",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/checkout/",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/my-account/",
+          "status": 200,
+          "title": "My account – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/my-account/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 60,
+          "internal_links": 12,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/share-cart/",
+          "status": 200,
+          "title": "Share Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/share-cart/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 46,
+          "internal_links": 11,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/privacy-policy/",
+          "status": 200,
+          "title": "Privacy policy – Ambimat Electronics",
+          "description": null,
+          "h1_count": 2,
+          "canonical": "https://orders.ambimat.com/privacy-policy/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 1070,
+          "internal_links": 11,
+          "external_links": 5
+        },
+        {
+          "url": "https://orders.ambimat.com/refund-and-cancellation-policy/",
+          "status": 200,
+          "title": "Refund and Cancellation Policy – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/refund-and-cancellation-policy/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 130,
+          "internal_links": 11,
+          "external_links": 4
+        },
+        {
+          "url": "https://orders.ambimat.com/shipping-policy/",
+          "status": 200,
+          "title": "Shipping Policy – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/shipping-policy/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 460,
+          "internal_links": 11,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/terms-and-conditions/",
+          "status": 200,
+          "title": "Terms and Conditions – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/terms-and-conditions/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 7217,
+          "internal_links": 11,
+          "external_links": 4
+        },
+        {
+          "url": "https://orders.ambimat.com/electronic-manufacturing/",
+          "status": 200,
+          "title": "Electronic Manufacturing – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/electronic-manufacturing/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 126,
+          "internal_links": 11,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/contact/",
+          "status": 200,
+          "title": "Contact – Ambimat Electronics",
+          "description": "Please get in touch with Ambimat Electronics for your engineering services needs. Services we provide includes design, development, manufacturing, testing, supply chain and packaging.",
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/contact/",
+          "robots_meta": "index, follow",
+          "word_count": 181,
+          "internal_links": 11,
+          "external_links": 5
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board/",
+          "status": 200,
+          "title": "F1tenth Power board (non-RoHS compliant – Multi Quantity) – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/product/f1tenth-power-board/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 290,
+          "internal_links": 28,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/",
+          "status": 200,
+          "title": "F1Tenth Power Board (RoHS Compliant – Multi Quantity) – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 145,
+          "internal_links": 24,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/",
+          "status": 200,
+          "title": "F1Tenth Power Board (non RoHS Compliant – Single qty) – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 122,
+          "internal_links": 24,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/",
+          "status": 200,
+          "title": "F1Tenth Power Board (RoHS Compliant – Single Quantity) – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 119,
+          "internal_links": 24,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/roboracer-core-kit/",
+          "status": 200,
+          "title": "RoboRacer Core Kit (Single Quantity) – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/product/roboracer-core-kit/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 398,
+          "internal_links": 24,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/elementor-hf/header/",
+          "status": 200,
+          "title": "Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 174,
+          "internal_links": 31,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/elementor-hf/footer/",
+          "status": 200,
+          "title": "Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 174,
+          "internal_links": 31,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/fido/",
+          "status": 200,
+          "title": "FIDO – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 102,
+          "internal_links": 20,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/pcb-board/",
+          "status": 200,
+          "title": "PCB Board – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 145,
+          "internal_links": 24,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits",
+          "status": 200,
+          "title": "Kits – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 95,
+          "internal_links": 16,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards",
+          "status": 200,
+          "title": "PCB Boards – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 173,
+          "internal_links": 28,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/shipping-policy",
+          "status": 200,
+          "title": "Shipping Policy – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/shipping-policy/",
+          "robots_meta": "max-image-preview:large",
+          "word_count": 460,
+          "internal_links": 11,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/?add-to-cart=2040",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 105,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?add-to-cart=15",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 105,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?add-to-cart=2210",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 105,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?add-to-cart=2211",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 105,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2210",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2211",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/cart/?add-to-cart=2040",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/my-account/lost-password/",
+          "status": 200,
+          "title": "Lost password – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/my-account/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 207,
+          "internal_links": 20,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com",
+          "status": 200,
+          "title": "Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": null,
+          "robots_meta": "max-image-preview:large",
+          "word_count": 174,
+          "internal_links": 31,
+          "external_links": 3
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board/?add-to-cart=2040",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=15",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-rohs-com-multipliant/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2211",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2210",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/f1tenth-power-board-1-qty-rohs-compliant/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=15",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product/roboracer-core-kit/?add-to-cart=2040",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/fido/?add-to-cart=2210",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/fido/?add-to-cart=2211",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=15",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/product-category/pcb-board/?add-to-cart=2040",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=kits&add-to-cart=2390",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2040",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2210",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=2211",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        },
+        {
+          "url": "https://orders.ambimat.com/?taxonomy=product_shipping_class&term=pcb-boards&add-to-cart=15",
+          "status": 200,
+          "title": "Cart – Ambimat Electronics",
+          "description": null,
+          "h1_count": 1,
+          "canonical": "https://orders.ambimat.com/cart/",
+          "robots_meta": "max-image-preview:large, noindex, follow",
+          "word_count": 104,
+          "internal_links": 19,
+          "external_links": 7
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sites_total": 1,
+    "sites_reported": 1,
+    "sites_unreachable": 0,
+    "sites_with_alerts": 0,
+    "sites_ok": 0,
+    "sites_timed_out": 0,
+    "pages_crawled": 54,
+    "broken_pages": 0,
+    "broken_links": 16,
+    "unverified_links": 1,
+    "suspicious_warnings": 55,
+    "external_links_checked": true,
+    "partial": false
+  }
+}

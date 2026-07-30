@@ -1,0 +1,839 @@
+{
+  "generated_at": "2026-07-29T10:22:56+05:30",
+  "generator": "RootedPhoneSiteMonitor/0.1",
+  "limitation": "This is a PUBLIC-CRAWL-BASED compromise indicator + SEO health report. It can only detect evidence of compromise that is visible on public pages at crawl time. It CANNOT prove whether a hack was attempted in the last 24 hours — that needs server/hosting/WAF logs, Search Console alerts, or CMS security logs, which this tool does not have. All 'suspicious' findings are advisory WARNINGS to investigate, not confirmed compromise.",
+  "run_args": {
+    "max_pages": 800,
+    "global_timeout": 3600,
+    "site_timeout": 1200,
+    "check_external_links": true
+  },
+  "sites": [
+    {
+      "name": "Ambimat eSIM",
+      "base_url": "https://esim.ambimat.com",
+      "final_url": "https://esim.ambimat.com/",
+      "reachable": true,
+      "error": null,
+      "pages_crawled": 33,
+      "timed_out": false,
+      "skipped": [
+        "30 external links skipped (bot-hostile social/CDN hosts)"
+      ],
+      "http": {
+        "status": 200,
+        "redirected_to": null
+      },
+      "security_headers": {
+        "present": [
+          "content-security-policy",
+          "x-frame-options",
+          "x-content-type-options",
+          "referrer-policy",
+          "strict-transport-security"
+        ],
+        "missing": []
+      },
+      "cert": {
+        "host": "esim.ambimat.com",
+        "not_after": "Oct  6 10:00:19 2026 GMT",
+        "days_to_expiry": 69
+      },
+      "alerts": [],
+      "warnings": [
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/sim-based-authentication.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/sim-based-authentication.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/esim-euicc.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/esim-euicc.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/iot-security.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/iot-security.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/secure-elements-java-card.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/secure-elements-java-card.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/telecom-integration.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/telecom-integration.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/architecture.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/architecture.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/resources.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/resources.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/case-studies.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/case-studies.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/case-studies/keyra.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/case-studies/keyra.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/about.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/about.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/contact.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/contact.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/esim-vs-euicc-vs-isim.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/esim-vs-euicc-vs-isim.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/hardware-backed-identity-iot.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/hardware-backed-identity-iot.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/secure-elements-connected-devices.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/secure-elements-connected-devices.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/java-card-esim-security.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/java-card-esim-security.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/embedded-pki-iot.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/embedded-pki-iot.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/secure-provisioning-iot.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/secure-provisioning-iot.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/device-attestation-iot.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/device-attestation-iot.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/telecom-grade-iot-security.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/telecom-grade-iot-security.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/euicc-applet-development.html"
+        },
+        {
+          "type": "defacement-marker-in-content",
+          "detail": "defacement-style phrase 'owned by' in page text — likely editorial (title looks normal, 1271 words); verify manually",
+          "url": "https://esim.ambimat.com/blogs/euicc-applet-development.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0, owned by",
+          "url": "https://esim.ambimat.com/blogs/euicc-applet-development.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/offline-iot-authentication.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/offline-iot-authentication.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/offline-capable-device-trust.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/offline-capable-device-trust.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/scp03-protected-ota-channel.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/scp03-protected-ota-channel.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/fleet-scale-device-provisioning.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/fleet-scale-device-provisioning.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/lte-and-enterprise-pki-identity.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/lte-and-enterprise-pki-identity.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/sms-otp-fraud-india-secure-authentication.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/sms-otp-fraud-india-secure-authentication.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/global-shift-away-from-sms-otp.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/global-shift-away-from-sms-otp.html"
+        },
+        {
+          "type": "external-iframe",
+          "detail": "iframe from external domain: https://www.googletagmanager.com/ns.html?id=GTM-P9BTHGVJ",
+          "url": "https://esim.ambimat.com/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: display:none, visibility:hidden, opacity:0",
+          "url": "https://esim.ambimat.com/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html"
+        },
+        {
+          "type": "title-drift",
+          "detail": "title changed since last run",
+          "url": "https://esim.ambimat.com/sim-based-authentication.html"
+        }
+      ],
+      "seo": {
+        "pages_missing_title": [],
+        "pages_missing_description": [],
+        "pages_missing_h1": [],
+        "pages_missing_canonical": [],
+        "noindex_pages": [],
+        "duplicate_titles": {},
+        "duplicate_descriptions": {}
+      },
+      "broken_pages": [],
+      "broken_internal_links": [],
+      "broken_external_links": [
+        {
+          "url": "https://www.cisa.gov/",
+          "status": 403,
+          "found_on": "https://esim.ambimat.com/blogs/global-shift-away-from-sms-otp.html"
+        },
+        {
+          "url": "https://www.gsma.com/solutions-and-impact/technologies/esim/",
+          "status": 403,
+          "found_on": "https://esim.ambimat.com/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html"
+        }
+      ],
+      "unverified_internal_links": [],
+      "unverified_external_links": [
+        {
+          "url": "https://www.facebook.com/AmbimatElec",
+          "status": null,
+          "found_on": "https://esim.ambimat.com/",
+          "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        }
+      ],
+      "title_drift": [
+        {
+          "url": "https://esim.ambimat.com/sim-based-authentication.html",
+          "old": "SIM/eSIM Authentication for India Â· AmbiSecure",
+          "new": "How SIM/eSIM Authentication Works Â· AmbiSecure"
+        }
+      ],
+      "pages": [
+        {
+          "url": "https://esim.ambimat.com/",
+          "status": 200,
+          "title": "SIM/eSIM Authentication Platform for India Â· AmbiSecure",
+          "description": "AmbiSecure SIM-Auth â a deployable SIM/eSIM-based authentication platform for banks, fintechs, government, and enterprise identity. Engineered for India-scale telecom integration. Seeking operator sandbox and deployment partnerships.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/",
+          "robots_meta": "index,follow",
+          "word_count": 1977,
+          "internal_links": 50,
+          "external_links": 16
+        },
+        {
+          "url": "https://esim.ambimat.com/sim-based-authentication.html",
+          "status": 200,
+          "title": "How SIM/eSIM Authentication Works Â· AmbiSecure",
+          "description": "How SIM/eSIM authentication works: a technical walkthrough of moving the trust boundary from a plaintext SMS OTP in transit to a key that never leaves the SIM/eSIM secure element. The mechanism beneath the AmbiSecure SIM-Auth Platform.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/sim-based-authentication.html",
+          "robots_meta": "index,follow",
+          "word_count": 1714,
+          "internal_links": 33,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/esim-euicc.html",
+          "status": 200,
+          "title": "eSIM / eUICC Engineering Â· AmbiSecure",
+          "description": "AmbiSecure eSIM/eUICC engineering â applet residency, secure identity, profile management, and operator-compatible architecture. The substrate that makes SIM-Auth deployable inside a telecom environment.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/esim-euicc.html",
+          "robots_meta": "index,follow",
+          "word_count": 1056,
+          "internal_links": 34,
+          "external_links": 13
+        },
+        {
+          "url": "https://esim.ambimat.com/iot-security.html",
+          "status": 200,
+          "title": "IoT Security Architecture â AmbiSecure",
+          "description": "Device identity, secure provisioning, lifecycle authentication, and offline-tolerant trust for industrial and large-fleet IoT â engineered by AmbiSecure.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/iot-security.html",
+          "robots_meta": "index,follow",
+          "word_count": 925,
+          "internal_links": 32,
+          "external_links": 13
+        },
+        {
+          "url": "https://esim.ambimat.com/secure-elements-java-card.html",
+          "status": 200,
+          "title": "Secure Elements & Java Card â AmbiSecure",
+          "description": "Secure Element integration and Java Card applets for cryptographic isolation, hardware-backed identity, and embedded trust anchors in connected products.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/secure-elements-java-card.html",
+          "robots_meta": "index,follow",
+          "word_count": 891,
+          "internal_links": 32,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/telecom-integration.html",
+          "status": 200,
+          "title": "Telecom Integration Â· Sandbox to Production Â· AmbiSecure",
+          "description": "The integration pathway for AmbiSecure SIM-Auth: operator sandbox deployment, interoperability validation, secure provisioning. Architected to be reviewed and deployed on operator terms â particular focus on Indian telecom infrastructure.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/telecom-integration.html",
+          "robots_meta": "index,follow",
+          "word_count": 819,
+          "internal_links": 31,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/architecture.html",
+          "status": 200,
+          "title": "Architecture â Trust Chain & eSIM Provisioning | AmbiSecure",
+          "description": "Trust chain architecture for connected devices: Secure Element / eUICC, embedded PKI, attestation, and secure provisioning lifecycle from AmbiSecure.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/architecture.html",
+          "robots_meta": "index,follow",
+          "word_count": 1002,
+          "internal_links": 30,
+          "external_links": 13
+        },
+        {
+          "url": "https://esim.ambimat.com/resources.html",
+          "status": 200,
+          "title": "Resources â eSIM, eUICC & Embedded Security | AmbiSecure",
+          "description": "Technical articles, architecture notes, and capability resources on eSIM, eUICC, Secure Elements, IoT identity, and embedded PKI from AmbiSecure.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/resources.html",
+          "robots_meta": "index,follow",
+          "word_count": 1244,
+          "internal_links": 53,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/case-studies.html",
+          "status": 200,
+          "title": "Case Studies â Developed Products Â· AmbiSecure",
+          "description": "Products developed and licensed under the AmbiSecure SIM-Auth Platform â execution evidence behind the architectural capability on this site.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/case-studies.html",
+          "robots_meta": "index,follow",
+          "word_count": 642,
+          "internal_links": 30,
+          "external_links": 11
+        },
+        {
+          "url": "https://esim.ambimat.com/case-studies/keyra.html",
+          "status": 200,
+          "title": "Keyra â Developed & Licensed Product Â· AmbiSecure",
+          "description": "Keyra â an identity trust layer developed and licensed by Ambimat Electronics under AmbiSecure. Production-execution evidence that the team behind SIM-Auth ships identity products at commercial scale, not just architects them.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/case-studies/keyra.html",
+          "robots_meta": "index,follow",
+          "word_count": 1014,
+          "internal_links": 29,
+          "external_links": 9
+        },
+        {
+          "url": "https://esim.ambimat.com/about.html",
+          "status": 200,
+          "title": "About â AmbiSecure eSIM Engineering Â· Ambimat Group",
+          "description": "AmbiSecure is the embedded security and trust capability of the Ambimat Group â India-based engineering in embedded systems, IoT, and connected-product trust. SIM-Auth is its telecom-focused authentication platform.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/about.html",
+          "robots_meta": "index,follow",
+          "word_count": 1032,
+          "internal_links": 30,
+          "external_links": 19
+        },
+        {
+          "url": "https://esim.ambimat.com/contact.html",
+          "status": 200,
+          "title": "Contact AmbiSecure â Technical Discussion & Partnerships",
+          "description": "Reach AmbiSecure for partnership inquiry, telecom sandbox collaboration, or technical discussion on eSIM, eUICC, Secure Elements, and IoT identity.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/contact.html",
+          "robots_meta": "index,follow",
+          "word_count": 532,
+          "internal_links": 28,
+          "external_links": 13
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/esim-vs-euicc-vs-isim.html",
+          "status": 200,
+          "title": "eSIM vs eUICC vs iSIM: The Engineering Difference",
+          "description": "A clean engineering walkthrough of what eSIM, eUICC, and iSIM actually denote, how they map to silicon, and why the distinction matters for IoT identity.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/esim-vs-euicc-vs-isim.html",
+          "robots_meta": "index,follow",
+          "word_count": 1512,
+          "internal_links": 34,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/hardware-backed-identity-iot.html",
+          "status": 200,
+          "title": "Hardware-Backed Identity for IoT Devices | AmbiSecure",
+          "description": "Why software-only identity isn't enough at fleet scale, and how Secure Elements and eUICC silicon move IoT identity into a resistant substrate.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/hardware-backed-identity-iot.html",
+          "robots_meta": "index,follow",
+          "word_count": 1355,
+          "internal_links": 35,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/secure-elements-connected-devices.html",
+          "status": 200,
+          "title": "Why Secure Elements Matter in Connected Infrastructure",
+          "description": "Secure Elements provide a controlled execution environment for identity, key custody, and crypto operations in connected products â and why it matters.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/secure-elements-connected-devices.html",
+          "robots_meta": "index,follow",
+          "word_count": 1276,
+          "internal_links": 35,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/java-card-esim-security.html",
+          "status": 200,
+          "title": "Java Card & eSIM Applet Development for Secure Identity",
+          "description": "How Java Card patterns map onto eSIM identity logic, where the trust boundaries are, and how to build applets that survive review.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/java-card-esim-security.html",
+          "robots_meta": "index,follow",
+          "word_count": 1295,
+          "internal_links": 33,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/embedded-pki-iot.html",
+          "status": 200,
+          "title": "Embedded PKI Architectures for IoT Security | AmbiSecure",
+          "description": "PKI under embedded constraints: certificate hierarchies, attestation chains, key custody, and revocation strategies for resource-bounded IoT devices.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/embedded-pki-iot.html",
+          "robots_meta": "index,follow",
+          "word_count": 1270,
+          "internal_links": 33,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/secure-provisioning-iot.html",
+          "status": 200,
+          "title": "Secure Provisioning Workflows for Connected Devices",
+          "description": "Reducing the trusted handoff surface during onboarding â manufacturing-time provisioning, re-provisioning, and lifecycle transitions for IoT identity.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/secure-provisioning-iot.html",
+          "robots_meta": "index,follow",
+          "word_count": 1167,
+          "internal_links": 34,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/device-attestation-iot.html",
+          "status": 200,
+          "title": "Device Attestation in IoT Security Architectures",
+          "description": "Producing verifiable claims about IoT device identity, firmware state, and provisioning â and structuring relying-party logic to act on them.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/device-attestation-iot.html",
+          "robots_meta": "index,follow",
+          "word_count": 1144,
+          "internal_links": 34,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/telecom-grade-iot-security.html",
+          "status": 200,
+          "title": "What Makes IoT Security \"Telecom-Grade\"? | AmbiSecure",
+          "description": "The phrase 'telecom-grade' is overused. An honest unpacking of what it actually means for IoT security â what the bar is and how to credibly aspire to it.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/telecom-grade-iot-security.html",
+          "robots_meta": "index,follow",
+          "word_count": 1168,
+          "internal_links": 33,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/euicc-applet-development.html",
+          "status": 200,
+          "title": "eUICC Applet Development: Security & Architecture",
+          "description": "What changes when applets live on eUICC silicon â lifecycle, security domains, profile interaction, and review surface for telecom-context applet engineering.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/euicc-applet-development.html",
+          "robots_meta": "index,follow",
+          "word_count": 1271,
+          "internal_links": 33,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/offline-iot-authentication.html",
+          "status": 200,
+          "title": "Offline-Capable Authentication for Low-Connectivity IoT",
+          "description": "Trust assertions that work without constant connectivity â short-lived credentials, capability tokens, monotonic counters, and cached attestation.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/offline-iot-authentication.html",
+          "robots_meta": "index,follow",
+          "word_count": 1175,
+          "internal_links": 35,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html",
+          "status": 200,
+          "title": "Trust Chain Architecture: HSM to Deployed Device",
+          "description": "End-to-end trust chain for embedded and telecom-connected devices: manufacturing HSM, secure element binding, SCP03 OTA, PKI, and field lifecycle.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html",
+          "robots_meta": "index,follow",
+          "word_count": 1880,
+          "internal_links": 38,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html",
+          "status": 200,
+          "title": "eSIM/eUICC Provisioning: RSP, SM-DP+, LPA Integration",
+          "description": "GSMA RSP architecture in detail â SM-DP+, SM-DS, LPA, GSMA CI, and the SGP.22 sequence, with the production failure modes seen at fleet scale.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html",
+          "robots_meta": "index,follow",
+          "word_count": 2456,
+          "internal_links": 36,
+          "external_links": 13
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html",
+          "status": 200,
+          "title": "Secure Element vs TEE vs TPM: Choosing a Trust Anchor",
+          "description": "Definitions, security guarantees, operational constraints, and a decision framework for selecting Secure Element, TEE, or TPM 2.0 as the trust anchor.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html",
+          "robots_meta": "index,follow",
+          "word_count": 2540,
+          "internal_links": 36,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/offline-capable-device-trust.html",
+          "status": 200,
+          "title": "Offline-Capable Trust: Device Identity Without Network",
+          "description": "Hardware-resident credentials, pre-loaded revocation, SE RTC discipline, and explicit degradation policy â the design behind offline-capable identity.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/offline-capable-device-trust.html",
+          "robots_meta": "index,follow",
+          "word_count": 2028,
+          "internal_links": 36,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/scp03-protected-ota-channel.html",
+          "status": 200,
+          "title": "SCP03-Protected OTA: What It Secures and What It Doesn't",
+          "description": "A precise read of what SCP03 actually secures â APDU confidentiality, integrity, replay prevention â and the attack surface it does not address.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/scp03-protected-ota-channel.html",
+          "robots_meta": "index,follow",
+          "word_count": 1995,
+          "internal_links": 35,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/fleet-scale-device-provisioning.html",
+          "status": 200,
+          "title": "Fleet Provisioning: Device Identity at Manufacturing Scale",
+          "description": "HSM infrastructure, key diversification, SE injection confirmation, atomic identity records, and PKI design for fleet-scale device provisioning.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/fleet-scale-device-provisioning.html",
+          "robots_meta": "index,follow",
+          "word_count": 2183,
+          "internal_links": 36,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/lte-and-enterprise-pki-identity.html",
+          "status": 200,
+          "title": "LTE Authentication Meets Enterprise PKI Identity",
+          "description": "LTE/USIM authentication and enterprise PKI device identity are independent systems sharing one hardware substrate. Designing the boundary is the work.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/lte-and-enterprise-pki-identity.html",
+          "robots_meta": "index,follow",
+          "word_count": 2110,
+          "internal_links": 35,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html",
+          "status": 200,
+          "title": "PKI for Embedded Systems: Five Enterprise Assumptions",
+          "description": "Chain length, online revocation, RSA-2048, on-demand rotation, reliable clocks â five enterprise PKI assumptions that fail on constrained hardware.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html",
+          "robots_meta": "index,follow",
+          "word_count": 3053,
+          "internal_links": 35,
+          "external_links": 12
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/sms-otp-fraud-india-secure-authentication.html",
+          "status": 200,
+          "title": "SMS OTP Fraud in India Â· Why Authentication Must Evolve",
+          "description": "How SMS-OTP fraud has evolved in India, the regulatory response from RBI, TRAI, DoT, and CERT-In, and the case for SIM/eSIM-based authentication.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/sms-otp-fraud-india-secure-authentication.html",
+          "robots_meta": "index,follow",
+          "word_count": 4255,
+          "internal_links": 40,
+          "external_links": 51
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/global-shift-away-from-sms-otp.html",
+          "status": 200,
+          "title": "The Global Shift Away from SMS OTP Â· AmbiSecure",
+          "description": "Regulators, banks, and digital identity providers worldwide are moving authentication beyond SMS OTP. The UAE Central Bank, FBI/CISA, PSD3, RBI, and Microsoft's direction â and where SIM/eSIM-rooted hardware-backed authentication fits.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/global-shift-away-from-sms-otp.html",
+          "robots_meta": "index,follow",
+          "word_count": 3229,
+          "internal_links": 53,
+          "external_links": 26
+        },
+        {
+          "url": "https://esim.ambimat.com/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html",
+          "status": 200,
+          "title": "SGP.32 and V2X PKI Â· The Common Architectural Pattern",
+          "description": "A side-by-side read of GSMA SGP.32 (IoT eSIM remote provisioning) and the ETSI/IEEE V2X PKI architecture. Both systems converge on the same hardware-rooted identity pattern â and a unified personalisation line is plausible. Engineering-grade walk-through from the AmbiSecure SIM-Auth Platform.",
+          "h1_count": 1,
+          "canonical": "https://esim.ambimat.com/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html",
+          "robots_meta": "index,follow",
+          "word_count": 2625,
+          "internal_links": 44,
+          "external_links": 28
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sites_total": 1,
+    "sites_reported": 1,
+    "sites_unreachable": 0,
+    "sites_with_alerts": 0,
+    "sites_ok": 0,
+    "sites_timed_out": 0,
+    "pages_crawled": 33,
+    "broken_pages": 0,
+    "broken_links": 2,
+    "unverified_links": 1,
+    "suspicious_warnings": 68,
+    "external_links_checked": true,
+    "partial": false
+  }
+}

@@ -1,0 +1,499 @@
+{
+  "generated_at": "2026-07-29T10:21:46+05:30",
+  "generator": "RootedPhoneSiteMonitor/0.1",
+  "limitation": "This is a PUBLIC-CRAWL-BASED compromise indicator + SEO health report. It can only detect evidence of compromise that is visible on public pages at crawl time. It CANNOT prove whether a hack was attempted in the last 24 hours — that needs server/hosting/WAF logs, Search Console alerts, or CMS security logs, which this tool does not have. All 'suspicious' findings are advisory WARNINGS to investigate, not confirmed compromise.",
+  "run_args": {
+    "max_pages": 800,
+    "global_timeout": 3600,
+    "site_timeout": 1200,
+    "check_external_links": true
+  },
+  "sites": [
+    {
+      "name": "AmbiAutomation",
+      "base_url": "https://ambiautomation.ambimat.com",
+      "final_url": "https://ambiautomation.ambimat.com/",
+      "reachable": true,
+      "error": null,
+      "pages_crawled": 28,
+      "timed_out": false,
+      "skipped": [
+        "1 external links skipped (bot-hostile social/CDN hosts)"
+      ],
+      "http": {
+        "status": 200,
+        "redirected_to": null
+      },
+      "security_headers": {
+        "present": [
+          "content-security-policy",
+          "x-frame-options",
+          "x-content-type-options",
+          "referrer-policy",
+          "strict-transport-security"
+        ],
+        "missing": []
+      },
+      "cert": {
+        "host": "ambiautomation.ambimat.com",
+        "not_after": "Sep 18 20:23:26 2026 GMT",
+        "days_to_expiry": 51
+      },
+      "alerts": [],
+      "warnings": [
+        {
+          "type": "defacement-marker-in-content",
+          "detail": "defacement-style phrase 'owned by' in page text — likely editorial (title looks normal, 1174 words); verify manually",
+          "url": "https://ambiautomation.ambimat.com/about"
+        },
+        {
+          "type": "suspicious-pattern",
+          "detail": "suspicious HTML/JS patterns: owned by",
+          "url": "https://ambiautomation.ambimat.com/about"
+        },
+        {
+          "type": "title-drift",
+          "detail": "title changed since last run",
+          "url": "https://ambiautomation.ambimat.com/energy-optimization"
+        },
+        {
+          "type": "title-drift",
+          "detail": "title changed since last run",
+          "url": "https://ambiautomation.ambimat.com/products"
+        },
+        {
+          "type": "title-drift",
+          "detail": "title changed since last run",
+          "url": "https://ambiautomation.ambimat.com/about"
+        },
+        {
+          "type": "title-drift",
+          "detail": "title changed since last run",
+          "url": "https://ambiautomation.ambimat.com/resources/energy-optimization-multi-zone-air-conditioning"
+        }
+      ],
+      "seo": {
+        "pages_missing_title": [],
+        "pages_missing_description": [],
+        "pages_missing_h1": [],
+        "pages_missing_canonical": [],
+        "noindex_pages": [],
+        "duplicate_titles": {
+          "contact — request a demo or savings model | ambiautomation": [
+            "https://ambiautomation.ambimat.com/contact",
+            "https://ambiautomation.ambimat.com/contact?purpose=engineering",
+            "https://ambiautomation.ambimat.com/contact?purpose=deployment",
+            "https://ambiautomation.ambimat.com/contact?purpose=datasheet",
+            "https://ambiautomation.ambimat.com/contact?purpose=savings",
+            "https://ambiautomation.ambimat.com/contact?purpose=rfp",
+            "https://ambiautomation.ambimat.com/contact?purpose=integration"
+          ]
+        },
+        "duplicate_descriptions": {
+          "tell us about your building — number of floors, hvac system, and what you'd like to control. our team will be in touch within one business day.": [
+            "https://ambiautomation.ambimat.com/contact",
+            "https://ambiautomation.ambimat.com/contact?purpose=engineering",
+            "https://ambiautomation.ambimat.com/contact?purpose=deployment",
+            "https://ambiautomation.ambimat.com/contact?purpose=datasheet",
+            "https://ambiautomation.ambimat.com/contact?purpose=savings",
+            "https://ambiautomation.ambimat.com/contact?purpose=rfp",
+            "https://ambiautomation.ambimat.com/contact?purpose=integration"
+          ]
+        }
+      },
+      "broken_pages": [],
+      "broken_internal_links": [],
+      "broken_external_links": [],
+      "unverified_internal_links": [],
+      "unverified_external_links": [
+        {
+          "url": "https://www.facebook.com/AmbimatElec",
+          "status": null,
+          "found_on": "https://ambiautomation.ambimat.com/",
+          "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        },
+        {
+          "url": "https://in.linkedin.com/company/ambimat-electronics",
+          "status": null,
+          "found_on": "https://ambiautomation.ambimat.com/",
+          "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+        }
+      ],
+      "title_drift": [
+        {
+          "url": "https://ambiautomation.ambimat.com/energy-optimization",
+          "old": "Energy Optimization for Multi-Zone HVAC | AmbiAutomation",
+          "new": "HVAC Energy Optimization with Measurable Payback | AmbiAutomation"
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/products",
+          "old": "Products — Server, App, IIoT Gateway | AmbiAutomation",
+          "new": "AmbiAutomation Product Line — Server, App & IIoT Gateway"
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/about",
+          "old": "About AmbiAutomation — Part of the Ambimat Group",
+          "new": "About AmbiAutomation — Hardware, Firmware & App, One Company"
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/energy-optimization-multi-zone-air-conditioning",
+          "old": "Energy Optimization for Multi-Zone HVAC | AmbiAutomation",
+          "new": "Multi-Zone HVAC Energy Optimization: A Practical Playbook | AmbiAutomation"
+        }
+      ],
+      "pages": [
+        {
+          "url": "https://ambiautomation.ambimat.com/",
+          "status": 200,
+          "title": "VRV / VRF Automation Retrofit | AmbiAutomation",
+          "description": "Retrofit automation for existing VRV / VRF HVAC systems. AmbiAutomation, part of the Ambimat Group, connects existing air-conditioning systems to an on-site server and mobile app for centralized HVAC control, scheduling, and energy optimization.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/",
+          "robots_meta": "index,follow",
+          "word_count": 1450,
+          "internal_links": 51,
+          "external_links": 12
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/vrv-vrf-automation",
+          "status": 200,
+          "title": "VRV / VRF Automation — Retrofit HVAC | AmbiAutomation",
+          "description": "Automate existing VRV and VRF air-conditioning systems without ripping out equipment. On-site BACnet/MODBUS server plus mobile app for centralized control, scheduling, zone monitoring, and energy optimization.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/vrv-vrf-automation",
+          "robots_meta": "index,follow",
+          "word_count": 1483,
+          "internal_links": 48,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/on-site-automation-server",
+          "status": 200,
+          "title": "On-Site Automation Server (HVAC Bridge Board) | AmbiAutomation",
+          "description": "The AmbiAutomation HVAC Bridge Board is an IP65 on-site automation server. BACnet IP, MODBUS RTU, RS232 / RS485, Ethernet, Wi-Fi, GPRS/CAT 1, NB-IoT. Edge logic, encrypted backhaul, 1.5 kV galvanic isolation.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/on-site-automation-server",
+          "robots_meta": "index,follow",
+          "word_count": 921,
+          "internal_links": 44,
+          "external_links": 10
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/mobile-app-control",
+          "status": 200,
+          "title": "Mobile App Control for HVAC | AmbiAutomation",
+          "description": "Operate every VRV / VRF zone in your building from a phone. Centralized scheduling, setpoints, alarms, role-based access, multi-site rollups — purpose-built for facilities teams.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/mobile-app-control",
+          "robots_meta": "index,follow",
+          "word_count": 722,
+          "internal_links": 44,
+          "external_links": 10
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/energy-optimization",
+          "status": 200,
+          "title": "HVAC Energy Optimization with Measurable Payback | AmbiAutomation",
+          "description": "Cut HVAC energy 15–30% on multi-zone buildings. Schedule discipline, setpoint caps, occupancy-aware modes, runaway detection. Payback in 12–24 months.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/energy-optimization",
+          "robots_meta": "index,follow",
+          "word_count": 757,
+          "internal_links": 44,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/building-automation",
+          "status": 200,
+          "title": "Building Automation Without a BMS Project | AmbiAutomation",
+          "description": "BMS-grade visibility and control for mid-market buildings — without the multi-year BMS project. BACnet IP, MODBUS RTU, mobile + web app.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/building-automation",
+          "robots_meta": "index,follow",
+          "word_count": 796,
+          "internal_links": 45,
+          "external_links": 10
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/industries",
+          "status": 200,
+          "title": "Industries — Offices, Hotels, Healthcare | AmbiAutomation",
+          "description": "Where AmbiAutomation fits: multi-zone offices and CRE, hotels, healthcare, educational institutions, retail, and light industrial facilities.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/industries",
+          "robots_meta": "index,follow",
+          "word_count": 884,
+          "internal_links": 41,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/products",
+          "status": 200,
+          "title": "AmbiAutomation Product Line — Server, App & IIoT Gateway",
+          "description": "The AmbiAutomation product line: HVAC Bridge Board on-site server, mobile + web app, and industrial IoT gateway adjacencies for plant-floor scenarios.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/products",
+          "robots_meta": "index,follow",
+          "word_count": 682,
+          "internal_links": 44,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/integration",
+          "status": 200,
+          "title": "Integration & Deployment Services | AmbiAutomation",
+          "description": "AmbiAutomation integration overview for systems integrators and consulting engineers: supported HVAC OEMs, protocol coverage, BMS coexistence, north-side API, and engineering-services scope (survey, design, commissioning, SAT, AMC).",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/integration",
+          "robots_meta": "index,follow",
+          "word_count": 1419,
+          "internal_links": 46,
+          "external_links": 10
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/about",
+          "status": 200,
+          "title": "About AmbiAutomation — Hardware, Firmware & App, One Company",
+          "description": "AmbiAutomation is the building-automation product line of the Ambimat Group — embedded engineering and electronics manufacturing in India since 1981, focused on retrofit automation for existing VRV / VRF HVAC systems.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/about",
+          "robots_meta": "index,follow",
+          "word_count": 1174,
+          "internal_links": 40,
+          "external_links": 10
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/",
+          "status": 200,
+          "title": "Resources — HVAC Automation Guides | AmbiAutomation",
+          "description": "Practical guides on VRV / VRF automation, energy optimization, retrofit deployments, and building-automation security — written by people who deploy these systems.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/",
+          "robots_meta": "index,follow",
+          "word_count": 496,
+          "internal_links": 46,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/what-is-vrv-vrf-automation",
+          "status": 200,
+          "title": "What is VRV / VRF Automation? | AmbiAutomation",
+          "description": "A plain-English explainer of VRV and VRF air-conditioning systems, why they're hard to operate manually, and what automation actually changes.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/what-is-vrv-vrf-automation",
+          "robots_meta": "index,follow",
+          "word_count": 1091,
+          "internal_links": 42,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/how-to-automate-existing-vrv-air-conditioning-system",
+          "status": 200,
+          "title": "How to Automate an Existing VRV System | AmbiAutomation",
+          "description": "Step-by-step walkthrough of retrofit automation for an existing VRV system — from survey to commissioning — without disrupting operations.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/how-to-automate-existing-vrv-air-conditioning-system",
+          "robots_meta": "index,follow",
+          "word_count": 938,
+          "internal_links": 42,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/benefits-of-centralized-hvac-control",
+          "status": 200,
+          "title": "Benefits of Centralized HVAC Control | AmbiAutomation",
+          "description": "Why fragmented HVAC control quietly costs commercial buildings 15–30% of HVAC energy — and what concretely changes when you centralize it.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/benefits-of-centralized-hvac-control",
+          "robots_meta": "index,follow",
+          "word_count": 767,
+          "internal_links": 43,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/on-site-server-vs-cloud-only-hvac-automation",
+          "status": 200,
+          "title": "On-Site Server vs Cloud-Only HVAC Automation | AmbiAutomation",
+          "description": "Why edge-resident control matters for HVAC, especially in buildings with unreliable internet — and where pure-cloud architectures break.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/on-site-server-vs-cloud-only-hvac-automation",
+          "robots_meta": "index,follow",
+          "word_count": 896,
+          "internal_links": 42,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/how-mobile-app-control-improves-hvac-operations",
+          "status": 200,
+          "title": "How Mobile App Control Improves HVAC Operations | AmbiAutomation",
+          "description": "The practical day-to-day difference between SCADA-console operation and mobile-first operation — and why it matters for facilities teams.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/how-mobile-app-control-improves-hvac-operations",
+          "robots_meta": "index,follow",
+          "word_count": 800,
+          "internal_links": 42,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/energy-optimization-multi-zone-air-conditioning",
+          "status": 200,
+          "title": "Multi-Zone HVAC Energy Optimization: A Practical Playbook | AmbiAutomation",
+          "description": "A levers-based playbook for cutting HVAC energy 15–30% on multi-zone systems — without sacrificing comfort.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/energy-optimization-multi-zone-air-conditioning",
+          "robots_meta": "index,follow",
+          "word_count": 856,
+          "internal_links": 42,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/retrofit-hvac-without-replacing-equipment",
+          "status": 200,
+          "title": "Retrofit HVAC Without Replacing Equipment | AmbiAutomation",
+          "description": "When rip-and-replace is the wrong answer — and what a retrofit-first program actually looks like.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/retrofit-hvac-without-replacing-equipment",
+          "robots_meta": "index,follow",
+          "word_count": 827,
+          "internal_links": 42,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/resources/security-considerations-for-building-automation-systems",
+          "status": 200,
+          "title": "Security for Building Automation Systems | AmbiAutomation",
+          "description": "The threat model facilities teams should think about — and what to demand from a BMS or automation vendor.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/resources/security-considerations-for-building-automation-systems",
+          "robots_meta": "index,follow",
+          "word_count": 1026,
+          "internal_links": 43,
+          "external_links": 11
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/privacy",
+          "status": 200,
+          "title": "Privacy Policy | AmbiAutomation",
+          "description": "How AmbiAutomation collects, uses, and protects the personal information you share with us through this website and our products.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/privacy",
+          "robots_meta": "index,follow",
+          "word_count": 685,
+          "internal_links": 38,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/terms",
+          "status": 200,
+          "title": "Terms of Use | AmbiAutomation",
+          "description": "Terms of use for the AmbiAutomation website. Content ownership, acceptable use, and governing law.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/terms",
+          "robots_meta": "index,follow",
+          "word_count": 548,
+          "internal_links": 38,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact?purpose=engineering",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact?purpose=deployment",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact?purpose=datasheet",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact?purpose=savings",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact?purpose=rfp",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        },
+        {
+          "url": "https://ambiautomation.ambimat.com/contact?purpose=integration",
+          "status": 200,
+          "title": "Contact — Request a Demo or Savings Model | AmbiAutomation",
+          "description": "Tell us about your building — number of floors, HVAC system, and what you'd like to control. Our team will be in touch within one business day.",
+          "h1_count": 1,
+          "canonical": "https://ambiautomation.ambimat.com/contact",
+          "robots_meta": "index,follow",
+          "word_count": 557,
+          "internal_links": 39,
+          "external_links": 9
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sites_total": 1,
+    "sites_reported": 1,
+    "sites_unreachable": 0,
+    "sites_with_alerts": 0,
+    "sites_ok": 0,
+    "sites_timed_out": 0,
+    "pages_crawled": 28,
+    "broken_pages": 0,
+    "broken_links": 0,
+    "unverified_links": 2,
+    "suspicious_warnings": 6,
+    "external_links_checked": true,
+    "partial": false
+  }
+}

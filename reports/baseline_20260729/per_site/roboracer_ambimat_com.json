@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-07-29T10:26:05+05:30",
+  "generator": "RootedPhoneSiteMonitor/0.1",
+  "limitation": "This is a PUBLIC-CRAWL-BASED compromise indicator + SEO health report. It can only detect evidence of compromise that is visible on public pages at crawl time. It CANNOT prove whether a hack was attempted in the last 24 hours — that needs server/hosting/WAF logs, Search Console alerts, or CMS security logs, which this tool does not have. All 'suspicious' findings are advisory WARNINGS to investigate, not confirmed compromise.",
+  "run_args": {
+    "max_pages": 800,
+    "global_timeout": 3600,
+    "site_timeout": 1200,
+    "check_external_links": true
+  },
+  "sites": [
+    {
+      "name": "RoboRacer",
+      "base_url": "https://roboracer.ambimat.com",
+      "final_url": "https://roboracer.ambimat.com/",
+      "reachable": true,
+      "error": null,
+      "pages_crawled": 3,
+      "timed_out": false,
+      "skipped": [],
+      "http": {
+        "status": 200,
+        "redirected_to": null
+      },
+      "security_headers": {
+        "present": [
+          "content-security-policy",
+          "x-frame-options",
+          "x-content-type-options",
+          "referrer-policy",
+          "strict-transport-security"
+        ],
+        "missing": []
+      },
+      "cert": {
+        "host": "roboracer.ambimat.com",
+        "not_after": "Oct  9 04:11:54 2026 GMT",
+        "days_to_expiry": 71
+      },
+      "alerts": [],
+      "warnings": [],
+      "seo": {
+        "pages_missing_title": [],
+        "pages_missing_description": [],
+        "pages_missing_h1": [],
+        "pages_missing_canonical": [],
+        "noindex_pages": [],
+        "duplicate_titles": {},
+        "duplicate_descriptions": {}
+      },
+      "broken_pages": [],
+      "broken_internal_links": [],
+      "broken_external_links": [
+        {
+          "url": "https://robo-racer.slack.com/signup",
+          "status": 403,
+          "found_on": "https://roboracer.ambimat.com/"
+        }
+      ],
+      "unverified_internal_links": [],
+      "unverified_external_links": [],
+      "title_drift": [],
+      "pages": [
+        {
+          "url": "https://roboracer.ambimat.com/",
+          "status": 200,
+          "title": "RoboRacer Core Kit â Pre-Assembled Autonomous Racing Platform",
+          "description": "The RoboRacer Core Kit is a fully assembled, pre-tested autonomy system for 1:10-scale robotic vehicles â sensors, compute, chassis and software integrated and validated by Ambimat Electronics.",
+          "h1_count": 1,
+          "canonical": "https://roboracer.ambimat.com/",
+          "robots_meta": "index,follow",
+          "word_count": 526,
+          "internal_links": 16,
+          "external_links": 7
+        },
+        {
+          "url": "https://roboracer.ambimat.com/resource.html",
+          "status": 200,
+          "title": "Resources â Open-Source RoboRacer Power Board Files | RoboRacer",
+          "description": "Download the open-source RoboRacer power board design files and the Power Board User Manual, released by Ambimat Electronics for the ROBORACER community.",
+          "h1_count": 1,
+          "canonical": "https://roboracer.ambimat.com/resource.html",
+          "robots_meta": "index,follow",
+          "word_count": 222,
+          "internal_links": 16,
+          "external_links": 7
+        },
+        {
+          "url": "https://roboracer.ambimat.com/contact.html",
+          "status": 200,
+          "title": "Contact & Order the RoboRacer Core Kit | Ambimat Electronics",
+          "description": "Order the RoboRacer Core Kit or reach the Ambimat Electronics team in Ahmedabad, India â sales and support contacts for India and the rest of the world.",
+          "h1_count": 1,
+          "canonical": "https://roboracer.ambimat.com/contact.html",
+          "robots_meta": "index,follow",
+          "word_count": 286,
+          "internal_links": 13,
+          "external_links": 9
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sites_total": 1,
+    "sites_reported": 1,
+    "sites_unreachable": 0,
+    "sites_with_alerts": 0,
+    "sites_ok": 1,
+    "sites_timed_out": 0,
+    "pages_crawled": 3,
+    "broken_pages": 0,
+    "broken_links": 1,
+    "unverified_links": 0,
+    "suspicious_warnings": 0,
+    "external_links_checked": true,
+    "partial": false
+  }
+}
