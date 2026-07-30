@@ -1,0 +1,1110 @@
+{
+  "generated_at": "2026-07-30 12:26:40 +0530",
+  "generated_date": "2026-07-30",
+  "mode": "phone-crawl-only",
+  "note": "No Google Search Console data — all signals are content/structure side.",
+  "domain_count": 1,
+  "metrics": {
+    "total_pages": 33,
+    "avg_ai_readiness": 97.0,
+    "total_orphans": 0,
+    "weak_pages_high": 0,
+    "audit_high": 0,
+    "audit_medium": 0
+  },
+  "trend": {
+    "previous_run": null,
+    "deltas": {},
+    "note": "first run — no baseline yet"
+  },
+  "domains": [
+    {
+      "name": "eSIM",
+      "slug": "esim",
+      "domain": "esim.ambimat.com",
+      "site_url": "https://esim.ambimat.com/",
+      "pages_crawled": 33,
+      "keywords_tracked": 116,
+      "ai_readiness": {
+        "average": 97.0,
+        "above_70": 33,
+        "below_40": 0,
+        "weakest": [
+          {
+            "url": "https://esim.ambimat.com/",
+            "score": 95
+          },
+          {
+            "url": "https://esim.ambimat.com/esim-euicc.html",
+            "score": 95
+          },
+          {
+            "url": "https://esim.ambimat.com/iot-security.html",
+            "score": 95
+          },
+          {
+            "url": "https://esim.ambimat.com/secure-elements-java-card.html",
+            "score": 95
+          },
+          {
+            "url": "https://esim.ambimat.com/telecom-integration.html",
+            "score": 95
+          }
+        ]
+      },
+      "internal_links": {
+        "orphans": [],
+        "under_linked": [],
+        "over_linked": [
+          "https://esim.ambimat.com/",
+          "https://esim.ambimat.com/sim-based-authentication.html",
+          "https://esim.ambimat.com/esim-euicc.html",
+          "https://esim.ambimat.com/iot-security.html",
+          "https://esim.ambimat.com/secure-elements-java-card.html",
+          "https://esim.ambimat.com/telecom-integration.html",
+          "https://esim.ambimat.com/architecture.html",
+          "https://esim.ambimat.com/resources.html",
+          "https://esim.ambimat.com/case-studies.html",
+          "https://esim.ambimat.com/about.html",
+          "https://esim.ambimat.com/contact.html",
+          "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html",
+          "https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html",
+          "https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html",
+          "https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html"
+        ],
+        "broken_outbound": [
+          [
+            "https://esim.ambimat.com/",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/sim-based-authentication.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/esim-euicc.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/iot-security.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/secure-elements-java-card.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/telecom-integration.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/architecture.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/resources.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/case-studies.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/case-studies/keyra.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/about.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/contact.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/esim-vs-euicc-vs-isim.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/hardware-backed-identity-iot.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/secure-elements-connected-devices.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/java-card-esim-security.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/embedded-pki-iot.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/secure-provisioning-iot.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/device-attestation-iot.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/telecom-grade-iot-security.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/euicc-applet-development.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/offline-iot-authentication.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/offline-capable-device-trust.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/scp03-protected-ota-channel.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/fleet-scale-device-provisioning.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/lte-and-enterprise-pki-identity.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/sms-otp-fraud-india-secure-authentication.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/global-shift-away-from-sms-otp.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ],
+          [
+            "https://esim.ambimat.com/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html",
+            "https://esim.ambimat.com/sitemap.xml"
+          ]
+        ],
+        "recommendation_count": 15
+      },
+      "weak_pages": {
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "top": []
+      },
+      "content_gaps": {
+        "count": 116,
+        "top": [
+          {
+            "keyword": "3gpp",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Device Attestation",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "eSIM",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "eUICC",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "fido2",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Globalplatform",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "IoT SIM",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "iSIM",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Java Card",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "M2M SIM",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "mff2",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "scp03",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Secure Element",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Sm-Dp+",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Sm-Ds",
+            "kind": "inventory_only",
+            "severity": "medium"
+          }
+        ]
+      },
+      "audit": {
+        "technical": {
+          "pages": 33,
+          "noindex": 0,
+          "redirect_chains": 0,
+          "slow_pages": 0,
+          "large_pages": 0,
+          "canonical_off": 0,
+          "missing_viewport": 0,
+          "missing_lang": 0,
+          "avg_response_ms": 262
+        },
+        "metadata": {
+          "pages": 33,
+          "og_incomplete": 0,
+          "twitter_missing": 0,
+          "low_alt_pages": 0,
+          "heading_issues": 0,
+          "alt_coverage": 1.0,
+          "images_total": 66
+        },
+        "schema": {
+          "pages": 33,
+          "pages_with_schema": 33,
+          "schema_coverage": 1.0,
+          "type_histogram": {
+            "FAQPage": 62,
+            "Organization": 34,
+            "BreadcrumbList": 32,
+            "Article": 27,
+            "TechArticle": 6,
+            "WebPage": 6,
+            "CollectionPage": 2,
+            "WebSite": 1,
+            "AboutPage": 1,
+            "ContactPage": 1
+          },
+          "high_leverage_present": [
+            "Organization",
+            "BreadcrumbList",
+            "FAQPage",
+            "Article"
+          ],
+          "faq_pages": 33
+        },
+        "content_quality": {
+          "pages": 33,
+          "average_quality": 100.0,
+          "below_55": 0,
+          "weakest": [
+            {
+              "url": "https://esim.ambimat.com/",
+              "score": 100
+            },
+            {
+              "url": "https://esim.ambimat.com/sim-based-authentication.html",
+              "score": 100
+            },
+            {
+              "url": "https://esim.ambimat.com/esim-euicc.html",
+              "score": 100
+            },
+            {
+              "url": "https://esim.ambimat.com/iot-security.html",
+              "score": 100
+            },
+            {
+              "url": "https://esim.ambimat.com/secure-elements-java-card.html",
+              "score": 100
+            }
+          ]
+        },
+        "counts": {
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "top_findings": []
+      }
+    }
+  ],
+  "ecosystem": {
+    "topic_authority": {
+      "owners": [
+        {
+          "cluster": "FIDO / WebAuthn / Passkeys",
+          "owner": "esim"
+        },
+        {
+          "cluster": "JavaCard / GlobalPlatform",
+          "owner": "esim"
+        },
+        {
+          "cluster": "Secure Elements / MFF2 / Embedded SE",
+          "owner": "esim"
+        },
+        {
+          "cluster": "PKI / X.509 / PKCS",
+          "owner": "esim"
+        },
+        {
+          "cluster": "DESFire / Transit",
+          "owner": "esim"
+        },
+        {
+          "cluster": "MFA / Phishing-resistant",
+          "owner": "esim"
+        },
+        {
+          "cluster": "eSIM / eUICC / SGP.22",
+          "owner": "esim"
+        },
+        {
+          "cluster": "IoT identity / OEM",
+          "owner": "esim"
+        }
+      ],
+      "thin_coverage": {},
+      "isolated_pages": [
+        "https://esim.ambimat.com/blogs/secure-provisioning-iot.html",
+        "https://esim.ambimat.com/blogs/sms-otp-fraud-india-secure-authentication.html",
+        "https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html",
+        "https://esim.ambimat.com/case-studies.html",
+        "https://esim.ambimat.com/case-studies/keyra.html",
+        "https://esim.ambimat.com/contact.html",
+        "https://esim.ambimat.com/telecom-integration.html"
+      ]
+    },
+    "overlap": {
+      "keyword_overlaps": 0,
+      "page_duplicates": []
+    },
+    "content_opportunities": [
+      {
+        "title": "FIDO2 vs Passkeys vs traditional MFA",
+        "cluster": "FIDO / WebAuthn / Passkeys",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "WebAuthn deployment patterns for enterprise",
+        "cluster": "FIDO / WebAuthn / Passkeys",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "FIDO2 + PIV interop in regulated industries",
+        "cluster": "FIDO / WebAuthn / Passkeys",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "Cornerstone page for: PIV / FIPS 201 / Smart card",
+        "cluster": "PIV / FIPS 201 / Smart card",
+        "priority": "HIGH",
+        "recommended_domain": "esim",
+        "kind": "cornerstone"
+      },
+      {
+        "title": "Secure Elements vs TPM vs HSM",
+        "cluster": "Secure Elements / MFF2 / Embedded SE",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "MFF2 vs removable secure-element deployments",
+        "cluster": "Secure Elements / MFF2 / Embedded SE",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "Secure-element lifecycle management",
+        "cluster": "Secure Elements / MFF2 / Embedded SE",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "PKCS#11 vs PKCS#15 — when to choose which",
+        "cluster": "PKI / X.509 / PKCS",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "X.509 chain validation pitfalls",
+        "cluster": "PKI / X.509 / PKCS",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "Cornerstone page for: ePassport / ICAO 9303",
+        "cluster": "ePassport / ICAO 9303",
+        "priority": "HIGH",
+        "recommended_domain": "esim",
+        "kind": "cornerstone"
+      },
+      {
+        "title": "DESFire EV2 vs EV3 — migration guide",
+        "cluster": "DESFire / Transit",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "Phishing-resistant MFA: hardware keys vs platform authenticators",
+        "cluster": "MFA / Phishing-resistant",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "Cornerstone page for: Identity Management",
+        "cluster": "Identity Management",
+        "priority": "HIGH",
+        "recommended_domain": "esim",
+        "kind": "cornerstone"
+      },
+      {
+        "title": "SGP.22 vs SGP.32 orchestration",
+        "cluster": "eSIM / eUICC / SGP.22",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "Consumer eSIM vs M2M eUICC deployment",
+        "cluster": "eSIM / eUICC / SGP.22",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "iSIM vs eSIM — when each wins",
+        "cluster": "eSIM / eUICC / SGP.22",
+        "priority": "LOW",
+        "recommended_domain": "esim",
+        "kind": "comparison"
+      },
+      {
+        "title": "Cornerstone page for: Energy / power / metering",
+        "cluster": "Energy / power / metering",
+        "priority": "HIGH",
+        "recommended_domain": "esim",
+        "kind": "cornerstone"
+      },
+      {
+        "title": "Cornerstone page for: Industrial automation",
+        "cluster": "Industrial automation",
+        "priority": "HIGH",
+        "recommended_domain": "esim",
+        "kind": "cornerstone"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: PIV / FIPS 201 / Smart card",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `esim` currently covers 'PIV / FIPS 201 / Smart card'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=PIV / FIPS 201 / Smart card, kind=cornerstone",
+      "domain_slug": "esim",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: ePassport / ICAO 9303",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `esim` currently covers 'ePassport / ICAO 9303'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=ePassport / ICAO 9303, kind=cornerstone",
+      "domain_slug": "esim",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: Identity Management",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `esim` currently covers 'Identity Management'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=Identity Management, kind=cornerstone",
+      "domain_slug": "esim",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: Energy / power / metering",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `esim` currently covers 'Energy / power / metering'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=Energy / power / metering, kind=cornerstone",
+      "domain_slug": "esim",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: Industrial automation",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `esim` currently covers 'Industrial automation'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=Industrial automation, kind=cornerstone",
+      "domain_slug": "esim",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/sim-based-authentication.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/sim-based-authentication.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/esim-euicc.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/esim-euicc.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/iot-security.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/iot-security.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/secure-elements-java-card.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/secure-elements-java-card.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/telecom-integration.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/telecom-integration.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/architecture.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/architecture.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/resources.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/resources.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/case-studies.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/case-studies.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/about.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/about.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/contact.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/contact.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/blogs/trust-chain-architecture-manufacturing-to-device.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/blogs/esim-euicc-rsp-provisioning-architecture.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/blogs/secure-element-vs-tee-vs-tpm.html` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html",
+      "suggested_action": "Manual review: `https://esim.ambimat.com/blogs/embedded-pki-enterprise-assumptions.html` has too many inbound links.",
+      "rationale": "Over-linked (30 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: 3gpp",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Device Attestation",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: eSIM",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: eUICC",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html, /, /about.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: fido2",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blogs/global-shift-away-from-sms-otp.html, /, /about.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Globalplatform",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: IoT SIM",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: iSIM",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Java Card",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: M2M SIM",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: mff2",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: scp03",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Secure Element",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blogs/global-shift-away-from-sms-otp.html, /blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html, /",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Sm-Dp+",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html, /, /about.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Sm-Ds",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blogs/sgp-32-and-v2x-pki-the-common-architectural-pattern.html, /, /about.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Webauthn",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: x.509",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about.html, /architecture.html",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "FIDO2 vs Passkeys vs traditional MFA",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=FIDO / WebAuthn / Passkeys, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "WebAuthn deployment patterns for enterprise",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=FIDO / WebAuthn / Passkeys, kind=standards_explainer",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "FIDO2 + PIV interop in regulated industries",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=FIDO / WebAuthn / Passkeys, kind=standards_explainer",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Secure Elements vs TPM vs HSM",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=Secure Elements / MFF2 / Embedded SE, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "MFF2 vs removable secure-element deployments",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=Secure Elements / MFF2 / Embedded SE, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Secure-element lifecycle management",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=Secure Elements / MFF2 / Embedded SE, kind=standards_explainer",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "PKCS#11 vs PKCS#15 — when to choose which",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=PKI / X.509 / PKCS, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "X.509 chain validation pitfalls",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=PKI / X.509 / PKCS, kind=standards_explainer",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "DESFire EV2 vs EV3 — migration guide",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=DESFire / Transit, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Phishing-resistant MFA: hardware keys vs platform authenticators",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=MFA / Phishing-resistant, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "SGP.22 vs SGP.32 orchestration",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=eSIM / eUICC / SGP.22, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Consumer eSIM vs M2M eUICC deployment",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=eSIM / eUICC / SGP.22, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "iSIM vs eSIM — when each wins",
+      "suggested_action": "Author this on `esim` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `esim`. Backfill for topical completeness.",
+      "evidence": "cluster=eSIM / eUICC / SGP.22, kind=comparison",
+      "domain_slug": "esim",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    }
+  ]
+}

@@ -1,0 +1,2720 @@
+{
+  "generated_at": "2026-07-30 12:53:08 +0530",
+  "generated_date": "2026-07-30",
+  "mode": "phone-crawl-only",
+  "note": "No Google Search Console data — all signals are content/structure side.",
+  "domain_count": 1,
+  "metrics": {
+    "total_pages": 285,
+    "avg_ai_readiness": 75.5,
+    "total_orphans": 0,
+    "weak_pages_high": 0,
+    "audit_high": 0,
+    "audit_medium": 0
+  },
+  "trend": {
+    "previous_run": null,
+    "deltas": {},
+    "note": "first run — no baseline yet"
+  },
+  "domains": [
+    {
+      "name": "AmbiSecure",
+      "slug": "ambisecure",
+      "domain": "ambisecure.ambimat.com",
+      "site_url": "https://ambisecure.ambimat.com/",
+      "pages_crawled": 285,
+      "keywords_tracked": 893,
+      "ai_readiness": {
+        "average": 75.5,
+        "above_70": 164,
+        "below_40": 0,
+        "weakest": [
+          {
+            "url": "https://ambisecure.ambimat.com/industries/transportation/",
+            "score": 54
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/resources/timelines/",
+            "score": 54
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/resources/tools/aaguid-lookup/",
+            "score": 54
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/resources/tools/ats-parser/",
+            "score": 54
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/resources/tools/authdata-parser/",
+            "score": 54
+          }
+        ]
+      },
+      "internal_links": {
+        "orphans": [],
+        "under_linked": [
+          "https://ambisecure.ambimat.com/blog/cyber-security-threats-overview/",
+          "https://ambisecure.ambimat.com/blog/lava-lamps-and-cryptographic-entropy/",
+          "https://ambisecure.ambimat.com/services/fido-validation-server/demo/"
+        ],
+        "over_linked": [
+          "https://ambisecure.ambimat.com/",
+          "https://ambisecure.ambimat.com/about/",
+          "https://ambisecure.ambimat.com/about/certifications/",
+          "https://ambisecure.ambimat.com/blog/",
+          "https://ambisecure.ambimat.com/blog/apdu-from-first-principles/",
+          "https://ambisecure.ambimat.com/blog/archive/",
+          "https://ambisecure.ambimat.com/blog/categories/",
+          "https://ambisecure.ambimat.com/blog/implementing-fido2-developer-guide/",
+          "https://ambisecure.ambimat.com/brochures/",
+          "https://ambisecure.ambimat.com/case-studies/",
+          "https://ambisecure.ambimat.com/contact/",
+          "https://ambisecure.ambimat.com/engagement-models/",
+          "https://ambisecure.ambimat.com/faqs/",
+          "https://ambisecure.ambimat.com/industries/",
+          "https://ambisecure.ambimat.com/industries/connected-mobility/",
+          "https://ambisecure.ambimat.com/industries/enterprise-access/",
+          "https://ambisecure.ambimat.com/industries/government-and-defence/",
+          "https://ambisecure.ambimat.com/industries/smart-cities/",
+          "https://ambisecure.ambimat.com/industries/transportation/",
+          "https://ambisecure.ambimat.com/partners/",
+          "https://ambisecure.ambimat.com/privacy/",
+          "https://ambisecure.ambimat.com/products/",
+          "https://ambisecure.ambimat.com/products/iot-security-coprocessor/",
+          "https://ambisecure.ambimat.com/products/javacard-applets/",
+          "https://ambisecure.ambimat.com/products/onepass-bio-card/",
+          "https://ambisecure.ambimat.com/products/onepass-card/",
+          "https://ambisecure.ambimat.com/products/onepass-platform/",
+          "https://ambisecure.ambimat.com/products/onepass-usb-key/",
+          "https://ambisecure.ambimat.com/references/",
+          "https://ambisecure.ambimat.com/resources/",
+          "https://ambisecure.ambimat.com/resources/tools/apdu-parser/",
+          "https://ambisecure.ambimat.com/resources/tools/asn1-parser/",
+          "https://ambisecure.ambimat.com/resources/tools/atr-parser/",
+          "https://ambisecure.ambimat.com/resources/tools/attestation-decoder/",
+          "https://ambisecure.ambimat.com/resources/tools/pem-der/",
+          "https://ambisecure.ambimat.com/resources/tools/tlv-parser/",
+          "https://ambisecure.ambimat.com/resources/tools/x509-viewer/",
+          "https://ambisecure.ambimat.com/resources/webauthn/",
+          "https://ambisecure.ambimat.com/services/",
+          "https://ambisecure.ambimat.com/services/fido-validation-server/",
+          "https://ambisecure.ambimat.com/services/javacard-development/",
+          "https://ambisecure.ambimat.com/solutions/",
+          "https://ambisecure.ambimat.com/solutions/closed-loop-ticketing/",
+          "https://ambisecure.ambimat.com/solutions/passwordless-enterprise/",
+          "https://ambisecure.ambimat.com/solutions/passwordless-mfa/",
+          "https://ambisecure.ambimat.com/solutions/phishing-resistant-authentication/",
+          "https://ambisecure.ambimat.com/solutions/secure-element-integration/",
+          "https://ambisecure.ambimat.com/solutions/transit-ticketing/",
+          "https://ambisecure.ambimat.com/solutions/v2x-security/",
+          "https://ambisecure.ambimat.com/support/",
+          "https://ambisecure.ambimat.com/technologies/",
+          "https://ambisecure.ambimat.com/technologies/desfire/",
+          "https://ambisecure.ambimat.com/technologies/sam/",
+          "https://ambisecure.ambimat.com/technologies/secure-elements/",
+          "https://ambisecure.ambimat.com/trust/",
+          "https://ambisecure.ambimat.com/videos/"
+        ],
+        "broken_outbound": [
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/desfire/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/fido/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/javacard/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/passkeys/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/pki/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/smart-cards/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/transit/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/",
+            "https://ambisecure.ambimat.com/tags/webauthn/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+            "https://ambisecure.ambimat.com/tags/ambisec/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+            "https://ambisecure.ambimat.com/tags/cra/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+            "https://ambisecure.ambimat.com/tags/cyber-resilience-act/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+            "https://ambisecure.ambimat.com/tags/device-identity/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+            "https://ambisecure.ambimat.com/tags/iot-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+            "https://ambisecure.ambimat.com/tags/secure-element/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/ambisec/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/cra/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/cyber-resilience-act/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/device-identity/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/embedded-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/secure-by-design/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-secure-by-design-hardware-backed-trust/",
+            "https://ambisecure.ambimat.com/tags/secure-element/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-vulnerability-handling-product-lifecycle-security/",
+            "https://ambisecure.ambimat.com/tags/cra/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-vulnerability-handling-product-lifecycle-security/",
+            "https://ambisecure.ambimat.com/tags/cyber-resilience-act/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-vulnerability-handling-product-lifecycle-security/",
+            "https://ambisecure.ambimat.com/tags/device-identity/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-vulnerability-handling-product-lifecycle-security/",
+            "https://ambisecure.ambimat.com/tags/embedded-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/cra-vulnerability-handling-product-lifecycle-security/",
+            "https://ambisecure.ambimat.com/tags/secure-element/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/eu-cyber-resilience-act-connected-hardware-iot/",
+            "https://ambisecure.ambimat.com/tags/cra/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/eu-cyber-resilience-act-connected-hardware-iot/",
+            "https://ambisecure.ambimat.com/tags/cyber-resilience-act/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/eu-cyber-resilience-act-connected-hardware-iot/",
+            "https://ambisecure.ambimat.com/tags/device-identity/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/eu-cyber-resilience-act-connected-hardware-iot/",
+            "https://ambisecure.ambimat.com/tags/embedded-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/eu-cyber-resilience-act-connected-hardware-iot/",
+            "https://ambisecure.ambimat.com/tags/iot-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/blog/eu-cyber-resilience-act-connected-hardware-iot/",
+            "https://ambisecure.ambimat.com/tags/secure-by-design/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/resources/ambisecure-deck/",
+            "https://ambisecure.ambimat.com/assets/deck/ambisecure-deck.pdf"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/aaguid/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/ambisec/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/attestation/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/biometrics/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/cra/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/cyber-resilience-act/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/cyber-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/desfire/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/device-identity/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/embedded-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/enterprise/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/epassport/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/fido/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/government-identity/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/hardware/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/iot-security/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/javacard/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/mfa/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/passkeys/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/passwordless/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/pki/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/privacy/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/recovery/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/sam/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/secure-by-design/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/secure-element/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/smart-cards/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/transit/"
+          ],
+          [
+            "https://ambisecure.ambimat.com/tags/",
+            "https://ambisecure.ambimat.com/tags/webauthn/"
+          ]
+        ],
+        "recommendation_count": 57
+      },
+      "weak_pages": {
+        "high": 0,
+        "medium": 227,
+        "low": 0,
+        "top": [
+          {
+            "url": "https://ambisecure.ambimat.com/blog/categories/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/cyber-security-threats-overview/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/designing-enterprise-passwordless-systems/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/designing-low-latency-secure-transit-validators/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/fido-supported-services/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/implementing-fido2-developer-guide/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/page/2/",
+            "issue": "H1 and title diverge",
+            "severity": "medium",
+            "action": "Align H1 and <title> on the primary query — keep them within one variant of each other."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/page/2/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/pki-credential-issuance-workforce-government/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/transit-validators-offline-trust-architecture/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/blog/why-sams-matter-in-closed-loop-transit/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/brochures/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/brochures/device-identity/",
+            "issue": "H1 and title diverge",
+            "severity": "medium",
+            "action": "Align H1 and <title> on the primary query — keep them within one variant of each other."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/brochures/device-identity/",
+            "issue": "No FAQPage schema",
+            "severity": "medium",
+            "action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs."
+          },
+          {
+            "url": "https://ambisecure.ambimat.com/brochures/fido/",
+            "issue": "H1 and title diverge",
+            "severity": "medium",
+            "action": "Align H1 and <title> on the primary query — keep them within one variant of each other."
+          }
+        ]
+      },
+      "content_gaps": {
+        "count": 893,
+        "top": [
+          {
+            "keyword": "#Ambisecure",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Active Authentication",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Ambipay",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "APDU",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Attestation",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Bac",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Biometrics",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "c-v2x",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Cap File",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "cc eal6+",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Certificate Authority",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Connected Mobility",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Csca",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "ctap2",
+            "kind": "inventory_only",
+            "severity": "medium"
+          },
+          {
+            "keyword": "Cyber Threats",
+            "kind": "inventory_only",
+            "severity": "medium"
+          }
+        ]
+      },
+      "audit": {
+        "technical": {
+          "pages": 285,
+          "noindex": 0,
+          "redirect_chains": 0,
+          "slow_pages": 0,
+          "large_pages": 0,
+          "canonical_off": 0,
+          "missing_viewport": 0,
+          "missing_lang": 0,
+          "avg_response_ms": 341
+        },
+        "metadata": {
+          "pages": 285,
+          "og_incomplete": 0,
+          "twitter_missing": 0,
+          "low_alt_pages": 0,
+          "heading_issues": 0,
+          "alt_coverage": 1.0,
+          "images_total": 61
+        },
+        "schema": {
+          "pages": 285,
+          "pages_with_schema": 285,
+          "schema_coverage": 1.0,
+          "type_histogram": {
+            "Organization": 285,
+            "BreadcrumbList": 284,
+            "FAQPage": 115,
+            "TechArticle": 78,
+            "SoftwareApplication": 76,
+            "Article": 62,
+            "CollectionPage": 31,
+            "Service": 23,
+            "Product": 20,
+            "WebPage": 14,
+            "VideoObject": 7,
+            "CreativeWork": 6,
+            "WebSite": 2,
+            "AboutPage": 1,
+            "Blog": 1,
+            "ContactPage": 1,
+            "PresentationDigitalDocument": 1,
+            "ItemList": 1
+          },
+          "high_leverage_present": [
+            "Organization",
+            "BreadcrumbList",
+            "FAQPage",
+            "Article",
+            "Product"
+          ],
+          "faq_pages": 115
+        },
+        "content_quality": {
+          "pages": 285,
+          "average_quality": 99.3,
+          "below_55": 0,
+          "weakest": [
+            {
+              "url": "https://ambisecure.ambimat.com/references/desfire/",
+              "score": 65
+            },
+            {
+              "url": "https://ambisecure.ambimat.com/references/globalplatform/",
+              "score": 65
+            },
+            {
+              "url": "https://ambisecure.ambimat.com/references/javacard-cap/",
+              "score": 65
+            },
+            {
+              "url": "https://ambisecure.ambimat.com/references/nfc/",
+              "score": 65
+            },
+            {
+              "url": "https://ambisecure.ambimat.com/references/x509-extensions/",
+              "score": 65
+            }
+          ]
+        },
+        "counts": {
+          "high": 0,
+          "medium": 0,
+          "low": 1
+        },
+        "top_findings": [
+          {
+            "category": "metadata",
+            "issue": "Duplicate H1 across 2 pages",
+            "severity": "low",
+            "url": "https://ambisecure.ambimat.com/brochures/onepass/"
+          }
+        ]
+      }
+    }
+  ],
+  "ecosystem": {
+    "topic_authority": {
+      "owners": [
+        {
+          "cluster": "FIDO / WebAuthn / Passkeys",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "PIV / FIPS 201 / Smart card",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "JavaCard / GlobalPlatform",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "Secure Elements / MFF2 / Embedded SE",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "PKI / X.509 / PKCS",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "ePassport / ICAO 9303",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "DESFire / Transit",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "MFA / Phishing-resistant",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "eSIM / eUICC / SGP.22",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "Industrial automation",
+          "owner": "ambisecure"
+        },
+        {
+          "cluster": "IoT identity / OEM",
+          "owner": "ambisecure"
+        }
+      ],
+      "thin_coverage": {},
+      "isolated_pages": [
+        "https://ambisecure.ambimat.com/about/certifications/",
+        "https://ambisecure.ambimat.com/blog/",
+        "https://ambisecure.ambimat.com/blog/ambisecure-products-cra-readiness/",
+        "https://ambisecure.ambimat.com/blog/archive/common-misconceptions-about-2fa/",
+        "https://ambisecure.ambimat.com/blog/archive/consumer-biometrics-and-privacy/",
+        "https://ambisecure.ambimat.com/blog/archive/cyber-attacks-in-india-part-1/",
+        "https://ambisecure.ambimat.com/blog/archive/cyber-attacks-in-india-part-2/",
+        "https://ambisecure.ambimat.com/blog/archive/cyber-attacks-in-india-part-3/",
+        "https://ambisecure.ambimat.com/blog/archive/emv-certification-in-public-transport/",
+        "https://ambisecure.ambimat.com/blog/archive/enterprise-security-threats/",
+        "https://ambisecure.ambimat.com/blog/archive/introduction-to-java-card/",
+        "https://ambisecure.ambimat.com/blog/archive/public-transport-ticketing-part-1/",
+        "https://ambisecure.ambimat.com/blog/archive/public-transport-ticketing-part-2/",
+        "https://ambisecure.ambimat.com/blog/archive/public-transport-ticketing-part-3/",
+        "https://ambisecure.ambimat.com/blog/archive/securing-iiot-infrastructure/",
+        "https://ambisecure.ambimat.com/blog/archive/sms-otp-disadvantages/",
+        "https://ambisecure.ambimat.com/blog/archive/workplace-biometrics/",
+        "https://ambisecure.ambimat.com/blog/categories/",
+        "https://ambisecure.ambimat.com/blog/categories/biometrics/",
+        "https://ambisecure.ambimat.com/blog/categories/cryptography/",
+        "https://ambisecure.ambimat.com/blog/categories/cyber-resilience/",
+        "https://ambisecure.ambimat.com/blog/categories/cyber-threats/",
+        "https://ambisecure.ambimat.com/blog/categories/cybersecurity/",
+        "https://ambisecure.ambimat.com/blog/categories/identity/",
+        "https://ambisecure.ambimat.com/blog/categories/offline-authentication/"
+      ]
+    },
+    "overlap": {
+      "keyword_overlaps": 0,
+      "page_duplicates": []
+    },
+    "content_opportunities": [
+      {
+        "title": "FIDO2 vs Passkeys vs traditional MFA",
+        "cluster": "FIDO / WebAuthn / Passkeys",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "WebAuthn deployment patterns for enterprise",
+        "cluster": "FIDO / WebAuthn / Passkeys",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "FIDO2 + PIV interop in regulated industries",
+        "cluster": "FIDO / WebAuthn / Passkeys",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "PIV vs CAC vs PIV-I",
+        "cluster": "PIV / FIPS 201 / Smart card",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "FIPS 201 derived credentials in mobile",
+        "cluster": "PIV / FIPS 201 / Smart card",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "Secure Elements vs TPM vs HSM",
+        "cluster": "Secure Elements / MFF2 / Embedded SE",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "MFF2 vs removable secure-element deployments",
+        "cluster": "Secure Elements / MFF2 / Embedded SE",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "Secure-element lifecycle management",
+        "cluster": "Secure Elements / MFF2 / Embedded SE",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "PKCS#11 vs PKCS#15 — when to choose which",
+        "cluster": "PKI / X.509 / PKCS",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "X.509 chain validation pitfalls",
+        "cluster": "PKI / X.509 / PKCS",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "ICAO 9303 — what changed in the latest revision",
+        "cluster": "ePassport / ICAO 9303",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "standards_explainer"
+      },
+      {
+        "title": "Active vs passive authentication for ePassports",
+        "cluster": "ePassport / ICAO 9303",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "DESFire EV2 vs EV3 — migration guide",
+        "cluster": "DESFire / Transit",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "Phishing-resistant MFA: hardware keys vs platform authenticators",
+        "cluster": "MFA / Phishing-resistant",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "Cornerstone page for: Identity Management",
+        "cluster": "Identity Management",
+        "priority": "HIGH",
+        "recommended_domain": "ambisecure",
+        "kind": "cornerstone"
+      },
+      {
+        "title": "SGP.22 vs SGP.32 orchestration",
+        "cluster": "eSIM / eUICC / SGP.22",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "Consumer eSIM vs M2M eUICC deployment",
+        "cluster": "eSIM / eUICC / SGP.22",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "iSIM vs eSIM — when each wins",
+        "cluster": "eSIM / eUICC / SGP.22",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      },
+      {
+        "title": "Cornerstone page for: Energy / power / metering",
+        "cluster": "Energy / power / metering",
+        "priority": "HIGH",
+        "recommended_domain": "ambisecure",
+        "kind": "cornerstone"
+      },
+      {
+        "title": "PLC vs edge controller for greenfield deployments",
+        "cluster": "Industrial automation",
+        "priority": "LOW",
+        "recommended_domain": "ambisecure",
+        "kind": "comparison"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: Identity Management",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `ambisecure` currently covers 'Identity Management'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=Identity Management, kind=cornerstone",
+      "domain_slug": "ambisecure",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "HIGH",
+      "title": "Cornerstone page for: Energy / power / metering",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "No page on `ambisecure` currently covers 'Energy / power / metering'. Publish a 1500+ word cornerstone with FAQ schema.",
+      "evidence": "cluster=Energy / power / metering, kind=cornerstone",
+      "domain_slug": "ambisecure",
+      "impact": "High",
+      "effort": "High",
+      "confidence": 0.7
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Internal-link medium: https://ambisecure.ambimat.com/services/fido-validation-server/demo/",
+      "suggested_action": "Link `https://ambisecure.ambimat.com/services/fido-validation-server/demo/` from:\n- https://ambisecure.ambimat.com/\n- https://ambisecure.ambimat.com/products/",
+      "rationale": "Under-linked (1 inbound) — add 2 cluster-adjacent link(s) to reach the cornerstone threshold.",
+      "evidence": "2 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/categories/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/cyber-security-threats-overview/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/designing-enterprise-passwordless-systems/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/designing-low-latency-secure-transit-validators/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/fido-supported-services/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/implementing-fido2-developer-guide/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/page/2/",
+      "suggested_action": "Align H1 and <title> on the primary query — keep them within one variant of each other.",
+      "rationale": "H1 and title diverge",
+      "evidence": "Medium — confuses topical signal",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/page/2/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/pki-credential-issuance-workforce-government/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Weak page: https://ambisecure.ambimat.com/blog/transit-validators-offline-trust-architecture/",
+      "suggested_action": "Author 3–5 FAQ entries + FAQPage JSON-LD with mainEntity Q/A pairs.",
+      "rationale": "No FAQPage schema",
+      "evidence": "Medium — Gemini / Perplexity favour FAQ-shaped pages",
+      "domain_slug": "ambisecure",
+      "impact": "Medium",
+      "effort": "Low",
+      "confidence": 0.65
+    },
+    {
+      "priority": "LOW",
+      "title": "Duplicate HN across N pages",
+      "suggested_action": "Give each page a unique H1 matching its specific intent.",
+      "rationale": "\"onepass — one identity, every form factor.\" on: https://ambisecure.ambimat.com/brochures/onepass/, https://ambisecure.ambimat.com/products/onepass-platform/",
+      "evidence": "https://ambisecure.ambimat.com/brochures/onepass/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.9
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/about/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/about/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/about/certifications/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/about/certifications/` has too many inbound links.",
+      "rationale": "Over-linked (192 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/blog/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/blog/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/blog/apdu-from-first-principles/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/blog/apdu-from-first-principles/` has too many inbound links.",
+      "rationale": "Over-linked (26 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/blog/archive/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/blog/archive/` has too many inbound links.",
+      "rationale": "Over-linked (54 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/blog/categories/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/blog/categories/` has too many inbound links.",
+      "rationale": "Over-linked (55 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/blog/implementing-fido2-developer-guide/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/blog/implementing-fido2-developer-guide/` has too many inbound links.",
+      "rationale": "Over-linked (25 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/brochures/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/brochures/` has too many inbound links.",
+      "rationale": "Over-linked (41 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/case-studies/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/case-studies/` has too many inbound links.",
+      "rationale": "Over-linked (50 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/contact/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/contact/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/engagement-models/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/engagement-models/` has too many inbound links.",
+      "rationale": "Over-linked (41 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/faqs/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/faqs/` has too many inbound links.",
+      "rationale": "Over-linked (41 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/industries/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/industries/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/industries/connected-mobility/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/industries/connected-mobility/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/industries/enterprise-access/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/industries/enterprise-access/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/industries/government-and-defence/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/industries/government-and-defence/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/industries/smart-cities/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/industries/smart-cities/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/industries/transportation/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/industries/transportation/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/partners/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/partners/` has too many inbound links.",
+      "rationale": "Over-linked (95 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/privacy/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/privacy/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/iot-security-coprocessor/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/iot-security-coprocessor/` has too many inbound links.",
+      "rationale": "Over-linked (276 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/javacard-applets/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/javacard-applets/` has too many inbound links.",
+      "rationale": "Over-linked (223 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/onepass-bio-card/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/onepass-bio-card/` has too many inbound links.",
+      "rationale": "Over-linked (198 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/onepass-card/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/onepass-card/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/onepass-platform/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/onepass-platform/` has too many inbound links.",
+      "rationale": "Over-linked (192 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/products/onepass-usb-key/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/products/onepass-usb-key/` has too many inbound links.",
+      "rationale": "Over-linked (280 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/references/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/references/` has too many inbound links.",
+      "rationale": "Over-linked (97 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/apdu-parser/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/apdu-parser/` has too many inbound links.",
+      "rationale": "Over-linked (38 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/asn1-parser/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/asn1-parser/` has too many inbound links.",
+      "rationale": "Over-linked (54 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/atr-parser/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/atr-parser/` has too many inbound links.",
+      "rationale": "Over-linked (28 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/attestation-decoder/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/attestation-decoder/` has too many inbound links.",
+      "rationale": "Over-linked (36 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/pem-der/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/pem-der/` has too many inbound links.",
+      "rationale": "Over-linked (44 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/tlv-parser/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/tlv-parser/` has too many inbound links.",
+      "rationale": "Over-linked (33 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/tools/x509-viewer/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/tools/x509-viewer/` has too many inbound links.",
+      "rationale": "Over-linked (54 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/resources/webauthn/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/resources/webauthn/` has too many inbound links.",
+      "rationale": "Over-linked (71 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/services/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/services/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/services/fido-validation-server/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/services/fido-validation-server/` has too many inbound links.",
+      "rationale": "Over-linked (51 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/services/javacard-development/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/services/javacard-development/` has too many inbound links.",
+      "rationale": "Over-linked (42 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/closed-loop-ticketing/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/closed-loop-ticketing/` has too many inbound links.",
+      "rationale": "Over-linked (86 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/passwordless-enterprise/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/passwordless-enterprise/` has too many inbound links.",
+      "rationale": "Over-linked (80 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/passwordless-mfa/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/passwordless-mfa/` has too many inbound links.",
+      "rationale": "Over-linked (29 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/phishing-resistant-authentication/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/phishing-resistant-authentication/` has too many inbound links.",
+      "rationale": "Over-linked (70 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/secure-element-integration/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/secure-element-integration/` has too many inbound links.",
+      "rationale": "Over-linked (48 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/transit-ticketing/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/transit-ticketing/` has too many inbound links.",
+      "rationale": "Over-linked (25 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/solutions/v2x-security/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/solutions/v2x-security/` has too many inbound links.",
+      "rationale": "Over-linked (274 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/support/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/support/` has too many inbound links.",
+      "rationale": "Over-linked (192 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/technologies/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/technologies/` has too many inbound links.",
+      "rationale": "Over-linked (285 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/technologies/desfire/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/technologies/desfire/` has too many inbound links.",
+      "rationale": "Over-linked (34 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/technologies/sam/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/technologies/sam/` has too many inbound links.",
+      "rationale": "Over-linked (27 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/technologies/secure-elements/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/technologies/secure-elements/` has too many inbound links.",
+      "rationale": "Over-linked (26 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/trust/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/trust/` has too many inbound links.",
+      "rationale": "Over-linked (95 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Internal-link low: https://ambisecure.ambimat.com/videos/",
+      "suggested_action": "Manual review: `https://ambisecure.ambimat.com/videos/` has too many inbound links.",
+      "rationale": "Over-linked (45 inbound) — likely footer/sidebar duplication. Manual review for link-juice dilution.",
+      "evidence": "0 candidate source(s)",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.75
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: #Ambisecure",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/enterprise-security-threats/, /blog/archive/is-passwordless-the-future/, /blog/archive/mfa-in-government/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Active Authentication",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Ambipay",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/epassport-applications/, /blog/archive/how-chip-based-epassports-work/, /blog/archive/public-transport-ticketing-part-3/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: APDU",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/apdu-from-first-principles/, /blog/archive/introduction-to-java-card/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Attestation",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/credential-lifecycle-management/, /blog/pki-credential-issuance-workforce-government/, /blog/secure-iot-identity-with-applets/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Bac",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/engineering-epassport-issuance-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Biometrics",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/biometrics/, /blog/archive/consumer-biometrics-and-privacy/, /blog/archive/workplace-biometrics/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: c-v2x",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Cap File",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: cc eal6+",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Certificate Authority",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Connected Mobility",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Csca",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/engineering-epassport-issuance-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: ctap2",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/how-fido-authentication-works/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Cyber Threats",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/cyber-threats/, /blog/archive/cyber-attacks-in-india-part-1/, /blog/archive/cyber-attacks-in-india-part-2/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Cybersecurity",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/cybersecurity/, /blog/archive/common-misconceptions-about-2fa/, /blog/archive/enterprise-security-threats/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: DESFire",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/desfire/, /blog/desfire-ev1-vs-ev2-vs-ev3/, /blog/designing-low-latency-secure-transit-validators/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: desfire ev2",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/case-studies/transit-ticketing/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: desfire ev3",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Device Identity",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/ambisecure-products-cra-readiness/, /blog/cra-secure-by-design-hardware-backed-trust/, /blog/cra-vulnerability-handling-product-lifecycle-security/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Digital Signature",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Enrolment Credential",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/how-v2x-pki-works/, /resources/tools/ieee-1609-2-parser/, /technologies/v2x-pki/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Enterprise Mfa",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/enterprise-security-threats/, /blog/archive/workplace-biometrics/, /blog/smart-cards-vs-fido-tokens-vs-passkeys/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: ePassport",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/epassport/, /blog/archive/epassport-applications/, /blog/archive/how-chip-based-epassports-work/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Esim",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Euicc",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Fido",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/fido/, /blog/archive/fast-identity-online/, /blog/archive/what-is-passwordless-authentication/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: FIDO2",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/is-passwordless-the-future/, /blog/how-fido-authentication-works/, /blog/passkeys-vs-traditional-mfa/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: fips 201",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Globalplatform",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/javacard-applet-development-enterprise-identity/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Government Identity",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/epassport-applications/, /blog/archive/how-chip-based-epassports-work/, /blog/archive/mfa-in-government/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Hsm",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/pki-credential-issuance-workforce-government/, /blog/secure-element-vs-tpm-vs-hsm/, /blog/why-hardware-backed-identity-matters/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: icao 9303",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/engineering-epassport-issuance-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Iot",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/iot-security-challenges-part-1/, /blog/archive/iot-security-challenges-part-2/, /blog/cra-secure-by-design-hardware-backed-trust/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Iot Identity",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/secure-iot-identity-with-applets/, /case-studies/secure-device-identity/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: IoT Security",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/iot-security/, /blog/archive/enterprise-security-threats/, /blog/archive/iot-security-challenges-part-1/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: iso 21177",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Its",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/technologies/v2x-pki/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Its Pki",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/how-v2x-pki-works/, /resources/tools/ieee-1609-2-parser/, /resources/tools/v2x-cert-chain-validator/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: JavaCard",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/javacard/, /blog/archive/introduction-to-java-card/, /blog/javacard-applet-development-enterprise-identity/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Key Provisioning",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Lds",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/engineering-epassport-issuance-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Mfa",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/mfa/, /blog/archive/common-misconceptions-about-2fa/, /blog/archive/mfa-in-government/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Nfc",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Obu",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/secure-elements-in-connected-vehicles/, /technologies/v2x-pki/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Offline Authentication",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/offline-authentication/, /blog/transit-validators-offline-trust-architecture/, /case-studies/transit-ticketing/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Openid Connect",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Pace",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/engineering-epassport-issuance-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Passkeys",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/passkeys-vs-traditional-mfa/, /blog/smart-cards-vs-fido-tokens-vs-passkeys/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Passwordless",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/passwordless/, /blog/archive/fast-identity-online/, /blog/archive/is-passwordless-the-future/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Passwordless Authentication",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: PIV",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/piv-vs-usb-tokens-vs-embedded/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: pkcs#11",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/piv-vs-usb-tokens-vs-embedded/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: pkcs#15",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Pkd",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/engineering-epassport-issuance-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: PKI",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/pki-credential-issuance-workforce-government/, /case-studies/secure-device-identity/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Pseudonymous Certificate",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/how-v2x-pki-works/, /blog/pseudonymous-certificates-and-privacy/, /resources/tools/ieee-1609-2-parser/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Rsp",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Rsu",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/secure-elements-in-connected-vehicles/, /technologies/v2x-pki/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: S/Mime",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/designing-email-document-signing-platforms/, /, /about/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Sam",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/designing-low-latency-secure-transit-validators/, /blog/transit-validators-offline-trust-architecture/, /blog/why-sams-matter-in-closed-loop-transit/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: SCP03",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/device-identity-at-manufacturing-scale/, /blog/javacard-applet-development-enterprise-identity/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Secure Element",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/ambisecure-products-cra-readiness/, /blog/cra-vulnerability-handling-product-lifecycle-security/, /blog/secure-element-vs-tpm-vs-hsm/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Security",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/consumer-biometrics-and-privacy/, /blog/archive/enterprise-security-threats/, /blog/archive/introduction-to-java-card/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: sgp.22",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: sgp.32",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/device-identity-at-manufacturing-scale/, /solutions/device-identity-at-scale/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Smart Card",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/apdu-from-first-principles/, /blog/archive/introduction-to-java-card/, /blog/archive/public-transport-ticketing-part-1/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Smart Cards",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/smart-cards/, /blog/archive/emv-certification-in-public-transport/, /blog/archive/epassport-applications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Smart City",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/iot-security-challenges-part-1/, /blog/archive/iot-security-challenges-part-2/, /blog/cra-secure-by-design-hardware-backed-trust/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Smart Solution",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/archive/consumer-biometrics-and-privacy/, /blog/archive/iot-security-challenges-part-1/, /blog/archive/iot-security-challenges-part-2/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: tec 31318",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Tpm",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/secure-element-vs-tpm-vs-hsm/, /blog/why-hardware-backed-identity-matters/, /blog/why-software-only-device-trust-fails/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Transit",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/transit/, /blog/archive/emv-certification-in-public-transport/, /blog/archive/public-transport-ticketing-part-1/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Transit Ticketing",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/why-sams-matter-in-closed-loop-transit/, /case-studies/transit-ticketing/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: u2f",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: v2x",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/why-software-only-device-trust-fails/, /resources/tools/ieee-1609-2-parser/, /resources/tools/v2x-cert-chain-validator/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: v2x pki",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/how-v2x-pki-works/, /technologies/v2x-pki/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: WebAuthn",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/categories/webauthn/, /blog/designing-enterprise-passwordless-systems/, /blog/how-fido-authentication-works/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: X.509",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/blog/pki-credential-issuance-workforce-government/, /case-studies/secure-device-identity/, /",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "Lift dormant keyword: Zero Trust",
+      "suggested_action": "Add the keyword as a synonym in the page H1 / dek; ensure at least one internal anchor uses the exact phrase. Re-check next quarter.",
+      "rationale": "Tracked on-site but not surfaced by Search Console. Strengthen with internal links + page-level synonyms.",
+      "evidence": "/, /about/, /about/certifications/",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Low",
+      "confidence": 0.6
+    },
+    {
+      "priority": "LOW",
+      "title": "FIDO2 vs Passkeys vs traditional MFA",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=FIDO / WebAuthn / Passkeys, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "WebAuthn deployment patterns for enterprise",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=FIDO / WebAuthn / Passkeys, kind=standards_explainer",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "FIDO2 + PIV interop in regulated industries",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=FIDO / WebAuthn / Passkeys, kind=standards_explainer",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "PIV vs CAC vs PIV-I",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=PIV / FIPS 201 / Smart card, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "FIPS 201 derived credentials in mobile",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=PIV / FIPS 201 / Smart card, kind=standards_explainer",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Secure Elements vs TPM vs HSM",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=Secure Elements / MFF2 / Embedded SE, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "MFF2 vs removable secure-element deployments",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=Secure Elements / MFF2 / Embedded SE, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Secure-element lifecycle management",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=Secure Elements / MFF2 / Embedded SE, kind=standards_explainer",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "PKCS#11 vs PKCS#15 — when to choose which",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=PKI / X.509 / PKCS, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "X.509 chain validation pitfalls",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=PKI / X.509 / PKCS, kind=standards_explainer",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "ICAO 9303 — what changed in the latest revision",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=ePassport / ICAO 9303, kind=standards_explainer",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Active vs passive authentication for ePassports",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=ePassport / ICAO 9303, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "DESFire EV2 vs EV3 — migration guide",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=DESFire / Transit, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Phishing-resistant MFA: hardware keys vs platform authenticators",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=MFA / Phishing-resistant, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "SGP.22 vs SGP.32 orchestration",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=eSIM / eUICC / SGP.22, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "Consumer eSIM vs M2M eUICC deployment",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=eSIM / eUICC / SGP.22, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "iSIM vs eSIM — when each wins",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=eSIM / eUICC / SGP.22, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    },
+    {
+      "priority": "LOW",
+      "title": "PLC vs edge controller for greenfield deployments",
+      "suggested_action": "Author this on `ambisecure` with FAQ schema + 3 internal links from cluster siblings.",
+      "rationale": "Editorial calendar suggestion for `ambisecure`. Backfill for topical completeness.",
+      "evidence": "cluster=Industrial automation, kind=comparison",
+      "domain_slug": "ambisecure",
+      "impact": "Low",
+      "effort": "Medium",
+      "confidence": 0.7
+    }
+  ]
+}
