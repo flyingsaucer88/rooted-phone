@@ -1,0 +1,29 @@
+===== 2026-07-01 19:12:34 +0530 boot: starting ambimat jobs =====
+2026-07-01 19:12:35 +0530 crond started
+===== 2026-07-01 19:13:20 +0530 boot: catch-up check done =====
+===== 2026-07-20 16:19:52 +0530 boot: starting ambimat jobs =====
+2026-07-20 16:19:54 +0530 wake-lock acquired
+2026-07-20 16:19:54 +0530 crond started
+Backup of u0_a122's previous crontab saved to /data/data/com.termux/files/home/.cache/crontab/crontab.bak
+Installed cron entries:
+  0 10 * * * /data/data/com.termux/files/home/seo_tracker/phone/run_site_monitor_daily.sh >> /data/data/com.termux/files/home/site_monitor_reports/cron.log 2>&1 # ambimat-site-monitor
+  0 11 * * * /data/data/com.termux/files/home/seo_tracker/phone/run_daily.sh >> /data/data/com.termux/files/home/seo_tracker_reports/cron.log 2>&1 # ambimat-seo-tracker
+  */30 * * * * /data/data/com.termux/files/home/seo_tracker/phone/ensure_scheduler.sh >> /data/data/com.termux/files/home/ambimat_job_logs/scheduler_watchdog.log 2>&1 # ambimat-scheduler-watchdog
+crond already running.
+
+Reboot persistence: ./phone/install_boot_persistence.sh
+Keep Termux alive:  ./phone/battery_optimization.sh   (disable battery optimization)
+===== 2026-07-20 16:30:53 +0530 boot: startup sequence done =====
+===== 2026-07-27 11:38:29 +0530 boot: starting ambimat jobs =====
+2026-07-27 11:38:30 +0530 wake-lock acquired
+2026-07-27 11:38:30 +0530 crond started
+Backup of u0_a122's previous crontab saved to /data/data/com.termux/files/home/.cache/crontab/crontab.bak
+Installed cron entries:
+  0 10 * * * /data/data/com.termux/files/home/seo_tracker/phone/run_site_monitor_daily.sh >> /data/data/com.termux/files/home/site_monitor_reports/cron.log 2>&1 # ambimat-site-monitor
+  0 11 * * * /data/data/com.termux/files/home/seo_tracker/phone/run_daily.sh >> /data/data/com.termux/files/home/seo_tracker_reports/cron.log 2>&1 # ambimat-seo-tracker
+  */30 * * * * /data/data/com.termux/files/home/seo_tracker/phone/ensure_scheduler.sh >> /data/data/com.termux/files/home/ambimat_job_logs/scheduler_watchdog.log 2>&1 # ambimat-scheduler-watchdog
+crond already running.
+
+Reboot persistence: ./phone/install_boot_persistence.sh
+Keep Termux alive:  ./phone/battery_optimization.sh   (disable battery optimization)
+===== 2026-07-27 11:49:47 +0530 boot: startup sequence done =====

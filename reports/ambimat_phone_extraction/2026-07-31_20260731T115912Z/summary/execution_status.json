@@ -1,0 +1,127 @@
+{
+  "extraction_date_ist": "2026-07-31",
+  "timezone_basis": "Asia/Kolkata (+05:30); phone TZ = Asia/Calcutta, phone clock agreed with workstation to within ~1s",
+  "runs": {
+    "site_monitor_1000": {
+      "classification": "COMPLETE",
+      "scheduled_time_ist": "10:00",
+      "actual_start_ist": "2026-07-31 10:00:02 +0530",
+      "actual_end_ist": "2026-07-31 10:25:04 +0530",
+      "ambimat_com_segment_ist": {
+        "start": "2026-07-31 10:00:03 +0530",
+        "end": "2026-07-31 10:15:56 +0530"
+      },
+      "run_id_basis": "report filename report_20260731_100005 (per-site) / report_20260731_102502 (merged)",
+      "command_or_task": "/data/data/com.termux/files/home/site_monitor/run_daily.sh (per-site mode)",
+      "exit_status": {
+        "crawler_rc_ambimat": 0,
+        "merge_rc": 0,
+        "job_rc": 0
+      },
+      "target_site": "ambimat.com (plus 6 sibling hosts in the same job; sibling output not extracted)",
+      "output_paths_on_phone": [
+        "/data/data/com.termux/files/home/site_monitor_reports/per_site/ambimat_com/report_20260731_100005.json",
+        "/data/data/com.termux/files/home/site_monitor_reports/per_site/ambimat_com/report_20260731_100005.md",
+        "/data/data/com.termux/files/home/site_monitor_reports/report_20260731_102502.json",
+        "/data/data/com.termux/files/home/site_monitor_reports/report_20260731_102502.md"
+      ],
+      "completion_marker": "daily_runner.log '===== 2026-07-31 10:25:04 +0530 daily run end (merge rc=0) ====='; site_monitor_daily.log 'success (2026-07-31)'; site_monitor_last_success_date=2026-07-31; report JSON parses with totals.partial=false",
+      "url_page_count": {
+        "ambimat_com_pages_crawled": 461,
+        "page_records_in_json": 461
+      },
+      "error_count": {
+        "broken_pages": 0,
+        "broken_internal_links": 0,
+        "broken_external_links": 2,
+        "unverified_external_links": 3,
+        "alerts": 0,
+        "warnings": 492
+      },
+      "boot_or_catchup_involved": "YES \u2014 launched by the half-hourly watchdog catch-up path at 10:00:03 ('site_monitor: catching up (now=1000, due=1000)'), which is the normal daily trigger on this device, not a missed-run recovery. No reboot today (phone uptime ~4.2 days).",
+      "notification_or_ssh_effect": "site_monitor_daily.log records 'lock held; skipping' at 10:00:03 \u2014 a second concurrent trigger declining the lock while the first run held it. This affected only the duplicate trigger, not the crawl: the holding run continued to 'end rc=0' at 10:25:04. No evidence of notification/SSH helper affecting the crawl.",
+      "evidence": {
+        "scheduler_watchdog": [
+          "2026-07-31 10:00:03 +0530 site_monitor: catching up (now=1000, due=1000)\u2026",
+          "2026-07-31 10:00:04 +0530 site_monitor: catch-up runner exited rc=0"
+        ],
+        "site_monitor_daily_log": [
+          "2026-07-31 10:00:02 +0530 site_monitor: start (runner=/data/data/com.termux/files/home/site_monitor/run_daily.sh)",
+          "2026-07-31 10:00:03 +0530 site_monitor: lock held; skipping",
+          "2026-07-31 10:25:04 +0530 site_monitor: end rc=0",
+          "2026-07-31 10:25:04 +0530 site_monitor: success (2026-07-31)"
+        ],
+        "runner_start_end": [
+          "===== 2026-07-31 10:00:02 +0530 daily run start (per-site mode) =====",
+          "===== 2026-07-31 10:25:04 +0530 daily run end (merge rc=0) ====="
+        ],
+        "ambimat_site_markers": [
+          "----- 2026-07-31 10:00:03 +0530 site START: Ambimat (ambimat_com) -----",
+          "----- 2026-07-31 10:15:56 +0530 site END:   Ambimat (crawler rc=0; alert=1 is a finding, not a job failure) -----"
+        ]
+      },
+      "caveats": [
+        "pages_crawled=461 is below the 800-page cap and below the ~697 sitemap size referenced in sites.yaml; the run did NOT report a timeout (timed_out=false, partial=false), so this reflects crawl scope/robots/link discovery rather than truncation. Not investigated further in this extraction-only run.",
+        "totals.sites_ok=0 while sites_with_alerts=0 \u2014 the per-site report counts a site as 'ok' only with zero warnings; 492 advisory warnings were present."
+      ]
+    },
+    "seo_1100": {
+      "classification": "COMPLETE",
+      "scheduled_time_ist": "11:00",
+      "actual_start_ist": "2026-07-31 11:00:02\u201311:00:04 +0530 (watchdog catch-up launch)",
+      "actual_end_ist": "2026-07-31 11:22:13 +0530",
+      "run_id_basis": "report filename report_20260731_112213; generated_date=2026-07-31",
+      "command_or_task": "seo_tracker phone_seo.py via the 11:00 catch-up runner (phone-crawl-only mode)",
+      "exit_status": {
+        "catchup_runner_rc": 0,
+        "seo_run_rc": 0
+      },
+      "target_site": "ambimat.com (plus 6 sibling domains in the same multi-domain report)",
+      "output_paths_on_phone": [
+        "/data/data/com.termux/files/home/seo_tracker_reports/report_20260731_112213.json",
+        "/data/data/com.termux/files/home/seo_tracker_reports/report_20260731_112213.md",
+        "/data/data/com.termux/files/home/seo_tracker_reports/report_latest.html"
+      ],
+      "completion_marker": "daily_runner.log 'Phone SEO run complete (crawl-only).' + '===== 2026-07-31 11:22:13 +0530 SEO run end (rc=0) ====='; seo_daily.log 'success (2026-07-31)'; seo_last_success_date=2026-07-31; report JSON parses; generated_date=2026-07-31",
+      "url_page_count": {
+        "ambimat_com_pages_crawled": 437,
+        "ecosystem_total_pages": 826
+      },
+      "error_count": {
+        "audit_high": 1,
+        "audit_medium": 17,
+        "audit_low": 464,
+        "weak_pages_high": 30,
+        "orphans": 12,
+        "broken_outbound_internal": 492
+      },
+      "boot_or_catchup_involved": "YES \u2014 watchdog catch-up path at 11:00:02 ('seo: catching up (now=1100, due=1100)'), the normal daily trigger. No boot recovery involved.",
+      "notification_or_ssh_effect": "seo_daily.log records 'lock held; skipped' at 11:00:03 \u2014 the duplicate trigger declining the lock. The holding run completed normally at 11:22:13 with rc=0. No notification/SSH helper effect on the crawl is visible.",
+      "evidence": {
+        "scheduler_watchdog": [
+          "2026-07-31 11:00:02 +0530 seo: catching up (now=1100, due=1100)\u2026",
+          "2026-07-31 11:00:04 +0530 seo: catch-up runner exited rc=0"
+        ],
+        "seo_daily_log": [
+          "2026-07-31 11:00:03 +0530 seo: lock held; skipped",
+          "2026-07-31 11:22:13 +0530 seo: success (2026-07-31)"
+        ],
+        "runner_end": [
+          "===== 2026-07-31 11:22:13 +0530 SEO run end (rc=0) ====="
+        ]
+      },
+      "caveats": [
+        "ambimat.com pages_crawled=437 here vs 461 in the 10:00 site-monitor run \u2014 two different crawlers with different scopes; both figures preserved, neither reconciled.",
+        "trend.deltas reports avg_ai_readiness +17.3 ecosystem-wide day-over-day, a large jump not explained within the report; recorded as-is."
+      ]
+    }
+  },
+  "not_performed": [
+    "no public-site/HTTP/DNS/TLS request",
+    "no GSC archive processed",
+    "no live server accessed",
+    "no scheduler or job invoked",
+    "no phone file created, modified, renamed or deleted",
+    "no git operation"
+  ]
+}

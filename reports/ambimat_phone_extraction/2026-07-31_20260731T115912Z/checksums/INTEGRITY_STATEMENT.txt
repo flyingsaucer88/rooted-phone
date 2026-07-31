@@ -1,0 +1,58 @@
+INTEGRITY STATEMENT
+===================
+Task ........ Extract today's existing ambimat.com results from the connected rooted phone
+Date ........ 2026-07-31 (Asia/Kolkata, +05:30)
+Device ...... ZY22382BFL — Moto G (4) / athene_f, Android 7.0, Termux user u0_a122
+Workstation . Neels-MacBook-Pro.local (neelshah)
+Directory ... reports/ambimat_phone_extraction/2026-07-31_20260731T115912Z/
+
+RUN CLASSIFICATION
+  10:00 IST live-page / site-monitor run ......... COMPLETE
+  11:00 IST SEO run ............................. COMPLETE
+  Both classifications rest on four independent markers each (runner end-marker,
+  job success line, last_success_date file, and a structurally valid report that
+  parses with partial=false / generated_date=2026-07-31).
+
+TRANSFER INTEGRITY
+  Files copied ................................... 29 / 29
+  Source-vs-copy SHA-256 match ................... 29 / 29
+  Source-vs-copy byte-size match ................. 29 / 29
+  Raw evidence unedited after parsing ............ verified by re-hash
+  Secret scan over copied files .................. 0 hits; no redaction required
+
+PHONE SOURCE STATE
+  Re-hashed after extraction ..................... 28 / 29 byte-identical
+  1 file changed: ambimat_job_logs/scheduler_watchdog.log, 227901 -> 228103 bytes.
+  Cause: the phone's OWN half-hourly watchdog appended its 17:30:02 tick during the
+  session. Proven append-only — head -c 227901 of the live file hashes to
+  3a675436029b8633c19fd661fac8d2d8a3e4d57cf089b43c617b4d489b6ae6b8, exactly the
+  pre-copy value. The 202 appended bytes read "wake-lock acquired" and
+  "already succeeded today (2026-07-31); skip" for BOTH jobs — independent evidence
+  that no job was launched.
+  This extraction created, edited, renamed, moved, truncated, compressed or deleted
+  ZERO files on the phone.
+
+ASSERTIONS
+  [x] No HTTP/HTTPS/DNS/TLS/browser/curl/wget request to ambimat.com or any public host
+  [x] No WordPress, WP-CLI, hosting-server, or Google Search Console access
+  [x] No GSC ZIP archive opened, extracted or processed
+  [x] No site-monitor or SEO script run, rerun, resumed or repaired
+  [x] No scheduler, cron, watchdog, catch-up, boot-recovery or retry logic triggered
+  [x] No phone script, config, schedule, database, report, log, manifest or state file modified
+  [x] No process killed; no log, cache, temp file or task state cleared
+  [x] No package installed; no connectivity configuration changed
+  [x] No credential, SSH private key, token, cookie, environment secret or unrelated
+      personal data copied to the workstation
+  [x] No git add/commit/push/pull/merge/reset/stash/clean performed
+  [x] No missing report replaced, reconstructed or fabricated
+  [x] Raw evidence kept separate from interpretation; contradictory observations preserved
+
+SCOPE NOTE
+  Six sibling per-site report sets (ambisecure / ambiautomation / esim / ambipower /
+  orders / roboracer) were discovered read-only and deliberately NOT extracted; they are
+  listed as EXCLUDED rows in inventory/phone_evidence_inventory.csv. The merged 7-site
+  site-monitor report was retained because it is the 10:00 job's own deliverable, and only
+  its ambimat.com rows were carried into the summaries.
+
+RESULT
+  TODAYS_AMBIMAT_PHONE_DATA_EXTRACTED_VERIFIED_NO_MUTATION

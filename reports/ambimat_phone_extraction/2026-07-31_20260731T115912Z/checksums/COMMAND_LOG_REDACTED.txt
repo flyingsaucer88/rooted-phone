@@ -1,0 +1,97 @@
+COMMAND LOG (secrets redacted) — Ambimat.com phone evidence extraction
+Session date: 2026-07-31 (Asia/Kolkata)
+Operator: neelshah @ Neels-MacBook-Pro.local (darwin 25.5.0)
+
+Redaction policy: the SSH identity file path is shown but no key material, passphrase,
+token or cookie was ever printed, copied or stored. Nothing below writes to the phone.
+
+PSSH = ssh -i ~/.ssh/id_moto_playground -p 8022 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 -o BatchMode=yes \
+            u0_a122@127.0.0.1 <remote-command>
+  (helper wrapper written to the session scratchpad as pssh.sh; read-only by construction)
+
+--- WORKSTATION CONTEXT -------------------------------------------------------
+date; TZ=Asia/Kolkata date; TZ=UTC date; hostname; whoami; pwd
+ls -la /Users/neelshah/Documents/git_repo/Rooted-Phone/
+ls -la .../reports/ .../logs/ .../cache_monitor/ .../site_monitor/ .../scripts/ .../docs/
+cat site_monitor/run_daily.sh ; cat site_monitor/schedule_daily.sh
+cat scripts/moto-ssh.sh ; cat scripts/pull_logs.sh
+which adb
+
+--- PHASE 1: CONNECTIVITY / IDENTITY (read-only) ------------------------------
+adb devices -l
+adb shell getprop ro.product.model | ro.product.device | ro.serialno
+adb shell getprop ro.build.version.release | ro.build.version.sdk | persist.sys.timezone
+adb shell 'ls -la /data/data/com.termux/files/home/'          # -> denied without root (expected)
+adb shell 'su -c id'                                          # -> su not found (expected; not pursued)
+adb forward tcp:8022 tcp:8022
+PSSH 'date; date +%s; echo ${TZ:-unset}; id; uname -a; getprop ro.build.version.release;
+      echo $PREFIX; ls $PREFIX/bin | wc -l; cat /proc/uptime;
+      command -v sha256sum shasum openssl python'
+
+--- PHASE 2: DISCOVERY (read-only) --------------------------------------------
+PSSH 'ls -la ~/'
+PSSH 'ls -la ~/ambimat_job_logs/'
+PSSH 'ls -la ~/seo_tracker_reports/ ; ls -lat ~/seo_tracker_reports/ | head -28'
+PSSH 'ls -lat ~/seo_tracker_reports/history/ | head -15'
+PSSH 'ls -1 ~/site_monitor_reports | wc -l ; ls -lat ~/site_monitor_reports | head -45'
+PSSH 'ls -la ~/site_monitor_reports/per_site/ ; for d in .../per_site/*/; do ls -lat "$d" | head -5; done'
+PSSH 'ls -la ~/site_monitor_reports/per_site/ambimat_com/'
+PSSH 'cat ~/site_monitor/config/sites.yaml'
+PSSH 'ls -la ~/seo_tracker/ ; ls -la ~/seo_tracker/phone/ ; cat ~/seo_tracker/phone/config.yaml'
+PSSH 'cat ~/ambimat_job_logs/seo_daily.log'
+PSSH 'cat ~/ambimat_job_logs/seo_last_success_date'
+PSSH 'cat ~/ambimat_job_logs/site_monitor_last_success_date'
+PSSH 'cat ~/ambimat_job_logs/missed_run.log ; wc -c ~/ambimat_job_logs/missed_cron.log'
+PSSH 'cat ~/ambimat_job_logs/cron_5min_probe.log'
+PSSH 'grep -n "^2026-07-31" ~/ambimat_job_logs/scheduler_watchdog.log | head -80'
+PSSH 'grep -c "^2026-07-31" ~/ambimat_job_logs/scheduler_watchdog.log'
+PSSH 'grep "^2026-07-31 1[3-9]" ~/ambimat_job_logs/scheduler_watchdog.log'
+PSSH 'grep -n "^2026-07-31" ~/ambimat_job_logs/site_monitor_daily.log ; tail -20 <same>'
+PSSH 'grep -n "site START|site END" ~/site_monitor_reports/daily_runner.log | tail -20'
+PSSH 'grep -n "daily run start|daily run end" ~/site_monitor_reports/daily_runner.log | tail -8'
+PSSH 'tail -60 ~/seo_tracker_reports/daily_runner.log'
+PSSH 'cd ~/site_monitor; sha256sum run_site_monitor.py;
+      grep -n "requests.(head|get)|allow_redirects|elapsed" run_site_monitor.py'
+PSSH 'sed -n "210,250p" ~/site_monitor/run_site_monitor.py'    # confirm HEAD/GET semantics
+
+--- PHASE 3/4: SOURCE HASHES, EXTRACTION DIR, COPY ----------------------------
+PSSH 'sha256sum <29 source paths>'      -> scratchpad/source_sha256.txt
+PSSH "stat -c '%n|%s|%y' <29 source paths>" -> scratchpad/source_stat.txt
+mkdir -p reports/ambimat_phone_extraction/2026-07-31_20260731T115912Z/{raw/{site_monitor,seo,scheduler},inventory,summary,checksums}
+scp -q -p -i ~/.ssh/id_moto_playground -P 8022 -o IdentitiesOnly=yes \
+    -o StrictHostKeyChecking=accept-new -o BatchMode=yes \
+    u0_a122@127.0.0.1:<source path> <dest dir>/          # x29, copy-only (never move/delete)
+python3 <verify>  # recompute SHA-256 + size of every copy vs source  -> 29/29 MATCH
+
+--- PHASE 5: PARSING (workstation only, raw/ read-only) -----------------------
+python3 scratchpad/build_artifacts.py <extract_dir> <scratchpad>
+  reads:  raw/site_monitor/.../report_20260731_100005.json
+          raw/site_monitor/.../report_20260731_102502.json
+          raw/seo/.../report_20260731_112213.json
+          raw/scheduler/ambimat_job_logs/*.log
+  writes: inventory/phone_evidence_inventory.csv
+          summary/site_monitor_results.csv
+          summary/seo_results.csv
+          summary/execution_status.json
+          checksums/SHA256SUMS
+  also:   secret scan over all 29 copied files (private keys, ssh-rsa, bearer tokens,
+          AWS keys, password=/api_key=/client_secret/refresh_token) -> 0 hits
+
+--- FINAL INTEGRITY ------------------------------------------------------------
+PSSH 'sha256sum <29 source paths>'   -> re-check; 28/29 identical
+PSSH "stat -c '%n|%s|%y' <29 source paths>" -> re-check
+PSSH 'head -c 227901 ~/ambimat_job_logs/scheduler_watchdog.log | sha256sum'
+      -> matches pre-copy hash: proves the copy is an exact prefix
+PSSH 'tail -c +227902 ~/ambimat_job_logs/scheduler_watchdog.log'
+      -> 3 lines appended by the phone's own 17:30 watchdog tick, both jobs "skip"
+python3 <re-hash raw/ and regenerate checksums/SHA256SUMS>
+
+--- NOT EXECUTED (explicitly out of scope) -------------------------------------
+No curl / wget / http / https / dns / tls / browser request of any kind.
+No WordPress, WP-CLI, hosting-server or Search Console access.
+No GSC ZIP opened, extracted or parsed.
+No site_monitor / seo_tracker / cron / crond / watchdog / catch-up script invoked.
+No crontab read or written; no process killed; no package installed.
+No file created, edited, renamed, moved, truncated, compressed or deleted on the phone.
+No git add / commit / push / pull / merge / reset / stash / clean.
