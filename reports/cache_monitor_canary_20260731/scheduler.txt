@@ -1,0 +1,9 @@
+=== SCHEDULER EVIDENCE ===
+scheduled time (IST)   : 12:00
+run kind               : canary
+start                  : {"utc": "2026-07-31T12:04:56Z", "ist": "2026-07-31T17:34:56+0530", "epoch": 1785499496}
+finish                 : {"utc": "2026-07-31T12:05:04Z", "ist": "2026-07-31T17:35:04+0530", "epoch": 1785499504}
+lock result            : acquired:cache_monitor_run
+maintenance lock       : clear
+marker date before run : none
+next scheduled (IST)   : 2026-08-01 12:00 IST

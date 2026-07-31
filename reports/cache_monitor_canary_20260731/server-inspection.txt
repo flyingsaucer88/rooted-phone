@@ -1,0 +1,4 @@
+=== READ-ONLY SERVER INSPECTION ===
+state                       : unavailable
+server_commands_read_only   : unavailable
+reason                      : no server-inspection configuration is installed

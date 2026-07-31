@@ -1,0 +1,116 @@
+{
+  "classification": "ALERT_STALE_OR_OBSOLETE_METADATA",
+  "conclusive_inspection": true,
+  "evidence_dir": "/data/data/com.termux/files/home/cache_monitor_reports/noon-cache-inspection-20260731T120455Z",
+  "job": "ambimat_front_page_cache_monitor",
+  "metadata": {
+    "canonical": "https://ambimat.com/",
+    "og_image": "https://i0.wp.com/ambimat.com/wp-content/uploads/2022/05/image_2022.png?fit=1021%2C532&ssl=1",
+    "og_image_height": "532",
+    "og_image_width": "1021",
+    "schema_content_urls": [
+      "https://i0.wp.com/ambimat.com/wp-content/uploads/2026/07/ambimat-home-ambimat.com-1200x630-1.png?fit=1200%2C630&ssl=1",
+      "https://ambimat.com/wp-content/uploads/2020/04/Ambimat-Logo.png"
+    ],
+    "schema_image": "https://i0.wp.com/ambimat.com/wp-content/uploads/2026/07/ambimat-home-ambimat.com-1200x630-1.png?fit=1200%2C630&ssl=1",
+    "twitter_card": "summary_large_image",
+    "twitter_image": null
+  },
+  "metadata_evaluation": {
+    "expected_metadata_missing": [],
+    "field_states": {
+      "canonical": "ok",
+      "og_image": "obsolete",
+      "schema_image": "governed",
+      "twitter_image": "absent"
+    },
+    "governed_path_segment": "2026/07/ambimat-home-ambimat.com-1200x630-1.png",
+    "obsolete_detected": true,
+    "obsolete_hits": [
+      {
+        "field": "og_image",
+        "matched_path_segment": "2022/05/image_2022.png",
+        "obsolete_attachment_id": 9920,
+        "value": "https://i0.wp.com/ambimat.com/wp-content/uploads/2022/05/image_2022.png?fit=1021%2C532&ssl=1"
+      }
+    ],
+    "unexpected_values": []
+  },
+  "mutation_attempted": false,
+  "public": {
+    "all_headers_sanitized": {
+      "accept-ranges": "bytes",
+      "connection": "Upgrade, close",
+      "content-length": "192835",
+      "content-type": "text/html; charset=UTF-8",
+      "date": "Fri, 31 Jul 2026 12:04:58 GMT",
+      "etag": "\"2f143-657e583550537\"",
+      "last-modified": "Fri, 31 Jul 2026 10:18:42 GMT",
+      "referrer-policy": "no-referrer-when-downgrade",
+      "server": "Apache",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "upgrade": "h2,h2c",
+      "vary": "Accept-Encoding"
+    },
+    "body_sha256": "75a548b15ea8df3dd52bd4b95edc5d74ad6f6198833f02594af98582693a46ef",
+    "cache_headers": {
+      "date": "Fri, 31 Jul 2026 12:04:58 GMT",
+      "etag": "\"2f143-657e583550537\"",
+      "last-modified": "Fri, 31 Jul 2026 10:18:42 GMT",
+      "server": "Apache",
+      "vary": "Accept-Encoding"
+    },
+    "content_length_bytes": 192835,
+    "content_type": "text/html; charset=UTF-8",
+    "elapsed_ms": 7735,
+    "final_url": "https://ambimat.com/",
+    "redirect_chain": [],
+    "request_utc": "2026-07-31T12:04:56Z",
+    "status": 200,
+    "transport_error": null
+  },
+  "public_request_count": 1,
+  "purpose": "inspect and report only \u2014 this job has no capability to change anything",
+  "reasons": [
+    "og_image serves the known obsolete image 2022/05/image_2022.png (attachment 9920)",
+    "no server-inspection configuration is installed"
+  ],
+  "repair_attempted": false,
+  "retry_history": [
+    {
+      "at_utc": "2026-07-31T12:05:04Z",
+      "attempt": 1,
+      "elapsed_ms": 7735,
+      "error": null,
+      "outcome": "response_captured",
+      "status": 200
+    }
+  ],
+  "scheduler": {
+    "finished": {
+      "epoch": 1785499504,
+      "ist": "2026-07-31T17:35:04+0530",
+      "utc": "2026-07-31T12:05:04Z"
+    },
+    "lock_result": "acquired:cache_monitor_run",
+    "maintenance_lock": "clear",
+    "marker_date_before": "none",
+    "next_scheduled_ist": "2026-08-01 12:00 IST",
+    "run_kind": "canary",
+    "scheduled_time_ist": "12:00",
+    "started": {
+      "epoch": 1785499496,
+      "ist": "2026-07-31T17:34:56+0530",
+      "utc": "2026-07-31T12:04:56Z"
+    }
+  },
+  "server": {
+    "available": false,
+    "unavailable_reason": "no server-inspection configuration is installed"
+  },
+  "server_commands_read_only": "unavailable",
+  "server_inspection_state": "unavailable",
+  "stale_or_obsolete_detected": true,
+  "url": "https://ambimat.com/",
+  "user_agent": "AmbimatRootedPhone-CacheMonitor/1.0"
+}

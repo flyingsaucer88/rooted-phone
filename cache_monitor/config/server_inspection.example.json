@@ -1,0 +1,25 @@
+{
+  "_comment": [
+    "OPTIONAL read-only server inspection. Copy to config/server_inspection.json on the",
+    "phone and set enabled=true ONLY if you have deliberately provisioned a credential for",
+    "this device. It is absent by default, and while it is absent the noon job reports",
+    "PASS_PUBLIC_HEALTHY_SERVER_INSPECTION_UNAVAILABLE and inspects the public page only.",
+    "",
+    "Nothing here can widen what the job may do. The complete set of remote commands is",
+    "fixed in SERVER_READ_ONLY_COMMANDS in front_page_cache_monitor.py: wp option get,",
+    "wp cron event list, test, realpath, readlink, stat, sha256sum. The 'path' and",
+    "'option' values are validated against strict patterns before they are quoted into a",
+    "template, and no other remote string is ever handed to ssh.",
+    "",
+    "Never point this at a credential that can write. A read-only account is the right",
+    "shape for this job. Never commit config/server_inspection.json — .gitignore excludes it."
+  ],
+
+  "enabled": false,
+  "host": "REPLACE_WITH_HOST",
+  "port": 22,
+  "user": "REPLACE_WITH_READ_ONLY_USER",
+  "identity_file": "~/.ssh/ambimat_cache_monitor_readonly",
+  "wp_path": "/REPLACE/WITH/PATH/TO/public_html",
+  "timeout_seconds": 30
+}

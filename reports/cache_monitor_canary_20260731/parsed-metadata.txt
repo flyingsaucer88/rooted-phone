@@ -1,0 +1,16 @@
+=== CANONICAL / SOCIAL / SCHEMA METADATA AS SERVED ===
+canonical         : https://ambimat.com/
+og_image          : https://i0.wp.com/ambimat.com/wp-content/uploads/2022/05/image_2022.png?fit=1021%2C532&ssl=1
+og_image_width    : 1021
+og_image_height   : 532
+twitter_image     : ABSENT
+twitter_card      : summary_large_image
+schema_image      : https://i0.wp.com/ambimat.com/wp-content/uploads/2026/07/ambimat-home-ambimat.com-1200x630-1.png?fit=1200%2C630&ssl=1
+
+=== EVALUATION AGAINST config/expected_metadata.json ===
+governed image path segment : 2026/07/ambimat-home-ambimat.com-1200x630-1.png
+field states                : {"og_image": "obsolete", "twitter_image": "absent", "schema_image": "governed", "canonical": "ok"}
+known obsolete detected     : True
+  OBSOLETE og_image -> 2022/05/image_2022.png (attachment 9920)
+
+This is an observation. No change was made to the site.

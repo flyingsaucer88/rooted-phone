@@ -5,14 +5,20 @@ device**, plus a small safe telemetry/experiment toolkit — all driven from a M
 USB (ADB + SSH) bridge. The phone is **unrooted**; everything here runs inside **Termux** with no
 root, no browser automation, and no cloud API keys.
 
-Two jobs run on the phone every day:
+Three jobs run on the phone every day:
 
 | Time (Asia/Kolkata) | Job | What it does |
 |---|---|---|
 | **10:00 AM** | **Site monitor** (this repo, `site_monitor/`) | Crawls every eligible internal page of each production site and flags non-live pages, broken links, redirects, HTTP/TLS/DNS failures, and public-page compromise indicators. |
 | **11:00 AM** | **SEO tracker** (phone-resident, `~/seo_tracker/phone/` — see note) | Runs the SEO health workflow for the same sites. |
+| **12:00 PM** | **Front-page cache monitor** (this repo, `cache_monitor/`) | **Inspect and report only.** Makes one ordinary public request to `https://ambimat.com/`, classifies whether the cached front page looks current, stale, inconsistent, unavailable or unverifiable, records evidence, and alerts. |
 
-Both jobs have **missed-run recovery**: if the phone was off/asleep at the scheduled time, a
+> ⚠️ **The 12:00 job never repairs the site.** It has no purge, flush, invalidate, warm,
+> rebuild, cron-run, database-write or WordPress-write path — not even a disabled one. A
+> stale finding produces an alert and evidence, and stops there. Full boundary, runbook and
+> post-alert procedure: [cache_monitor/README.md](cache_monitor/README.md).
+
+All three jobs have **missed-run recovery**: if the phone was off/asleep at the scheduled time, a
 watchdog and a boot hook run the day's job late (exactly once), so a powered-off phone does not
 silently skip a day.
 
@@ -65,6 +71,15 @@ silently skip a day.
 │   ├── requirements.txt          # requests, beautifulsoup4, PyYAML
 │   ├── keywords/*.txt            # editable spam / suspicious-pattern keyword lists
 │   └── reports/.gitkeep          # placeholder; live reports go to ~/site_monitor_reports
+├── cache_monitor/                # the 12:00 front-page cache monitor (READ-ONLY, runnable)
+│   ├── README.md                 # runbook: boundary, states, catch-up, post-alert procedure
+│   ├── front_page_cache_monitor.py       # the inspection engine (stdlib only)
+│   ├── run_cache_monitor_daily.sh        # phone wrapper: locks, marker, notify, evidence
+│   ├── install_noon_job.sh               # install/show/remove ONLY the 12:00 cron line
+│   ├── ensure_scheduler_noon_block.sh    # versioned copy of the watchdog catch-up edit
+│   ├── config/expected_metadata.json     # governed vs known-obsolete front-page metadata
+│   ├── config/server_inspection.example.json  # optional read-only server access (off by default)
+│   └── tests/                    # 58 offline fixture tests + 39 scheduling scenarios + static audit
 ├── scripts/                      # Mac/phone telemetry + connection helpers
 │   ├── moto-ssh.sh               # USB forward + SSH login helper
 │   ├── collect_baseline.sh       # one-shot device baseline
@@ -153,14 +168,18 @@ is committed at
 
 ## Schedules (Asia/Kolkata)
 
-Installed as three Termux `cron` lines (via `~/seo_tracker/phone/schedule_daily.sh install`
-**[phone-side]**):
+Installed as four Termux `cron` lines — three via `~/seo_tracker/phone/schedule_daily.sh install`
+**[phone-side]**, and the noon line via [cache_monitor/install_noon_job.sh](cache_monitor/install_noon_job.sh):
 
 ```
-0 10 * * *   run_site_monitor_daily.sh    # 10:00 — site monitor
-0 11 * * *   run_daily.sh                  # 11:00 — SEO tracker
-*/30 * * * * ensure_scheduler.sh           # every 30 min — watchdog / catch-up
+0 10 * * *   run_site_monitor_daily.sh     # 10:00 — site monitor          # ambimat-site-monitor
+0 11 * * *   run_daily.sh                  # 11:00 — SEO tracker           # ambimat-seo-tracker
+*/30 * * * * ensure_scheduler.sh           # every 30 min — watchdog       # ambimat-scheduler-watchdog
+0 12 * * *   run_cache_monitor_daily.sh    # 12:00 — cache monitor (RO)    # ambimat-cache-monitor
 ```
+
+Each installer strips and rewrites only its own marker-tagged lines, so the two are independent:
+removing the noon job leaves the other three untouched, and vice versa.
 
 The in-repo [site_monitor/schedule_daily.sh](site_monitor/schedule_daily.sh) is a **simpler,
 single-job** installer (the 10:00 site-monitor line only) and does not set up boot persistence — it
@@ -187,6 +206,9 @@ Implemented by the phone-side scheduler (`~/seo_tracker/phone/lib_common.sh` + `
 
 18/18 controlled scenario tests for these behaviours pass — harness:
 [reports/scheduler_verification/sched_tests.sh](reports/scheduler_verification/sched_tests.sh).
+The 12:00 cache monitor adds 39 more scheduling scenarios (its own lock, respecting the 10:00/11:00
+locks, same-day duplicate suppression, post-noon reboot catch-up, multiple missed days, IST
+handling) — harness: [cache_monitor/tests/sched_tests_noon.sh](cache_monitor/tests/sched_tests_noon.sh).
 
 ## Manual run, validation & troubleshooting
 
@@ -196,7 +218,12 @@ Implemented by the phone-side scheduler (`~/seo_tracker/phone/lib_common.sh` + `
 - **Check the scheduler on the phone:** `crontab -l`, `pgrep -x crond`, `pgrep -x sshd`,
   and inspect `~/ambimat_job_logs/*_last_success_date` and `~/ambimat_job_logs/boot_startup.log`.
 - **Validate the crawler config parses:** `python -c "import yaml; yaml.safe_load(open('site_monitor/config/sites.yaml'))"`.
-- **Byte-compile the Python:** `python -m compileall site_monitor scripts`.
+- **Byte-compile the Python:** `python -m compileall site_monitor cache_monitor scripts`.
+- **Cache monitor (read-only, safe any time):**
+  `python3 ~/cache_monitor/front_page_cache_monitor.py --evidence-dir ~/cache_monitor_reports/manual-$(date -u +%Y%m%dT%H%M%SZ) --run-kind manual`.
+  Makes one ordinary public request and changes nothing; does not touch the daily marker.
+  Its tests: `python3 cache_monitor/tests/test_cache_monitor.py`,
+  `bash cache_monitor/tests/sched_tests_noon.sh`, `python3 cache_monitor/tests/audit_no_mutation.py`.
 - **Reboot acceptance test:** reboot the phone, do **not** open Termux, wait ~2 min, then from the
   Mac check `boot_startup.log` shows a fresh run and `crond`/`sshd` are up.
 - **Report "hang" gotcha (already fixed):** notifications are detached (`/dev/null` FDs +
@@ -208,10 +235,15 @@ Implemented by the phone-side scheduler (`~/seo_tracker/phone/lib_common.sh` + `
   timestamped `report_YYYYMMDD_HHMMSS.*`, per-site reports under `per_site/<slug>/`, and
   `daily_runner.log` / `cron.log`. `report_latest.json` also serves as the title-drift baseline.
 - **Scheduler logs (phone):** `~/ambimat_job_logs/` (markers, `scheduler_watchdog.log`,
-  `boot_startup.log`).
-- **Committed evidence (repo):** `reports/scheduler_verification/` and
-  `reports/full_coverage_crawl_20260727/COVERAGE_SUMMARY.md`. Raw crawl dumps and raw telemetry are
-  gitignored by design (keep large/regenerable/sensitive runs out of git).
+  `boot_startup.log`, `cache_monitor_daily.log`).
+- **Cache-monitor evidence (phone):** `~/cache_monitor_reports/noon-cache-inspection-<UTC>/`
+  (mode 700) — `result.json`, `SUMMARY.txt`, sanitized headers, parsed metadata, request procedure,
+  retry history, scheduler evidence, server evidence, and a self-excluding `EVIDENCE.sha256`.
+- **Committed evidence (repo):** `reports/scheduler_verification/`,
+  `reports/full_coverage_crawl_20260727/COVERAGE_SUMMARY.md`, and
+  `reports/cache_monitor_canary_20260731/` (the single live read-only canary of the noon job).
+  Raw crawl dumps and raw telemetry are gitignored by design (keep large/regenerable/sensitive runs
+  out of git).
 
 ## Safety notes & known limitations
 

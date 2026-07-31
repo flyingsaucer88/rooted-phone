@@ -1,0 +1,15 @@
+HTTP 200
+accept-ranges: bytes
+connection: Upgrade, close
+content-length: 192835
+content-type: text/html; charset=UTF-8
+date: Fri, 31 Jul 2026 12:04:58 GMT
+etag: "2f143-657e583550537"
+last-modified: Fri, 31 Jul 2026 10:18:42 GMT
+referrer-policy: no-referrer-when-downgrade
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+upgrade: h2,h2c
+vary: Accept-Encoding
+
+(Sanitized: cookie, authorization and authenticate headers are never recorded.)

@@ -30,6 +30,11 @@ env/
 # Third-party clone (source-inspection only, not ours to version)
 external/
 
+# Cache-monitor server access: never commit a credential pointer or a private key path
+# that has been filled in. The .example.json (disabled, placeholder values) IS committed.
+cache_monitor/config/server_inspection.json
+cache_monitor_reports/
+
 # Site monitor reports — public-site data, but keep raw runs out of git.
 reports/site_monitor*/
 site_monitor/reports/*

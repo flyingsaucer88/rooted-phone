@@ -1,0 +1,21 @@
+ambimat.com front-page cache inspection — ALERT_STALE_OR_OBSOLETE_METADATA
+
+run kind            : canary
+started (IST)       : 2026-07-31T17:34:56+0530
+finished (IST)      : 2026-07-31T17:35:04+0530
+HTTP status         : 200
+stale/obsolete      : YES
+cache file age      : unknown
+server inspection   : unavailable
+public requests     : 1
+
+No repair attempted.
+
+Reasons:
+  - og_image serves the known obsolete image 2022/05/image_2022.png (attachment 9920)
+  - no server-inspection configuration is installed
+
+Evidence: /data/data/com.termux/files/home/cache_monitor_reports/noon-cache-inspection-20260731T120455Z
+Next scheduled inspection: 2026-08-01 12:00 IST
+
+Manual review required — monitoring job made no changes.

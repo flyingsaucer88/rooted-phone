@@ -1,0 +1,19 @@
+=== EXACT REQUEST PROCEDURE ===
+requested URL      : https://ambimat.com/
+declared UA        : AmbimatRootedPhone-CacheMonitor/1.0
+public requests    : 1
+query string       : none
+cache directives   : none sent (no Cache-Control, no Pragma, no cache-busting parameter)
+cookies            : none set, sent or manipulated (no cookie processor installed)
+conditional headers: none sent (no If-None-Match, no If-Modified-Since)
+session            : logged out; ordinary public visitor path only
+request time (UTC) : 2026-07-31T12:04:56Z
+http status        : 200
+final URL          : https://ambimat.com/
+redirect chain     : []
+response time (ms) : 7735
+content-type       : text/html; charset=UTF-8
+content length     : 192835
+body sha256        : 75a548b15ea8df3dd52bd4b95edc5d74ad6f6198833f02594af98582693a46ef
+mutation_attempted : False
+repair_attempted   : False

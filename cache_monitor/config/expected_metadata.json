@@ -1,0 +1,64 @@
+{
+  "_comment": [
+    "Source of truth for what the ambimat.com front page SHOULD and SHOULD NOT serve.",
+    "Derived verbatim from the Gate C read-only evidence of 2026-07-31 (front-page natural",
+    "cache-expiry verification, evidence directory",
+    "gateC/front-page-extended-natural-cache-expiry-verification-20260731T112230Z/).",
+    "Nothing here is invented: every path segment and attachment id below was proven in that",
+    "run by matching the served URL path segment against wp_postmeta._wp_attached_file.",
+    "This file is DATA ONLY. It grants no authority to change anything on the server."
+  ],
+
+  "url": "https://ambimat.com/",
+  "user_agent": "AmbimatRootedPhone-CacheMonitor/1.0",
+
+  "expected_canonical": "https://ambimat.com/",
+
+  "governed_image": {
+    "attachment_id": 36105,
+    "path_segment": "2026/07/ambimat-home-ambimat.com-1200x630-1.png",
+    "width": 1200,
+    "height": 630
+  },
+
+  "obsolete_images": [
+    {
+      "attachment_id": 9920,
+      "path_segment": "2022/05/image_2022.png",
+      "width": 1021,
+      "height": 532,
+      "note": "Stale front-page social image observed in the pre-write W3TC cache entry on 2026-07-31."
+    }
+  ],
+
+  "checks": {
+    "canonical": { "required": true },
+    "og_image": { "required": true, "must_be": "governed_image" },
+    "twitter_image": {
+      "required": false,
+      "must_be": "governed_image",
+      "note": "The installed stack emitted NO twitter:image tag on 2026-07-31. Absence is therefore accepted (not an alert); a PRESENT tag pointing at an obsolete image IS an alert."
+    },
+    "schema_image": {
+      "required": false,
+      "must_be": "governed_image",
+      "note": "Primary (non-logo) schema contentUrl. Already governed on 2026-07-31 because it derives from the featured image."
+    }
+  },
+
+  "schema_logo_path_segments_to_ignore": [
+    "2020/04/Ambimat-Logo.png"
+  ],
+
+  "pgcache_lifetime_seconds": 3600,
+  "cache_path_template": "wp-content/cache/page_enhanced/{host}/_index_slash_ssl.html",
+
+  "transport_retry": {
+    "max_attempts": 3,
+    "backoff_seconds": [20, 45],
+    "retry_after_cap_seconds": 120
+  },
+
+  "request_timeout_seconds": 45,
+  "max_redirects": 5
+}

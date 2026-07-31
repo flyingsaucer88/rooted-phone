@@ -1,0 +1,1 @@
+!! ALERT_STALE_OR_OBSOLETE_METADATA | HTTP 200 | stale/obsolete: YES | cache age: unknown | server inspection: unavailable | No repair attempted. | Manual review required — monitoring job made no changes. | Evidence: /data/data/com.termux/files/home/cache_monitor_reports/noon-cache-inspection-20260731T120455Z | Next: 2026-08-01 12:00 IST
