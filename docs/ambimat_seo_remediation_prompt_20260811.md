@@ -1,5 +1,8 @@
 # Prompt — ambimat.com SEO remediation over SSH (evidence 2026-08-11)
 
+> **SUPERSEDED by `seo_remediation_prompts_20260814.md`** — built on fresher evidence and on
+> 6 weeks of trend history. Kept for the audit trail.
+
 Paste everything below the line into a fresh Claude Code session. Evidence came from the rooted
 phone's scheduled runs; the session itself works over SSH against production.
 

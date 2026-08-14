@@ -1,5 +1,8 @@
 # Prompt — orders.ambimat.com remediation over SSH (evidence 2026-08-11)
 
+> **SUPERSEDED by `seo_remediation_prompts_20260814.md`** — built on fresher evidence and on
+> 6 weeks of trend history. Kept for the audit trail.
+
 Supersedes the Orders section of `site_remediation_prompts_20260804.md`, which was written from the
 degraded 08-04 run. Paste everything below the line into a fresh Claude Code session.
 

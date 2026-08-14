@@ -1,5 +1,8 @@
 # Per-site remediation prompts — evidence date 2026-08-04
 
+> **SUPERSEDED by `seo_remediation_prompts_20260814.md`** — built on fresher evidence and on
+> 6 weeks of trend history. Kept for the audit trail.
+
 Built from the phone's own 10:00 site-monitor run (`report_20260804_102806`) and 11:00 SEO run
 (`report_20260804_115321`). `ambimat.com` is deliberately **not** covered here — it is handled separately.
 
