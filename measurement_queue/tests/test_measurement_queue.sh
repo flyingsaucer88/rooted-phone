@@ -15,6 +15,8 @@ setup() {
   TMP="$(mktemp -d)"; export AMBIMAT_LOGDIR="$TMP/logs" AMBIMAT_HOME="$TMP/home"
   export MQ_STATE_DIR="$TMP/state" MQ_EVIDENCE_ROOT="$TMP/ev" MQ_DIR="$DIR"
   export MQ_QUEUE_FILE="$DIR/queue.tsv" MQ_PROMPT_DIR="$DIR/prompts" MQ_LOG="$TMP/mq.log"
+  # Pin the executor empty so no test can ever dispatch the real API backend.
+  export MQ_EXECUTOR_CMD=""
   mkdir -p "$AMBIMAT_LOGDIR" "$MQ_STATE_DIR" "$MQ_EVIDENCE_ROOT"
   # shellcheck disable=SC1090
   . "$DIR/lib_measure.sh"
@@ -137,8 +139,11 @@ else
   ok "no test invokes a real measurement prompt or network call"
 fi
 # The executor must never be configured during tests.
-if [ -z "${MQ_EXECUTOR_CMD:-}" ]; then ok "no executor configured during tests (nothing can dispatch)"
-else bad "test isolation" "MQ_EXECUTOR_CMD is set"; fi
+case "${MQ_EXECUTOR_CMD:-}" in
+  "") ok "no executor dispatchable during tests (MQ_EXECUTOR_CMD pinned empty)" ;;
+  *run_api_measurement.sh*) bad "test isolation" "the real API executor is dispatchable in tests" ;;
+  *) bad "test isolation" "an unexpected executor is set" ;;
+esac
 teardown
 
 echo "== 11. Watchdog block is REACHABLE (regression: it must precede 'exit 0') =="
@@ -177,6 +182,46 @@ else bad "mutation proof" "result.json missing or non-zero mutations"; fi
 # a blocked run must NOT be marked completed (it must stay retryable)
 [ "$(mq_get "$V2X" status)" != "completed" ] && ok "blocked run stays retryable (not marked completed)" || bad "blocked" "marked completed"
 teardown
+
+echo "== 13. Standalone API layer: read-only by construction =="
+API="$DIR/api"
+if [ -d "$API" ]; then
+  for m in guard creds collect claude_runtime; do
+    if (cd "$API" && python3 "$m.py" >/dev/null 2>&1); then ok "api/$m.py self-test passes"
+    else bad "api/$m.py self-test" "non-zero exit"; fi
+  done
+  if (cd "$API" && python3 - >/dev/null 2>&1 <<'PY'
+import guard, tempfile
+g = guard.Guard(tempfile.mkdtemp())
+slipped = []
+for (svc, op) in guard.DENY:
+    try:
+        g.check(svc, op, "POST", "https://example.com/x")
+        slipped.append((svc, op))
+    except guard.MutationGuard:
+        pass
+assert not slipped, slipped
+assert g.summary()["all_calls_read_only"] is False
+PY
+  ); then ok "every guard.DENY operation is refused (all named mutations)"
+  else bad "guard DENY" "an operation slipped through"; fi
+  PAT="requ""ests\\."
+  if grep -nE "^[^#]*$PAT" "$API/collect.py" "$API/execute.py" >/dev/null 2>&1; then
+    bad "collector bypass" "collect.py/execute.py call requests directly"
+  else ok "collectors reach the network only through guard.Guard"; fi
+  if grep -q "run_api_measurement.sh" "$DIR/lib_measure.sh"; then
+    ok "MQ_EXECUTOR_CMD defaults to the standalone API executor"
+  else bad "executor wiring" "lib_measure.sh does not default MQ_EXECUTOR_CMD"; fi
+  pf="$(bash "$DIR/preflight_auth.sh" serp,ai_overview 2>&1)"
+  case "$pf" in *"serp=UNAVAILABLE_OPTIONAL"*) ok "UI-only sources degrade, they do not block";;
+    *) bad "degradation" "serp did not degrade";; esac
+  if (cd "$API" && python3 -c "import creds,json;print(json.dumps(creds.report()))" 2>/dev/null \
+       | grep -qiE "private_key|BEGIN |sk-ant|refresh_token"); then
+    bad "secret leak" "creds.report() emitted credential material"
+  else ok "credential report exposes state only, never a secret"; fi
+else
+  ok "api/ not present on this host — standalone API checks skipped"
+fi
 
 echo; echo "RESULT: $PASS passed, $FAIL failed"
 [ "$FAIL" -eq 0 ]

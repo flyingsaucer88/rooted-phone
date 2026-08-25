@@ -45,3 +45,11 @@ report_2*.md
 report_2*.html
 # Raw generated crawl dumps under evidence dirs (keep only hand-authored *SUMMARY*.md).
 reports/full_coverage_crawl_*/report_full_coverage.*
+
+# Measurement API credentials — never in the repo (see measurement_queue/api/creds.py)
+.ambimat_measure_creds/
+**/google_service_account.json
+**/anthropic_api_key
+**/bing_api_key
+**/linkedin_oauth.json
+*.pem

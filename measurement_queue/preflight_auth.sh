@@ -1,49 +1,62 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# Authenticated-data-source preflight (master prompt §12).
+# Authenticated-data-source preflight — standalone API mode.
 #
-# Every one of the four queued measurement prompts needs authenticated,
-# browser-or-API access to third-party analytics. This probe decides — at RUN
-# time, not install time — whether that access exists. If it does not, the
-# runner must emit BLOCKED rather than fabricate data (§12, §22).
+# Replaces the browser-era probe.  The device is unrooted, has no automatable
+# browser, and will have no Mac at 01:00 IST, so authenticated access now means
+# API credentials on the phone, not a Chrome session.
 #
-# It performs NO network requests: it only inspects local capability, so it can
-# never generate measurement traffic merely to test access (§12).
+# Still performs NO network requests: it inspects local credential readiness
+# only, so it can never generate measurement traffic merely to test access.
 #
 # Usage: preflight_auth.sh <comma-separated-sources>
-# Exit 0 = all requested sources available; 1 = at least one unavailable.
-# Prints one "<source>=AVAILABLE|UNAVAILABLE (<reason>)" line per source.
+# Exit 0 = every CRITICAL source is available; 1 = a critical source is missing.
+# Optional sources (bing, linkedin, serp, ai_overview) degrade the run per the
+# master prompt's failure-degradation rule; they never block it.
 set -u
 REQ="${1:-}"
+DIR="$(cd "$(dirname "$0")" && pwd)"
 rc=0
 
-has_bin()  { command -v "$1" >/dev/null 2>&1; }
-has_py()   { python -c "import $1" >/dev/null 2>&1; }
-has_browser() { has_bin chromium || has_bin chromium-browser || has_bin google-chrome || has_bin chrome || has_bin firefox; }
-has_driver()  { has_py selenium || has_py playwright || has_bin chromedriver || has_bin geckodriver; }
-# A credential store the operator has deliberately provisioned. Never printed.
-CRED_DIR="${AMBIMAT_MEASURE_CREDS:-$HOME/.ambimat_measure_creds}"
-has_creds() { [ -d "$CRED_DIR" ] && [ -n "$(ls -A "$CRED_DIR" 2>/dev/null)" ]; }
+# One python call reports every credential state; secrets are never printed.
+STATES="$(cd "$DIR/api" && python3 - <<'PY' 2>/dev/null
+import creds, json
+print(json.dumps({k: v["state"] for k, v in creds.report().items()}))
+PY
+)"
+[ -z "$STATES" ] && STATES='{}'
+state_of() {
+  printf '%s' "$STATES" | python3 -c "import json,sys;print(json.load(sys.stdin).get('$1','MISSING'))" 2>/dev/null || echo MISSING
+}
+
+GOOGLE="$(state_of google_sa)"
+BING="$(state_of bing)"
+LINKEDIN="$(state_of linkedin)"
+ANTHROPIC="$(state_of anthropic)"
+
+emit() { # <src> <critical|optional> <state> <reason>
+  local src="$1" crit="$2" st="$3" why="$4"
+  if [ "$st" = "PRESENT" ]; then
+    echo "$src=AVAILABLE (api)"
+  elif [ "$crit" = "optional" ]; then
+    echo "$src=UNAVAILABLE_OPTIONAL ($why) — run continues, metric reported unavailable"
+  else
+    echo "$src=UNAVAILABLE ($why)"; rc=1
+  fi
+}
 
 check() {
-  local src="$1" ok=1 reason=""
-  case "$src" in
-    gsc|ga4)
-      if has_py googleapiclient && has_py google.oauth2 && has_creds; then ok=0
-      elif has_browser && has_driver && has_creds; then ok=0
-      else ok=1; reason="no Google API client + credentials, and no automatable authenticated browser"; fi ;;
-    bing)
-      if has_creds && { has_py requests_oauthlib || { has_browser && has_driver; }; }; then ok=0
-      else ok=1; reason="no Bing Webmaster Tools credential path"; fi ;;
-    linkedin)
-      if has_browser && has_driver && has_creds; then ok=0
-      else ok=1; reason="post-level analytics need an authenticated browser session"; fi ;;
-    serp|ai_overview)
-      if has_browser && has_driver; then ok=0
-      else ok=1; reason="browser-visible SERP/AI Overview observation needs a real browser"; fi ;;
-    *) ok=1; reason="unknown source" ;;
+  case "$1" in
+    gsc)      emit gsc      critical "$GOOGLE"    "Google service-account credential is $GOOGLE" ;;
+    ga4)      emit ga4      critical "$GOOGLE"    "Google service-account credential is $GOOGLE" ;;
+    bing)     emit bing     optional "$BING"      "Bing Webmaster API key is $BING" ;;
+    linkedin) emit linkedin optional "$LINKEDIN"  "LinkedIn member-analytics token is $LINKEDIN" ;;
+    serp)         echo "serp=UNAVAILABLE_OPTIONAL (no compliant standalone SERP source) — GSC is the ranking source of truth" ;;
+    ai_overview)  echo "ai_overview=UNAVAILABLE_OPTIONAL (GOOGLE_AI_OVERVIEW = NOT AVAILABLE IN STANDALONE API MODE)" ;;
+    *)            echo "$1=UNAVAILABLE (unknown source)"; rc=1 ;;
   esac
-  if [ "$ok" -eq 0 ]; then echo "$src=AVAILABLE"; else echo "$src=UNAVAILABLE ($reason)"; rc=1; fi
 }
 
 IFS=','; for s in $REQ; do [ -n "$s" ] && check "$s"; done; unset IFS
+# The reasoning runtime is required by every gate regardless of the source list.
+emit claude critical "$ANTHROPIC" "Anthropic API key is $ANTHROPIC"
 exit $rc

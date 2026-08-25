@@ -1,0 +1,47 @@
+{
+  "mode": "reachability",
+  "ts": "2026-08-25T13:03:23+0530",
+  "reachability": [
+    {
+      "host": "oauth2.googleapis.com",
+      "tls": "TLSv1.3",
+      "ok": true,
+      "ms": 288
+    },
+    {
+      "host": "analyticsdata.googleapis.com",
+      "tls": "TLSv1.3",
+      "ok": true,
+      "ms": 134
+    },
+    {
+      "host": "analyticsadmin.googleapis.com",
+      "tls": "TLSv1.3",
+      "ok": true,
+      "ms": 191
+    },
+    {
+      "host": "searchconsole.googleapis.com",
+      "tls": "TLSv1.3",
+      "ok": true,
+      "ms": 146
+    },
+    {
+      "host": "ssl.bing.com",
+      "tls": "TLSv1.3",
+      "ok": true,
+      "ms": 349
+    },
+    {
+      "host": "api.linkedin.com",
+      "ok": false,
+      "error": "ConnectionResetError"
+    },
+    {
+      "host": "api.anthropic.com",
+      "tls": "TLSv1.3",
+      "ok": true,
+      "ms": 171
+    }
+  ]
+}

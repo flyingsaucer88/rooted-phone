@@ -1,0 +1,3 @@
+[2026-08-25 13:06:03 IST] detached probe firing (ppid detached from ssh)
+  anthropic  HTTP 401  141 bytes
+  bing       HTTP 400  50 bytes

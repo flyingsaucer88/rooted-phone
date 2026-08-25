@@ -19,6 +19,10 @@
 : "${MQ_MAX_ATTEMPTS_PER_DAY:=6}"
 # Daily jobs whose locks we must never compete with (§15, §23).
 : "${MQ_FOREIGN_LOCKS:=seo_run site_run cache_monitor_run}"
+# Execution backend. The browser/ADB path is dead on this device (unrooted, no
+# Mac at 01:00 IST), so the queue hands off to the standalone read-only API
+# executor. Every call it makes is checked against api/guard.py's allowlist.
+: "${MQ_EXECUTOR_CMD=bash $MQ_DIR/run_api_measurement.sh}"
 
 mkdir -p "$MQ_STATE_DIR" "$MQ_EVIDENCE_ROOT" 2>/dev/null || true
 
