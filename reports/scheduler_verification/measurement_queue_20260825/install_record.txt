@@ -1,0 +1,6 @@
+installed_ist: 2026-08-25T11:27:33+0530
+installed_utc: 2026-08-25T05:57:33Z
+device: Moto G (4) / ZY22382BFL
+tz_prop: Asia/Calcutta  offset: +0530
+ensure_scheduler sha256: 7c05ac978b5f025dffb2795f2fc7c9b245c0ced0f6d21ef3b829ad01ab54fcc7
+backup kept: yes

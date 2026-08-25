@@ -1,0 +1,49 @@
+== 1. Early execution is prevented ==
+  PASS  V2X cannot run at 2026-08-26 23:59:59 (before due time (now=1787768999 < due=1787772600))
+  PASS  AmbiSecure cannot run at 2026-08-28 23:59:59 (blackout date 2026-08-28 — prohibited (master prompt §3))
+  PASS  eSIM cannot run at 2026-08-31 23:59:59 (before due time (now=1788200999 < due=1788204600))
+  PASS  V2X becomes due exactly at 2026-08-27 01:00:00
+  PASS  AmbiSecure becomes due exactly at 2026-08-29 01:00:00
+  PASS  eSIM becomes due exactly at 2026-09-01 01:00:00
+== 2. 28 August blackout ==
+  PASS  no run executable at 2026-08-28 00:00:01 IST (count=0)
+  PASS  no run executable at 2026-08-28 09:30:00 IST (count=0)
+  PASS  no run executable at 2026-08-28 23:59:59 IST (count=0)
+== 3. Missed-V2X held across the blackout, released 29 Aug ==
+  PASS  overdue V2X refused on 28 Aug (blackout date 2026-08-28 — prohibited (master prompt §3))
+  PASS  overdue V2X released on 29 Aug
+== 4. Batch A serializes A1 -> A2 ==
+  PASS  Ambimat blocked while AmbiSecure incomplete (dependency 'ambisecure_gsc_7day_20260829' not completed)
+  PASS  AmbiSecure itself is due
+  PASS  Ambimat released after AmbiSecure completes
+== 5. Duplicate execution prevented ==
+  PASS  completed run never re-executes (already completed)
+== 6. Reboot catch-up (phone off at due time) ==
+  PASS  eSIM still runs after a late boot the same day
+== 7. Bounded retry (no infinite loop) ==
+  PASS  retry bounded at 6/day (attempt budget exhausted for 2026-08-27)
+  PASS  attempt budget resets the next day
+== 8. Defers to the daily 10:00/11:00/12:00 jobs ==
+  PASS  defers while daily job 'seo_run' holds its lock
+  PASS  proceeds once daily locks clear
+== 9. Timezone is Asia/Kolkata, not device-implicit ==
+  PASS  due time resolves to 1787772600 regardless of ambient TZ
+== 10. Evidence dir writable + no prompt executed ==
+  PASS  evidence directory writable (/data/data/com.termux/files/usr/tmp/tmp.xm22sO4BuF/ev/v2x_seo_measurement_20260827)
+  PASS  no test invokes a real measurement prompt or network call
+  PASS  no executor configured during tests (nothing can dispatch)
+== 11. Watchdog block is REACHABLE (regression: it must precede 'exit 0') ==
+  PASS  queue block at line 84 precedes final 'exit 0' at line 102
+  PASS  ensure_scheduler.sh still parses
+  PASS  daily job 'run_site_monitor_daily' still wired in
+  PASS  daily job 'run_daily' still wired in
+  PASS  12:00 cache-monitor block still wired in
+== 12. Due job with no auth + no prompt emits BLOCKED, never fabricates ==
+  PASS  V2X recorded status=blocked
+  PASS  verdict is the required BLOCKED string
+  PASS  BLOCKED evidence report written
+  PASS  evidence checksums written
+  PASS  result.json proves data_collected=false and all mutations = 0
+  PASS  blocked run stays retryable (not marked completed)
+
+RESULT: 35 passed, 0 failed

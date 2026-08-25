@@ -1,0 +1,5 @@
+# run_id	due_ist (Asia/Kolkata)	depends_on	prompt_file	label	required_sources
+v2x_seo_measurement_20260827	2026-08-27 01:00:00	-	v2x_measurement_gate.md	V2X	gsc,ga4,bing,serp,ai_overview
+ambisecure_gsc_7day_20260829	2026-08-29 01:00:00	-	ambisecure_gsc_7day.md	AmbiSecure	gsc
+ambimat_ga4_gsc_20260829	2026-08-29 01:00:00	ambisecure_gsc_7day_20260829	ambimat_ga4_gsc_gate.md	Ambimat	gsc,ga4
+esim_phase3b4_20260901	2026-09-01 01:00:00	-	esim_phase3b4.md	eSIM	gsc,ga4,linkedin
