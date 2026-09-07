@@ -73,3 +73,31 @@ SEO tracker, generated **2026-09-07 18:04:12 +0530**, 9 domains — **Orders 15 
    returns a real 404 to browsers, linked from
    `https://ambimat.com/products/nxps-development-kits-with-secure-element-pdm-1-0-plugin-sim-package-from-nxp/`.
    Choosing the correct replacement NXP page is a content decision.
+
+## Phase 13 — secrets check on changed files only — OBSERVED
+
+Every commit made today was scanned for private keys, `sk-ant-*`, `AIza*`, and inline
+passwords.
+
+* **Rooted-Phone** — 2 hits, both `-` deletion lines from the removed measurement code
+  (docstrings reading `'BEGIN PRIVATE KEY'`). No secret existed or was removed.
+* **Ambimat-AI-site** — clean.
+* **ambimat-site** — 2 hits, both the same string, in the byte-exact
+  `functions.php.PRE-CHANGE` / `.AS-DEPLOYED` rollback pair:
+
+  `acf_update_setting('google_api_key', 'AIzaSy…');`
+
+  **Not introduced by this work and not a new exposure.** It is hardcoded in the live
+  `launchseat` theme, pre-exists in this repository from commit `9066bc7`, already appears
+  in many committed evidence packages including the identical rollback pairs in
+  `ambimat_closure_20260826T101851Z/` and `ambimat_launchseat_quality_20260902T133500Z/`,
+  and the repository is **private**. The rollback copies are deliberately byte-exact —
+  redacting them would void the sha256 assertion that makes them a usable rollback.
+
+  It is an **ACF Google Maps browser key**, the class of key that is served to every
+  visitor on any page rendering a map, so it is public by design rather than a leaked
+  credential. Flagged for the owner only to confirm it carries an HTTP-referrer
+  restriction in Google Cloud Console. **No action taken** — restricting or rotating it is
+  outside this task and would be an unrequested production change.
+
+No credential was created, installed, moved, printed or committed anywhere in this work.
