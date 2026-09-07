@@ -1,0 +1,110 @@
+fi
+
+exit 0
+
+===== boot hook (measurement refs?) =====
+(no measurement reference in boot hook)
+
+===== queue.tsv =====
+# run_id	due_ist (Asia/Kolkata)	depends_on	prompt_file	label	required_sources
+v2x_seo_measurement_20260827	2026-08-27 01:00:00	-	v2x_measurement_gate.md	V2X	gsc,ga4,bing,serp,ai_overview
+ambisecure_gsc_7day_20260829	2026-08-29 01:00:00	-	ambisecure_gsc_7day.md	AmbiSecure	gsc
+ambimat_ga4_gsc_20260829	2026-08-29 01:00:00	ambisecure_gsc_7day_20260829	ambimat_ga4_gsc_gate.md	Ambimat	gsc,ga4
+esim_phase3b4_20260901	2026-09-01 01:00:00	-	esim_phase3b4.md	eSIM	gsc,ga4,linkedin
+
+===== measurement state =====
+--- ambimat_ga4_gsc_20260829.state
+status=scheduled
+run_id=ambimat_ga4_gsc_20260829
+label=Ambimat
+intended_ist=2026-08-29T01:00:00+0530
+--- ambisecure_gsc_7day_20260829.state
+attempts_date=2026-09-07
+attempts=6
+last_attempt=2026-09-07T15:08:52+0530
+actual_start=2026-09-07T15:08:52+0530
+status=blocked
+verdict=BLOCKED — SOURCE PROMPT NOT INSTALLED
+evidence_dir=/data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829
+actual_end=2026-09-07T15:08:55+0530
+run_id=ambisecure_gsc_7day_20260829
+label=AmbiSecure
+intended_ist=2026-08-29T01:00:00+0530
+--- esim_phase3b4_20260901.state
+attempts_date=2026-09-07
+attempts=6
+last_attempt=2026-09-07T15:08:56+0530
+actual_start=2026-09-07T15:08:57+0530
+status=blocked
+verdict=BLOCKED — AUTHENTICATED DATA SOURCE UNAVAILABLE
+evidence_dir=/data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901
+actual_end=2026-09-07T15:08:59+0530
+run_id=esim_phase3b4_20260901
+label=eSIM
+intended_ist=2026-09-01T01:00:00+0530
+--- v2x_seo_measurement_20260827.state
+attempts_date=2026-09-07
+attempts=6
+last_attempt=2026-09-07T15:08:48+0530
+actual_start=2026-09-07T15:08:49+0530
+status=blocked
+verdict=BLOCKED — SOURCE PROMPT NOT INSTALLED
+evidence_dir=/data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827
+actual_end=2026-09-07T15:08:51+0530
+run_id=v2x_seo_measurement_20260827
+label=V2X
+intended_ist=2026-08-27T01:00:00+0530
+
+===== measurement_queue tree =====
+/data/data/com.termux/files/home/measurement_queue/api/__pycache__/claude_runtime.cpython-313.pyc
+/data/data/com.termux/files/home/measurement_queue/api/__pycache__/collect.cpython-313.pyc
+/data/data/com.termux/files/home/measurement_queue/api/__pycache__/creds.cpython-313.pyc
+/data/data/com.termux/files/home/measurement_queue/api/__pycache__/gauth.cpython-313.pyc
+/data/data/com.termux/files/home/measurement_queue/api/__pycache__/guard.cpython-313.pyc
+/data/data/com.termux/files/home/measurement_queue/api/claude_runtime.py
+/data/data/com.termux/files/home/measurement_queue/api/collect.py
+/data/data/com.termux/files/home/measurement_queue/api/creds.py
+/data/data/com.termux/files/home/measurement_queue/api/execute.py
+/data/data/com.termux/files/home/measurement_queue/api/gauth.py
+/data/data/com.termux/files/home/measurement_queue/api/guard.py
+/data/data/com.termux/files/home/measurement_queue/api/smoke.py
+/data/data/com.termux/files/home/measurement_queue/build_manifest.sh
+/data/data/com.termux/files/home/measurement_queue/ensure_scheduler_measurement_block.sh
+/data/data/com.termux/files/home/measurement_queue/lib_measure.sh
+/data/data/com.termux/files/home/measurement_queue/preflight_auth.sh
+/data/data/com.termux/files/home/measurement_queue/prompts/MANIFEST.tsv
+/data/data/com.termux/files/home/measurement_queue/prompts/MISSING_ambisecure_gsc_7day.md
+/data/data/com.termux/files/home/measurement_queue/prompts/MISSING_v2x_measurement_gate.md
+/data/data/com.termux/files/home/measurement_queue/prompts/TRUNCATION_NOTICE_esim_phase3b4.md
+/data/data/com.termux/files/home/measurement_queue/prompts/ambimat_ga4_gsc_gate.md
+/data/data/com.termux/files/home/measurement_queue/prompts/esim_phase3b4.md
+/data/data/com.termux/files/home/measurement_queue/queue.tsv
+/data/data/com.termux/files/home/measurement_queue/run_api_measurement.sh
+/data/data/com.termux/files/home/measurement_queue/run_measurement_queue.sh
+/data/data/com.termux/files/home/measurement_queue/targets/README.md
+/data/data/com.termux/files/home/measurement_queue/tests/test_measurement_queue.sh
+/data/data/com.termux/files/home/measurement_queue/write_index.sh
+
+===== credential dir =====
+total 16
+drwx------.  2 u0_a122 u0_a122 4096 Aug 25 13:03 .
+drwx------. 17 u0_a122 u0_a122 4096 Sep  7 15:02 ..
+entry count: 0
+
+===== scheduled_measurements =====
+/data/data/com.termux/files/home/scheduled_measurements/LATEST.json
+/data/data/com.termux/files/home/scheduled_measurements/LATEST.md
+/data/data/com.termux/files/home/scheduled_measurements/_smoke/smoke_20260825T130324.json
+/data/data/com.termux/files/home/scheduled_measurements/_smoke/smoke_20260907T150658.json
+/data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/REPORT.md
+/data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/SHA256SUMS
+/data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/raw/preflight_auth.txt
+/data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/result.json
+/data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/REPORT.md
+/data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/SHA256SUMS
+/data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/raw/preflight_auth.txt
+/data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/result.json
+/data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/REPORT.md
+/data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/SHA256SUMS
+/data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/raw/preflight_auth.txt
+/data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/result.json

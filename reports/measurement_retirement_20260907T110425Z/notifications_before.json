@@ -1,0 +1,113 @@
+USB forward active: localhost:8022 -> phone:8022
+[
+  {
+    "id": 1337,
+    "tag": "",
+    "key": "0|com.termux|1337|null|10122",
+    "group": "",
+    "packageName": "com.termux",
+    "title": "Termux",
+    "content": "0 sessions (wake lock held)",
+    "when": "2026-09-07 16:30:01"
+  },
+  {
+    "id": 17040404,
+    "tag": "",
+    "key": "-1|android|17040404|null|1000",
+    "group": "",
+    "packageName": "android",
+    "title": "USB debugging connected",
+    "content": "Tap to disable USB debugging.",
+    "when": "1970-01-01 05:30:00"
+  },
+  {
+    "id": 2147483647,
+    "tag": "group_key_override",
+    "key": "0|com.termux.api|2147483647|group_key_override|10122|ranker_bundle",
+    "group": "ranker_bundle",
+    "packageName": "com.termux.api",
+    "title": "",
+    "content": "",
+    "when": "2026-09-07 13:11:17"
+  },
+  {
+    "id": 0,
+    "tag": "ambimat_cache_monitor",
+    "key": "0|com.termux.api|0|ambimat_cache_monitor|10122",
+    "group": "",
+    "packageName": "com.termux.api",
+    "title": "Ambimat front-page cache",
+    "content": "PASS_PUBLIC_HEALTHY_SERVER_INSPECTION_UNAVAILABLE | No repair attempted.",
+    "when": "2026-09-07 16:04:27"
+  },
+  {
+    "id": 0,
+    "tag": "seo-tracker",
+    "key": "0|com.termux.api|0|seo-tracker|10122",
+    "group": "",
+    "packageName": "com.termux.api",
+    "title": "SEO tracker ✓",
+    "content": "Daily crawl done — see report_latest.html",
+    "when": "2026-09-07 15:56:02"
+  },
+  {
+    "id": 0,
+    "tag": "ambimat_site_monitor",
+    "key": "0|com.termux.api|0|ambimat_site_monitor|10122",
+    "group": "",
+    "packageName": "com.termux.api",
+    "title": "Ambimat Site Monitor",
+    "content": "ALERT: 1 broken pages, 17 broken links, 6 unverified links, 589 suspicious warnings",
+    "when": "2026-09-07 15:24:46"
+  },
+  {
+    "id": 0,
+    "tag": "ambimat_measure_esim_phase3b4_20260901",
+    "key": "0|com.termux.api|0|ambimat_measure_esim_phase3b4_20260901|10122",
+    "group": "",
+    "packageName": "com.termux.api",
+    "title": "eSIM — AUTHENTICATED DATA SOURCE UNAVAILABLE",
+    "content": "One or more required sources (gsc,ga4,linkedin) cannot be reached unattended from this device. /data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901",
+    "when": "2026-09-07 15:08:59"
+  },
+  {
+    "id": 0,
+    "tag": "ambimat_measure_ambisecure_gsc_7day_20260829",
+    "key": "0|com.termux.api|0|ambimat_measure_ambisecure_gsc_7day_20260829|10122",
+    "group": "",
+    "packageName": "com.termux.api",
+    "title": "AmbiSecure — SOURCE PROMPT NOT INSTALLED",
+    "content": "Source prompt not installed at `/data/data/com.termux/files/home/measurement_queue/prompts/ambisecure_gsc_7day.md`. The immutable copy was never supplied, so there is nothing authoritative to execute. /data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829",
+    "when": "2026-09-07 15:08:55"
+  },
+  {
+    "id": 0,
+    "tag": "ambimat_measure_v2x_seo_measurement_20260827",
+    "key": "0|com.termux.api|0|ambimat_measure_v2x_seo_measurement_20260827|10122",
+    "group": "",
+    "packageName": "com.termux.api",
+    "title": "V2X — SOURCE PROMPT NOT INSTALLED",
+    "content": "Source prompt not installed at `/data/data/com.termux/files/home/measurement_queue/prompts/v2x_measurement_gate.md`. The immutable copy was never supplied, so there is nothing authoritative to execute. /data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827",
+    "when": "2026-09-07 15:08:51"
+  },
+  {
+    "id": 0,
+    "tag": "com.google.android.gms.auth.TokenNotificationManager:acf75e2d71d53e4a1f71fe2564a82ff5:com.google",
+    "key": "0|com.google.android.gms|0|com.google.android.gms.auth.TokenNotificationManager:acf75e2d71d53e4a1f71fe2564a82ff5:com.google|10034",
+    "group": "",
+    "packageName": "com.google.android.gms",
+    "title": "Sign in required",
+    "content": "Sign in to continue using ravikumar.c@ciright.com",
+    "when": "2026-09-07 12:34:20"
+  },
+  {
+    "id": 17040397,
+    "tag": "",
+    "key": "-1|android|17040397|null|1000",
+    "group": "",
+    "packageName": "android",
+    "title": "USB charging this device",
+    "content": "Tap for more options.",
+    "when": "1970-01-01 05:30:00"
+  }
+]

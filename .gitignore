@@ -46,7 +46,9 @@ report_2*.html
 # Raw generated crawl dumps under evidence dirs (keep only hand-authored *SUMMARY*.md).
 reports/full_coverage_crawl_*/report_full_coverage.*
 
-# Measurement API credentials — never in the repo (see measurement_queue/api/creds.py)
+# The authenticated-measurement experiment was RETIRED 2026-09-07 (owner decision) and
+# the phone needs no credentials at all. These patterns stay purely as a safety net so a
+# stray key can never be committed by accident.
 .ambimat_measure_creds/
 **/google_service_account.json
 **/anthropic_api_key

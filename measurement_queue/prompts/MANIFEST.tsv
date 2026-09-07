@@ -1,5 +1,0 @@
-run_id	label	source_filename	source_purpose	sha256	stored_path	intended_execution	timezone	status
-v2x_seo_measurement_20260827	V2X	v2x_measurement_gate.md	V2X measurement prompt	-	-	2026-08-27 01:00:00	Asia/Kolkata	NOT_SUPPLIED
-ambisecure_gsc_7day_20260829	AmbiSecure	ambisecure_gsc_7day.md	AmbiSecure measurement prompt	-	-	2026-08-29 01:00:00	Asia/Kolkata	NOT_SUPPLIED
-ambimat_ga4_gsc_20260829	Ambimat	ambimat_ga4_gsc_gate.md	Ambimat measurement prompt	8d11dad8a11d23ca70acdd6cd9a6d45af690398206945d3d516dc0eb80bf4fbc	/Users/neelshah/Documents/git_repo/Rooted-Phone/measurement_queue/prompts/ambimat_ga4_gsc_gate.md	2026-08-29 01:00:00	Asia/Kolkata	STORED
-esim_phase3b4_20260901	eSIM	esim_phase3b4.md	eSIM measurement prompt	59fe806c67447cdd1aea5a9cbd4edafb40891330a4f19aed77e429a3ae6d0189	/Users/neelshah/Documents/git_repo/Rooted-Phone/measurement_queue/prompts/esim_phase3b4.md	2026-09-01 01:00:00	Asia/Kolkata	STORED_TRUNCATED

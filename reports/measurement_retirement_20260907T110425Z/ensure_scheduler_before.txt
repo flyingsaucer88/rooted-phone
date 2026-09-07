@@ -1,0 +1,84 @@
+USB forward active: localhost:8022 -> phone:8022
+     1	#!/data/data/com.termux/files/usr/bin/bash
+     2	# Self-healing scheduler watchdog. Runs from cron every 30 min, at boot, and on
+     3	# demand. Each invocation:
+     4	#   1. single-flights (won't stack)
+     5	#   2. (Termux) holds a wake-lock so Android is less likely to kill Termux/crond
+     6	#   3. (Termux) restarts crond if it died, and reinstalls crontab lines if missing
+     7	#   4. catches up the 10:00 site-monitor and 11:00 SEO jobs if they're due & unrun
+     8	#
+     9	# This is what makes the schedule survive Termux being killed WITHOUT a reboot:
+    10	# as long as any watchdog tick runs (cron while alive, or boot), crond is revived.
+    11	#
+    12	# Flags/env: AMBIMAT_DRYRUN=1 → report what it would do without running jobs.
+    13	DIR="$(cd "$(dirname "$0")" && pwd)"
+    14	. "$DIR/lib_common.sh"
+    15	
+    16	[ "${1:-}" = "--dry-run" ] && export AMBIMAT_DRYRUN=1
+    17	WLOG="$AMBIMAT_LOGDIR/scheduler_watchdog.log"
+    18	
+    19	# 1. single-flight (short stale window — ticks are frequent)
+    20	if ! amb_acquire_lock watchdog 25; then
+    40	      bash "$DIR/schedule_daily.sh" install >> "$WLOG" 2>&1
+    41	    fi
+    42	  fi
+    43	else
+    44	  amb_log "$WLOG" "crond not found — crontab self-heal skipped (non-Termux host?)"
+    45	fi
+    46	
+    47	# 4. catch up due jobs — site (10:00) before SEO (11:00) so heavy runs stagger.
+    48	SITE_RUNNER="${AMBIMAT_SITE_RUNNER_CMD:-$DIR/run_site_monitor_daily.sh}"
+    49	SEO_RUNNER="${AMBIMAT_SEO_RUNNER_CMD:-$DIR/run_daily.sh}"
+    50	amb_run_if_due site_monitor 1000 "$SITE_RUNNER" "$WLOG"
+    51	amb_run_if_due seo          1100 "$SEO_RUNNER"  "$WLOG"
+    52	
+    53	# --- ambimat-cache-monitor: 12:00 catch-up (added 2026-07-31) ------------------
+    54	#
+    55	# This is the EXACT block appended to ~/seo_tracker/phone/ensure_scheduler.sh, kept
+    56	# here as the versioned copy of that edit. It is additive: it changes nothing about
+    57	# the 10:00 site-monitor or the 11:00 SEO job, which run above it unchanged.
+    58	#
+    59	# amb_run_if_due already provides everything the noon job needs:
+    60	#   - runs at most once per Asia/Kolkata day (the front_page_cache marker)
+    61	#   - never runs before 12:00 local
+    62	#   - defers while the network is down
+    63	#   - after a reboot at any time past noon, the watchdog's next tick (or the
+    64	#     Termux:Boot startup call) runs it exactly once — and only for today, never
+    65	#     replaying missed historical dates
+    66	#
+    67	# The runner it calls is inspect-and-report only. This block adds no capability.
+    68	CACHE_HOME="${AMBIMAT_CACHE_HOME:-$AMBIMAT_HOME/cache_monitor}"
+    69	CACHE_RUNNER="${AMBIMAT_CACHE_RUNNER_CMD:-$CACHE_HOME/run_cache_monitor_daily.sh}"
+    70	if [ -x "$CACHE_RUNNER" ]; then
+    71	  # Self-heal the noon crontab line the same way the three existing lines are healed.
+    72	  if command -v crontab >/dev/null 2>&1; then
+    73	    if ! crontab -l 2>/dev/null | grep -q 'ambimat-cache-monitor'; then
+    74	      amb_log "$WLOG" "crontab missing the 12:00 cache-monitor line — reinstalling"
+    75	      bash "$CACHE_HOME/install_noon_job.sh" install >> "$WLOG" 2>&1
+    76	    fi
+    77	  fi
+    78	  amb_run_if_due front_page_cache 1200 "$CACHE_RUNNER" "$WLOG"
+    79	else
+    80	  amb_log "$WLOG" "front_page_cache: runner not installed at $CACHE_RUNNER; skipping"
+    81	fi
+    82	
+    83	
+    84	# --- ambimat-measurement-queue: one-shot dated jobs (added 2026-08-25) --------
+    85	#
+    86	# Versioned copy of the block appended to ~/seo_tracker/phone/ensure_scheduler.sh.
+    87	# Purely additive: the 10:00 site-monitor, 11:00 SEO and 12:00 cache-monitor
+    88	# blocks above are untouched, and this runs only after them so the daily jobs
+    89	# always win the locks (master prompt §23).
+    90	#
+    91	# The queue runner does its own date/blackout/dependency/idempotency gating, so
+    92	# the watchdog just ticks it every 30 minutes.
+    93	MQ_HOME="${AMBIMAT_MEASURE_HOME:-$AMBIMAT_HOME/measurement_queue}"
+    94	MQ_RUNNER="${AMBIMAT_MEASURE_RUNNER_CMD:-$MQ_HOME/run_measurement_queue.sh}"
+    95	if [ -x "$MQ_RUNNER" ]; then
+    96	  bash "$MQ_RUNNER" >> "$AMBIMAT_LOGDIR/measurement_queue.log" 2>&1 || \
+    97	    amb_log "$WLOG" "measurement_queue: runner exited non-zero (see measurement_queue.log)"
+    98	else
+    99	  amb_log "$WLOG" "measurement_queue: runner not installed at $MQ_RUNNER; skipping"
+   100	fi
+   101	
+   102	exit 0

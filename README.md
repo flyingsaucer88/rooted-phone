@@ -5,6 +5,13 @@ device**, plus a small safe telemetry/experiment toolkit — all driven from a M
 USB (ADB + SSH) bridge. The phone is **unrooted**; everything here runs inside **Termux** with no
 root, no browser automation, and no cloud API keys.
 
+**The phone needs no credentials, API keys or authenticated accounts to do its job.** An
+earlier experiment that added authenticated GA4 / Search Console measurement was
+**RETIRED on 2026-09-07 by owner decision** and removed; see
+[reports/measurement_retirement_20260907T110425Z/](reports/measurement_retirement_20260907T110425Z/).
+If you find a note anywhere asking you to install `google_service_account.json` or an
+`anthropic_api_key`, it is stale — nothing here needs them.
+
 Three jobs run on the phone every day:
 
 | Time (Asia/Kolkata) | Job | What it does |
@@ -114,9 +121,11 @@ deps are the only application dependencies of the crawler; it otherwise uses the
   It lists the monitored sites and the crawl/alert policy. The monitored production domains are:
   `ambimat.com`, `ambisecure.ambimat.com`, `ambiautomation.ambimat.com`, `esim.ambimat.com`,
   `ambipower.ambimat.com`, `orders.ambimat.com`, `roboracer.ambimat.com`, `v2x.ambimat.com`,
-  `ai.ambimat.com` (9 sites). `v2x` and `ai` were added 2026-09-07 — they were live but
-  monitored by neither job. `tests/test_site_inventory.py` now fails if any of the eight
-  mandatory production sites goes missing from either inventory.
+  `ai.ambimat.com` (**9 sites — the authoritative active estate**). `v2x` and `ai` were
+  added 2026-09-07; `esim` was ratified as mandatory the same day.
+  `tests/test_site_inventory.py` fails if any of the nine goes missing from either
+  inventory, if the two inventories drift apart, if retired `ambimechanicals` reappears,
+  or if the retired measurement experiment returns.
   Notable keys: `max_pages_per_site`, `max_internal_link_checks_per_site`, `max_seconds_per_site`,
   `global_max_seconds`, `delay_between_requests_seconds`, `connect_timeout_seconds` /
   `read_timeout_seconds`, `check_external_links`, `external_check_skip_hosts` (social/CDN hosts that
