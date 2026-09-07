@@ -221,15 +221,21 @@ class SiteCrawler:
         return r
 
     def _status_only(self, url):
-        """HEAD, falling back to GET; retried once. Returns (status:int|None, error).
+        """HEAD, confirmed with GET on any failure; retried once. Returns (status:int|None, error).
         A None status means 'could not verify' (connection error/timeout — e.g. transient rate
         limiting during a request burst), NOT necessarily a broken link. Callers treat None as
-        UNVERIFIED, distinct from a real failing status code."""
+        UNVERIFIED, distinct from a real failing status code.
+
+        A HEAD failure is never trusted on its own. Plenty of hosts serve GET perfectly well
+        while refusing HEAD outright — addtoany.com answers HEAD with 403 and GET with 302,
+        which put 15 working share links on the Orders "broken external links" list. GET is
+        what a real visitor performs, so it is the only fair verdict. The extra request is
+        bounded: it only happens for links that already looked broken."""
         last_err = None
         for attempt in range(2):
             try:
                 r = self.session.head(url, timeout=self.timeout, allow_redirects=True)
-                if r.status_code == 405 or r.status_code >= 500:
+                if r.status_code in self.fail_codes or r.status_code >= 400:
                     r = self.session.get(url, timeout=self.timeout, allow_redirects=True, stream=True)
                     r.close()
                 return r.status_code, None
