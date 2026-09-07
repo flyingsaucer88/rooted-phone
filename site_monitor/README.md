@@ -137,7 +137,7 @@ best-effort. The daily job does not force the screen on.
 
 ```bash
 cd ~/site_monitor
-./schedule_daily.sh install     # adds "0 10 * * *" + starts crond for this session
+./schedule_daily.sh install     # adds "0 8 * * *" + starts crond for this session
 ./schedule_daily.sh show        # show crontab + crond status
 ./schedule_daily.sh remove      # disable the daily job
 ```

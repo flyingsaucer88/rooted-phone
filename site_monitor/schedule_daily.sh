@@ -12,7 +12,7 @@ set -euo pipefail
 HOME_DIR="/data/data/com.termux/files/home"
 WRAPPER="$HOME_DIR/site_monitor/run_daily.sh"
 CRON_LOG="$HOME_DIR/site_monitor_reports/cron.log"
-CRON_LINE="0 10 * * * $WRAPPER >> $CRON_LOG 2>&1"
+CRON_LINE="0 8 * * * $WRAPPER >> $CRON_LOG 2>&1"
 MARKER="# ambimat-site-monitor"
 
 cmd="${1:-show}"

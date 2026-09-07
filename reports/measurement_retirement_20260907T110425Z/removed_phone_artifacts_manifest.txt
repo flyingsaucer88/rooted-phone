@@ -1,0 +1,20 @@
+# Inert measurement artifacts removed from the phone on 2026-09-07 (owner decision).
+# sha256  size  mtime  original_phone_path
+
+ddd72c1700141441e7e92fe51b1dd13fbf9c3ab63e306edeafc17a4c05fe9ad8  995  2026-09-07 16:30:06  /data/data/com.termux/files/home/scheduled_measurements/LATEST.md
+e3b044ae58e94a86cfb3c12b1a22b7ad216d5e90fc90ebc565632a47938a88f0  2239  2026-09-07 16:30:06  /data/data/com.termux/files/home/scheduled_measurements/LATEST.json
+88c0d14395ccf02b83145ea3454653bf18961fc1a25986d58c68d5a8490958c2  861  2026-08-25 13:03:24  /data/data/com.termux/files/home/scheduled_measurements/_smoke/smoke_20260825T130324.json
+9f3bee386fbd4469a436b0951c3bad85eff9fc0f634e6d628af893ade751436d  861  2026-09-07 15:06:58  /data/data/com.termux/files/home/scheduled_measurements/_smoke/smoke_20260907T150658.json
+38fdd6981b01bd4203fe609cef933623462af42ca4aa07ac0bb4337748a1c6fc  481  2026-09-07 15:08:50  /data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/raw/preflight_auth.txt
+915e9b40d5b9eccad169d89887b16fb51817427ad0dfb8032ee07bf6fb76b5db  1383  2026-09-07 15:08:50  /data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/REPORT.md
+fd58ca62cd73e318f0365e402def2fbd0c6a0ed1bef91837cfb64d8d03654031  672  2026-09-07 15:08:51  /data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/result.json
+e63b449fe65b7cacf1998f0a42643e18bc6b6f8471ed0b2ae6ba3a24bda35992  249  2026-09-07 15:08:51  /data/data/com.termux/files/home/scheduled_measurements/v2x_seo_measurement_20260827/SHA256SUMS
+e0daee705a3fdff8fc8156c2085046541488004a718306a7b3ebaa30e8ff94b2  113  2026-09-07 15:08:54  /data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/raw/preflight_auth.txt
+6cf15d887cdb23ce545c4f1a020abfebb5fd142c3dd1114facc64a2b9feba7b8  1020  2026-09-07 15:08:54  /data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/REPORT.md
+64fdb79033fa156404e1be486555c578018bbae8bd46a5fb3caf53cb78d6f63f  678  2026-09-07 15:08:54  /data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/result.json
+1bddb69642d098c722fb57096c9584ba9ac9baf3ef24b57662cb2024e6af746f  249  2026-09-07 15:08:54  /data/data/com.termux/files/home/scheduled_measurements/ambisecure_gsc_7day_20260829/SHA256SUMS
+49098f93a6877073248f74fd87b97546c3a556232c78d7d8ab404cdfd146ff65  298  2026-09-07 15:08:58  /data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/raw/preflight_auth.txt
+df7d71d64761c746a46042f8ab6551aac73548a244ba334b815f40a76d80dfe9  1149  2026-09-07 15:08:58  /data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/REPORT.md
+b94349449aeae9c2fd7da20a60d67197c2f2364d456f584825eeef16d12ee74c  628  2026-09-07 15:08:59  /data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/result.json
+28a0a8b3c891d5364d96519a3a41456560515ac2a5a1b9528aa3928cc74ea21d  249  2026-09-07 15:08:59  /data/data/com.termux/files/home/scheduled_measurements/esim_phase3b4_20260901/SHA256SUMS
+654dbe389a0bbff59cd0d179cacf75fe3ca64736e478aa4802b7afa406fb8da4  247109  2026-09-07 16:30:05  /data/data/com.termux/files/home/ambimat_job_logs/measurement_queue.log

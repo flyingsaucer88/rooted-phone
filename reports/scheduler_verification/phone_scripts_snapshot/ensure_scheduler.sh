@@ -47,8 +47,8 @@ fi
 # 4. catch up due jobs — site (10:00) before SEO (11:00) so heavy runs stagger.
 SITE_RUNNER="${AMBIMAT_SITE_RUNNER_CMD:-$DIR/run_site_monitor_daily.sh}"
 SEO_RUNNER="${AMBIMAT_SEO_RUNNER_CMD:-$DIR/run_daily.sh}"
-amb_run_if_due site_monitor 1000 "$SITE_RUNNER" "$WLOG"
-amb_run_if_due seo          1100 "$SEO_RUNNER"  "$WLOG"
+amb_run_if_due site_monitor 0800 "$SITE_RUNNER" "$WLOG"
+amb_run_if_due seo          0900 "$SEO_RUNNER"  "$WLOG"
 
 # --- ambimat-cache-monitor: 12:00 catch-up (added 2026-07-31) ------------------
 #
@@ -75,7 +75,7 @@ if [ -x "$CACHE_RUNNER" ]; then
       bash "$CACHE_HOME/install_noon_job.sh" install >> "$WLOG" 2>&1
     fi
   fi
-  amb_run_if_due front_page_cache 1200 "$CACHE_RUNNER" "$WLOG"
+  amb_run_if_due front_page_cache 1000 "$CACHE_RUNNER" "$WLOG"
 else
   amb_log "$WLOG" "front_page_cache: runner not installed at $CACHE_RUNNER; skipping"
 fi

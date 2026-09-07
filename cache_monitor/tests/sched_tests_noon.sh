@@ -137,45 +137,45 @@ EOF
 chmod +x "$FAKE"
 
 : > "$STUB_CALLS"; rm -f "$MARKER"
-AMBIMAT_NOW_HM=1130 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true \
-  amb_run_if_due front_page_cache 1200 "$FAKE" t.log >/dev/null
-ok "reboot at 11:30 (before noon) -> NOT run" "[ $(calls) -eq 0 ]"
+AMBIMAT_NOW_HM=0930 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true \
+  amb_run_if_due front_page_cache 1000 "$FAKE" t.log >/dev/null
+ok "reboot at 09:30 (before 10:00) -> NOT run" "[ $(calls) -eq 0 ]"
 
 : > "$STUB_CALLS"; rm -f "$MARKER"
-AMBIMAT_NOW_HM=1230 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true \
-  amb_run_if_due front_page_cache 1200 "$FAKE" t.log >/dev/null
-ok "reboot at 12:30 with today unrun -> catch-up runs once" "[ $(calls) -eq 1 ]"
+AMBIMAT_NOW_HM=1030 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true \
+  amb_run_if_due front_page_cache 1000 "$FAKE" t.log >/dev/null
+ok "reboot at 10:30 with today unrun -> catch-up runs once" "[ $(calls) -eq 1 ]"
 
 : > "$STUB_CALLS"
 AMBIMAT_NOW_DATE=2026-08-01 amb_set_marker front_page_cache
-for hm in 1230 1300 1800 2330; do
+for hm in 1030 1100 1800 2330; do
   AMBIMAT_NOW_HM=$hm AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true \
-    amb_run_if_due front_page_cache 1200 "$FAKE" t.log >/dev/null
+    amb_run_if_due front_page_cache 1000 "$FAKE" t.log >/dev/null
 done
 ok "repeated watchdog ticks after success -> no re-inspection" "[ $(calls) -eq 0 ]"
 
 : > "$STUB_CALLS"; echo "2026-07-28" > "$MARKER"     # phone was off for several days
 AMBIMAT_NOW_HM=1400 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true \
-  amb_run_if_due front_page_cache 1200 "$FAKE" t.log >/dev/null
+  amb_run_if_due front_page_cache 1000 "$FAKE" t.log >/dev/null
 ok "three missed days -> runs exactly ONCE for today" "[ $(calls) -eq 1 ]"
 ok "three missed days -> no replay of historical dates" "[ $(calls) -eq 1 ]"
 
 : > "$STUB_CALLS"; rm -f "$MARKER"
-AMBIMAT_NOW_HM=1230 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=false \
-  amb_run_if_due front_page_cache 1200 "$FAKE" t.log >/dev/null
+AMBIMAT_NOW_HM=1030 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=false \
+  amb_run_if_due front_page_cache 1000 "$FAKE" t.log >/dev/null
 ok "catch-up while offline -> deferred, no marker" "[ $(calls) -eq 0 ] && [ ! -f $MARKER ]"
 
 : > "$STUB_CALLS"; rm -f "$MARKER"
-AMBIMAT_NOW_HM=1230 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true AMBIMAT_DRYRUN=1 \
-  amb_run_if_due front_page_cache 1200 "$FAKE" t.log >/dev/null
+AMBIMAT_NOW_HM=1030 AMBIMAT_NOW_DATE=2026-08-01 AMBIMAT_NET_CMD=true AMBIMAT_DRYRUN=1 \
+  amb_run_if_due front_page_cache 1000 "$FAKE" t.log >/dev/null
 ok "dry-run -> nothing executed" "[ $(calls) -eq 0 ]"
 
 echo "=== H. timezone is explicitly Asia/Kolkata ==="
 ok "lib exports TZ=Asia/Kolkata" "[ \"\$TZ\" = 'Asia/Kolkata' ]"
 ok "marker date uses IST, not UTC" "[ \"\$(TZ=Asia/Kolkata date +%Y-%m-%d)\" = \"\$(amb_now_date)\" ]"
 ok "runner pins TZ before any date use" "grep -q 'TZ:=Asia/Kolkata' $RUNNER"
-ok "cron line is 0 12 (noon)" "grep -q '0 12 \* \* \*' $CM/install_noon_job.sh"
-ok "catch-up due time is 1200" "grep -q 'front_page_cache 1200' $CM/ensure_scheduler_noon_block.sh"
+ok "cron line is 0 10" "grep -q '0 10 \* \* \*' $CM/install_noon_job.sh"
+ok "catch-up due time is 1000 (08:00/09:00/10:00 schedule)" "grep -q 'front_page_cache 1000' $CM/ensure_scheduler_noon_block.sh"
 
 echo "=== I. no live-site side effects from this harness ==="
 ok "no HTTP client in the runner" "! grep -qE '(^|[^_a-z])(curl|wget)' $RUNNER"

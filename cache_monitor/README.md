@@ -130,8 +130,8 @@ authenticate headers are dropped before anything is recorded.
 ## Catch-up, locking and retries
 
 * **Catch-up** — `ensure_scheduler.sh` (cron `*/30` and Termux:Boot) calls
-  `amb_run_if_due front_page_cache 1200 …`. After a reboot at any time past 12:00 with
-  today's inspection unrun, it runs **once**. Before 12:00 it does not run. If the phone
+  `amb_run_if_due front_page_cache 1000 …`. After a reboot at any time past 10:00 with
+  today's inspection unrun, it runs **once**. Before 10:00 it does not run. If the phone
   was off for days it runs once for the current day and never replays historical dates.
   The catch-up run carries exactly the same read-only restrictions as the scheduled run.
 * **Locking** — its own `cache_monitor_run` lock (non-blocking, stale/dead-owner reclaim);

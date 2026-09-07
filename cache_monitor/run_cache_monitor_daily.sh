@@ -1,15 +1,15 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# 12:00 IST ambimat.com front-page cache inspection — INSPECT AND REPORT ONLY.
+# 10:00 IST ambimat.com front-page cache inspection — INSPECT AND REPORT ONLY.
 #
-# Invoked by the 12:00 cron line (# ambimat-cache-monitor) and by the existing
+# Invoked by the 10:00 cron line (# ambimat-cache-monitor) and by the existing
 # scheduler watchdog / Termux:Boot catch-up path. It observes; it never repairs.
 # There is no flag, environment variable or code path in this file or in
 # front_page_cache_monitor.py that changes anything on the server.
 #
-# Behaviour, matching the conventions already used by the 10:00 and 11:00 jobs:
+# Behaviour, matching the conventions already used by the 08:00 and 09:00 jobs:
 #   - defers (exit 0, no marker) when the network is down, so the watchdog retries
-#   - defers (exit 0, no marker) while the 10:00 or 11:00 job still holds its lock
-#   - takes its own dedicated non-blocking lock so two noon inspections cannot overlap
+#   - defers (exit 0, no marker) while the 08:00 or 09:00 job still holds its lock
+#   - takes its own dedicated non-blocking lock so two inspections cannot overlap
 #   - skips when today's inspection already completed (Asia/Kolkata date marker)
 #   - writes the success marker for any CONCLUSIVE inspection, including a stale ALERT:
 #     a stale finding is a completed inspection, not a failed scheduling run
@@ -23,7 +23,7 @@ export PATH="$PREFIX/bin:$PREFIX/bin/applets:${PATH}:/system/bin:/system/xbin"
 export LANG="${LANG:-en_US.UTF-8}"
 
 JOB="front_page_cache"
-DUE_HM="1200"
+DUE_HM="1000"   # 10:00 IST (was 12:00 until 2026-09-07)
 
 SELF_DIR="$(cd "$(dirname "$0")" && pwd)"
 : "${AMBIMAT_HOME:=/data/data/com.termux/files/home}"
@@ -91,7 +91,7 @@ if ! amb_network_ready; then
   exit 0
 fi
 
-# --- 3. global maintenance lock: never collide with the 10:00 / 11:00 work --
+# --- 3. global maintenance lock: never collide with the 08:00 / 09:00 work --
 MAINT="clear"
 for other in site_run seo_run; do
   d="$AMBIMAT_LOGDIR/.${other}.lock"

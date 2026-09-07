@@ -116,6 +116,20 @@ def main():
     st, _ = _crawler(s)._status_only("https://example.com/no-head")
     failures += check("HEAD 405 + GET 200 reports 200", st, 200)
 
+    # The fallback must not become a blanket amnesty: a host that refuses HEAD and
+    # then 404s the GET is genuinely dead, and GET is the answer that counts.
+    s = FakeSession(403, 404)
+    st, _ = _crawler(s)._status_only("https://example.com/blocked-then-gone")
+    failures += check("HEAD 403 + GET 404 reports 404, not 403", st, 404)
+    failures += check("  and 404 is classified broken, not unverified",
+                      _classify_external(404), "broken")
+
+    # Same shape for a server error behind a HEAD refusal.
+    s = FakeSession(403, 503)
+    st, _ = _crawler(s)._status_only("https://example.com/blocked-then-down")
+    failures += check("HEAD 403 + GET 503 reports 503", st, 503)
+    failures += check("  and 503 is classified broken", _classify_external(503), "broken")
+
     # A third party refusing bots is not a broken link; a dead page still is.
     failures += check("external 403 -> unverified, not broken", _classify_external(403), "unverified")
     failures += check("external 401 -> unverified", _classify_external(401), "unverified")
@@ -125,7 +139,7 @@ def main():
     failures += check("external 503 -> still broken", _classify_external(503), "broken")
     failures += check("external 200 -> ok", _classify_external(200), "ok")
 
-    print("\n%d passed, %d failed" % (14 - failures, failures))
+    print("\n%d passed, %d failed" % (18 - failures, failures))
     return 1 if failures else 0
 
 

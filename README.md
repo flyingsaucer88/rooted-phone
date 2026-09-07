@@ -16,11 +16,11 @@ Three jobs run on the phone every day:
 
 | Time (Asia/Kolkata) | Job | What it does |
 |---|---|---|
-| **10:00 AM** | **Site monitor** (this repo, `site_monitor/`) | Crawls every eligible internal page of each production site and flags non-live pages, broken links, redirects, HTTP/TLS/DNS failures, and public-page compromise indicators. |
-| **11:00 AM** | **SEO tracker** (phone-resident, `~/seo_tracker/phone/` — see note) | Runs the SEO health workflow for the same sites. |
-| **12:00 PM** | **Front-page cache monitor** (this repo, `cache_monitor/`) | **Inspect and report only.** Makes one ordinary public request to `https://ambimat.com/`, classifies whether the cached front page looks current, stale, inconsistent, unavailable or unverifiable, records evidence, and alerts. |
+| **08:00 AM** | **Site monitor** (this repo, `site_monitor/`) | Crawls every eligible internal page of each production site and flags non-live pages, broken links, redirects, HTTP/TLS/DNS failures, and public-page compromise indicators. |
+| **09:00 AM** | **SEO tracker** (phone-resident, `~/seo_tracker/phone/` — see note) | Runs the SEO health workflow for the same sites. |
+| **10:00 AM** | **Front-page cache monitor** (this repo, `cache_monitor/`) | **Inspect and report only.** Makes one ordinary public request to `https://ambimat.com/`, classifies whether the cached front page looks current, stale, inconsistent, unavailable or unverifiable, records evidence, and alerts. |
 
-> ⚠️ **The 12:00 job never repairs the site.** It has no purge, flush, invalidate, warm,
+> ⚠️ **The 10:00 cache job never repairs the site.** It has no purge, flush, invalidate, warm,
 > rebuild, cron-run, database-write or WordPress-write path — not even a disabled one. A
 > stale finding produces an alert and evidence, and stops there. Full boundary, runbook and
 > post-alert procedure: [cache_monitor/README.md](cache_monitor/README.md).
@@ -75,16 +75,16 @@ silently skip a day.
 │   ├── render_report.py          # JSON -> Markdown/HTML renderer + viewer
 │   ├── run_once.sh               # run one crawl now (foreground)
 │   ├── run_daily.sh              # per-site orchestrator (one process per site) + notify
-│   ├── schedule_daily.sh         # install/show/remove the simple 10:00 cron line
+│   ├── schedule_daily.sh         # install/show/remove the simple 08:00 cron line
 │   ├── show_latest_report.sh     # open/print the latest report on the phone
 │   ├── requirements.txt          # requests, beautifulsoup4, PyYAML
 │   ├── keywords/*.txt            # editable spam / suspicious-pattern keyword lists
 │   └── reports/.gitkeep          # placeholder; live reports go to ~/site_monitor_reports
-├── cache_monitor/                # the 12:00 front-page cache monitor (READ-ONLY, runnable)
+├── cache_monitor/                # the 10:00 front-page cache monitor (READ-ONLY, runnable)
 │   ├── README.md                 # runbook: boundary, states, catch-up, post-alert procedure
 │   ├── front_page_cache_monitor.py       # the inspection engine (stdlib only)
 │   ├── run_cache_monitor_daily.sh        # phone wrapper: locks, marker, notify, evidence
-│   ├── install_noon_job.sh               # install/show/remove ONLY the 12:00 cron line
+│   ├── install_noon_job.sh               # install/show/remove ONLY the 10:00 cron line (name is historic)
 │   ├── ensure_scheduler_noon_block.sh    # versioned copy of the watchdog catch-up edit
 │   ├── config/expected_metadata.json     # governed vs known-obsolete front-page metadata
 │   ├── config/server_inspection.example.json  # optional read-only server access (off by default)
@@ -172,7 +172,7 @@ Useful flags: `--max-pages N`, `--global-timeout SEC`, `--site-timeout SEC`, `--
 The SEO tracker is device-resident under `~/seo_tracker/phone/` (not in this repo). On the phone:
 
 ```bash
-bash ~/seo_tracker/phone/run_daily.sh          # run the SEO workflow now (the 11:00 job entry point)
+bash ~/seo_tracker/phone/run_daily.sh          # run the SEO workflow now (the 09:00 job entry point)
 ```
 
 It covers the **same 9 domains** as the site monitor. Its domain list lives on the device at
@@ -184,20 +184,20 @@ is committed at
 ## Schedules (Asia/Kolkata)
 
 Installed as four Termux `cron` lines — three via `~/seo_tracker/phone/schedule_daily.sh install`
-**[phone-side]**, and the noon line via [cache_monitor/install_noon_job.sh](cache_monitor/install_noon_job.sh):
+**[phone-side]**, and the cache-monitor line via [cache_monitor/install_noon_job.sh](cache_monitor/install_noon_job.sh):
 
 ```
-0 10 * * *   run_site_monitor_daily.sh     # 10:00 — site monitor          # ambimat-site-monitor
-0 11 * * *   run_daily.sh                  # 11:00 — SEO tracker           # ambimat-seo-tracker
+0 8  * * *   run_site_monitor_daily.sh     # 08:00 — site monitor          # ambimat-site-monitor
+0 9  * * *   run_daily.sh                  # 09:00 — SEO tracker           # ambimat-seo-tracker
 */30 * * * * ensure_scheduler.sh           # every 30 min — watchdog       # ambimat-scheduler-watchdog
-0 12 * * *   run_cache_monitor_daily.sh    # 12:00 — cache monitor (RO)    # ambimat-cache-monitor
+0 10 * * *   run_cache_monitor_daily.sh    # 10:00 — cache monitor (RO)    # ambimat-cache-monitor
 ```
 
 Each installer strips and rewrites only its own marker-tagged lines, so the two are independent:
-removing the noon job leaves the other three untouched, and vice versa.
+removing the cache job leaves the other three untouched, and vice versa.
 
 The in-repo [site_monitor/schedule_daily.sh](site_monitor/schedule_daily.sh) is a **simpler,
-single-job** installer (the 10:00 site-monitor line only) and does not set up boot persistence — it
+single-job** installer (the 08:00 site-monitor line only) and does not set up boot persistence — it
 predates the phone-side two-job scheduler. On the device, the phone-side installer is authoritative.
 
 ## Restart / catch-up behaviour (phone powered off during a scheduled run)
@@ -221,8 +221,8 @@ Implemented by the phone-side scheduler (`~/seo_tracker/phone/lib_common.sh` + `
 
 18/18 controlled scenario tests for these behaviours pass — harness:
 [reports/scheduler_verification/sched_tests.sh](reports/scheduler_verification/sched_tests.sh).
-The 12:00 cache monitor adds 39 more scheduling scenarios (its own lock, respecting the 10:00/11:00
-locks, same-day duplicate suppression, post-noon reboot catch-up, multiple missed days, IST
+The 10:00 cache monitor adds 39 more scheduling scenarios (its own lock, respecting the 08:00/09:00
+locks, same-day duplicate suppression, post-10:00 reboot catch-up, multiple missed days, IST
 handling) — harness: [cache_monitor/tests/sched_tests_noon.sh](cache_monitor/tests/sched_tests_noon.sh).
 
 ## Manual run, validation & troubleshooting
@@ -256,7 +256,7 @@ handling) — harness: [cache_monitor/tests/sched_tests_noon.sh](cache_monitor/t
   retry history, scheduler evidence, server evidence, and a self-excluding `EVIDENCE.sha256`.
 - **Committed evidence (repo):** `reports/scheduler_verification/`,
   `reports/full_coverage_crawl_20260727/COVERAGE_SUMMARY.md`, and
-  `reports/cache_monitor_canary_20260731/` (the single live read-only canary of the noon job).
+  `reports/cache_monitor_canary_20260731/` (the single live read-only canary of the cache job).
   Raw crawl dumps and raw telemetry are gitignored by design (keep large/regenerable/sensitive runs
   out of git).
 
@@ -274,7 +274,7 @@ handling) — harness: [cache_monitor/tests/sched_tests_noon.sh](cache_monitor/t
   sensor/battery/Wi-Fi telemetry needs the Termux:API app (installed). No NFC/compass/barometer.
 - **Connectivity.** The phone is on a guest/client-isolated Wi-Fi, so the Mac reaches it over the
   **USB** ADB→SSH bridge (port 8022), not LAN SSH.
-- **Battery.** Keep the phone on the charger during the 10:00–11:00 window; heavy Doze on Android 7
+- **Battery.** Keep the phone on the charger during the 08:00–10:00 window; heavy Doze on Android 7
   can otherwise delay wake-ups even with the battery whitelist and held wake-lock.
 - **Manual setup still required** for the phone-side pieces (Termux:Boot app, `~/seo_tracker/phone/`
   SEO tracker + scheduler, battery whitelist) — these are not provisioned by this repo.
