@@ -159,6 +159,11 @@ def term_in_text(term, text_lower):
     return t in text_lower
 
 
+# Statuses that mean "this third party refuses automated clients", not "this link is dead".
+# Only ever applied to EXTERNAL links: an internal 401/403 is a real finding about our site.
+EXTERNAL_BLOCKING_CODES = {401, 403, 429}
+
+
 class SiteCrawler:
     def __init__(self, site, crawl_cfg, alerts_cfg, sec_headers, keywords, prev_titles, verbose=False):
         self.name = site["name"]
@@ -584,6 +589,16 @@ class SiteCrawler:
             rec = {"url": u, "status": st, "found_on": self.link_sources.get(u)}
             if st is None:
                 rec["error"] = err
+                unverified_external.append(rec)
+            elif st in EXTERNAL_BLOCKING_CODES:
+                # A third party refusing an automated client is not a broken link, and it is
+                # not something this site can fix. cisa.gov answers our crawler with 403 and
+                # a browser with 200; gsma.com, centralbank.ae and slack.com refuse every
+                # non-browser client. Reporting those as "broken" buried the one link that
+                # genuinely was (an NXP page returning a real 404) under five that were not.
+                # 404/410/5xx stay broken: those ARE actionable dead outbound links.
+                rec["error"] = f"external host refused an automated request (HTTP {st})"
+                rec["classification"] = "external-blocking"
                 unverified_external.append(rec)
             elif st in self.fail_codes:
                 broken_external.append(rec)

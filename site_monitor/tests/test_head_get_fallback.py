@@ -75,6 +75,17 @@ def check(name, got, want):
     return 1
 
 
+def _classify_external(status):
+    """Mirror of the external-link branch in check_links()."""
+    import run_site_monitor
+    fail_codes = {400, 401, 403, 404, 410, 429, 500, 502, 503, 504}
+    if status in run_site_monitor.EXTERNAL_BLOCKING_CODES:
+        return "unverified"
+    if status in fail_codes:
+        return "broken"
+    return "ok"
+
+
 def main():
     failures = 0
 
@@ -105,7 +116,16 @@ def main():
     st, _ = _crawler(s)._status_only("https://example.com/no-head")
     failures += check("HEAD 405 + GET 200 reports 200", st, 200)
 
-    print("\n%d passed, %d failed" % (7 - failures, failures))
+    # A third party refusing bots is not a broken link; a dead page still is.
+    failures += check("external 403 -> unverified, not broken", _classify_external(403), "unverified")
+    failures += check("external 401 -> unverified", _classify_external(401), "unverified")
+    failures += check("external 429 -> unverified", _classify_external(429), "unverified")
+    failures += check("external 404 -> still broken", _classify_external(404), "broken")
+    failures += check("external 410 -> still broken", _classify_external(410), "broken")
+    failures += check("external 503 -> still broken", _classify_external(503), "broken")
+    failures += check("external 200 -> ok", _classify_external(200), "ok")
+
+    print("\n%d passed, %d failed" % (14 - failures, failures))
     return 1 if failures else 0
 
 
