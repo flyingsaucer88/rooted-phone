@@ -492,13 +492,13 @@ class TestEvidence(unittest.TestCase):
 # 6. Timezone / next-run arithmetic (Asia/Kolkata)
 # ---------------------------------------------------------------------------
 class TestTimezone(unittest.TestCase):
-    def test_next_noon_before_noon_is_today(self):
+    def test_next_run_before_due_is_today(self):
         t = datetime.datetime(2026, 8, 1, 3, 0, tzinfo=m.UTC)  # 08:30 IST
-        self.assertEqual(m._next_noon_ist(t), "2026-08-01 12:00 IST")
+        self.assertEqual(m._next_run_ist(t), "2026-08-01 10:00 IST")
 
-    def test_next_noon_after_noon_is_tomorrow(self):
+    def test_next_run_after_due_is_tomorrow(self):
         t = datetime.datetime(2026, 8, 1, 9, 0, tzinfo=m.UTC)  # 14:30 IST
-        self.assertEqual(m._next_noon_ist(t), "2026-08-02 12:00 IST")
+        self.assertEqual(m._next_run_ist(t), "2026-08-02 10:00 IST")
 
     def test_ist_offset_is_plus_0530(self):
         t = datetime.datetime(2026, 8, 1, 6, 30, tzinfo=m.UTC)

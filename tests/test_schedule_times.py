@@ -27,6 +27,9 @@ EXPECTED = [
      [(r"amb_run_if_due front_page_cache 1000", "watchdog catch-up block uses 1000")]),
     ("site_monitor/schedule_daily.sh",
      [(r'^CRON_LINE="0 8 \* \* \*', "site monitor cron line is 0 8")]),
+    ("cache_monitor/front_page_cache_monitor.py",
+     [(r"^SCHEDULED_HOUR_IST = 10$", "engine's scheduled hour constant is 10"),
+      (r'^SCHEDULED_TIME_IST = "10:00"$', "engine's scheduled time constant is 10:00")]),
     ("reports/scheduler_verification/phone_scripts_snapshot/ensure_scheduler.sh",
      [(r"amb_run_if_due site_monitor 0800", "watchdog: site monitor at 0800"),
       (r"amb_run_if_due seo\s+0900", "watchdog: SEO at 0900"),
@@ -41,6 +44,8 @@ STALE = [
     (r'DUE_HM="1200"', "cache monitor DUE_HM still 1200"),
     (r'CRON_LINE="0 12 \* \* \*', "cache cron line still 0 12"),
     (r'CRON_LINE="0 10 \* \* \* \$WRAPPER', "site monitor cron line still 0 10"),
+    (r'_next_noon_ist', "engine still uses the _next_noon_ist helper"),
+    (r'"scheduled_time_ist": "12:00"', "engine still reports a 12:00 scheduled time"),
 ]
 OPERATIONAL_DIRS = ["site_monitor", "cache_monitor", "scripts", "tests",
                     "reports/scheduler_verification/phone_scripts_snapshot"]

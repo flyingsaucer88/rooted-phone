@@ -957,26 +957,33 @@ def build_result(cfg: dict, args, obs, retries, started, marker_before) -> dict:
         "server": server,
         "retry_history": retries,
         "scheduler": {
-            "scheduled_time_ist": "12:00",
+            "scheduled_time_ist": SCHEDULED_TIME_IST,
             "run_kind": args.run_kind,
             "started": stamp(started),
             "finished": stamp(finished),
             "lock_result": args.lock_result,
             "maintenance_lock": args.maintenance_lock,
             "marker_date_before": marker_before,
-            "next_scheduled_ist": _next_noon_ist(finished),
+            "next_scheduled_ist": _next_run_ist(finished),
         },
         "evidence_dir": args.evidence_dir,
     }
     return result, meta
 
 
-def _next_noon_ist(from_dt: _dt.datetime) -> str:
+# The one place the cache monitor's scheduled time is written down. Moved from
+# 12:00 to 10:00 IST on 2026-09-07 with the rest of the daily schedule; the cron
+# line and the watchdog due time (DUE_HM in run_cache_monitor_daily.sh) must agree.
+SCHEDULED_HOUR_IST = 10
+SCHEDULED_TIME_IST = "10:00"
+
+
+def _next_run_ist(from_dt: _dt.datetime) -> str:
     local = from_dt.astimezone(IST)
-    noon = local.replace(hour=12, minute=0, second=0, microsecond=0)
-    if local >= noon:
-        noon += _dt.timedelta(days=1)
-    return noon.strftime("%Y-%m-%d 12:00 IST")
+    due = local.replace(hour=SCHEDULED_HOUR_IST, minute=0, second=0, microsecond=0)
+    if local >= due:
+        due += _dt.timedelta(days=1)
+    return due.strftime("%Y-%m-%d ") + SCHEDULED_TIME_IST + " IST"
 
 
 def main(argv=None) -> int:
@@ -1020,11 +1027,11 @@ def main(argv=None) -> int:
             "server_inspection_state": "unavailable",
             "public": {}, "server": {},
             "scheduler": {
-                "scheduled_time_ist": "12:00", "run_kind": args.run_kind,
+                "scheduled_time_ist": SCHEDULED_TIME_IST, "run_kind": args.run_kind,
                 "started": stamp(started), "finished": stamp(finished),
                 "lock_result": args.lock_result, "maintenance_lock": args.maintenance_lock,
                 "marker_date_before": args.marker_date_before,
-                "next_scheduled_ist": _next_noon_ist(finished),
+                "next_scheduled_ist": _next_run_ist(finished),
             },
             "evidence_dir": args.evidence_dir,
         }
