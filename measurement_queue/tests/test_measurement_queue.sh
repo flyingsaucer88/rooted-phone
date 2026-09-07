@@ -15,6 +15,10 @@ setup() {
   TMP="$(mktemp -d)"; export AMBIMAT_LOGDIR="$TMP/logs" AMBIMAT_HOME="$TMP/home"
   export MQ_STATE_DIR="$TMP/state" MQ_EVIDENCE_ROOT="$TMP/ev" MQ_DIR="$DIR"
   export MQ_QUEUE_FILE="$DIR/queue.tsv" MQ_PROMPT_DIR="$DIR/prompts" MQ_LOG="$TMP/mq.log"
+  # Never read the owner's real credentials: point the preflight at an empty dir.
+  export AMBIMAT_MEASURE_CREDS="$TMP/creds"; mkdir -p "$AMBIMAT_MEASURE_CREDS"
+  # Tests must not post Android notifications (they would overwrite the live banner).
+  export MQ_NOTIFY_DISABLE=1
   # Pin the executor empty so no test can ever dispatch the real API backend.
   export MQ_EXECUTOR_CMD=""
   mkdir -p "$AMBIMAT_LOGDIR" "$MQ_STATE_DIR" "$MQ_EVIDENCE_ROOT"
@@ -147,20 +151,20 @@ esac
 teardown
 
 echo "== 11. Watchdog block is REACHABLE (regression: it must precede 'exit 0') =="
-ES="${AMBIMAT_ENSURE_SCHEDULER:-/data/data/com.termux/files/home/seo_tracker/phone/ensure_scheduler.sh}"
-if [ -f "$ES" ]; then
-  blk="$(grep -n 'ambimat-measurement-queue' "$ES" | head -1 | cut -d: -f1)"
-  ext="$(grep -n '^exit 0' "$ES" | tail -1 | cut -d: -f1)"
+ESH="${AMBIMAT_ENSURE_SCHEDULER:-/data/data/com.termux/files/home/seo_tracker/phone/ensure_scheduler.sh}"
+if [ -f "$ESH" ]; then
+  blk="$(grep -n 'ambimat-measurement-queue' "$ESH" | head -1 | cut -d: -f1)"
+  ext="$(grep -n '^exit 0' "$ESH" | tail -1 | cut -d: -f1)"
   if [ -n "$blk" ] && [ -n "$ext" ] && [ "$blk" -lt "$ext" ]; then
     ok "queue block at line $blk precedes final 'exit 0' at line $ext"
   else
     bad "watchdog reachability" "block=$blk exit0=$ext — block would be dead code"
   fi
-  bash -n "$ES" && ok "ensure_scheduler.sh still parses" || bad "ensure_scheduler syntax" ""
+  bash -n "$ESH" && ok "ensure_scheduler.sh still parses" || bad "ensure_scheduler syntax" ""
   for j in run_site_monitor_daily run_daily; do
-    grep -q "$j" "$ES" && ok "daily job '$j' still wired in" || bad "daily job preserved" "$j missing"
+    grep -q "$j" "$ESH" && ok "daily job '$j' still wired in" || bad "daily job preserved" "$j missing"
   done
-  grep -q "front_page_cache" "$ES" && ok "12:00 cache-monitor block still wired in" || bad "cache job preserved" ""
+  grep -q "front_page_cache" "$ESH" && ok "12:00 cache-monitor block still wired in" || bad "cache job preserved" ""
 else
   ok "ensure_scheduler.sh not present on this host — reachability check skipped"
 fi
@@ -171,8 +175,14 @@ export MQ_NOW_EPOCH="$(E "2026-08-27 01:30:00")"
 bash "$DIR/run_measurement_queue.sh" >/dev/null 2>&1
 st="$(mq_get "$V2X" status)"; vd="$(mq_get "$V2X" verdict)"
 [ "$st" = "blocked" ] && ok "V2X recorded status=blocked" || bad "blocked path" "status=$st"
-case "$vd" in *"AUTHENTICATED DATA SOURCE UNAVAILABLE"*) ok "verdict is the required BLOCKED string";;
-  *) bad "blocked verdict" "got '$vd'";; esac
+# REGRESSION (2026-09-07): every blocker used to be reported as an authentication
+# failure. V2X is blocked by a missing PROMPT, and must say so — mislabelling it
+# sent the owner hunting for credentials that were never the cause.
+case "$vd" in *"SOURCE PROMPT NOT INSTALLED"*) ok "missing-prompt blocker names the prompt, not auth";;
+  *) bad "blocked verdict" "expected SOURCE PROMPT NOT INSTALLED, got '$vd'";; esac
+case "$vd" in *"AUTHENTICATED DATA SOURCE UNAVAILABLE"*)
+    bad "verdict mislabelling" "missing prompt reported as an authentication failure";;
+  *) ok "missing-prompt blocker is NOT labelled an auth failure";; esac
 ev="$(mq_get "$V2X" evidence_dir)"
 [ -f "$ev/REPORT.md" ] && ok "BLOCKED evidence report written" || bad "evidence" "no REPORT.md at $ev"
 [ -f "$ev/SHA256SUMS" ] && ok "evidence checksums written" || bad "evidence" "no SHA256SUMS"
@@ -181,6 +191,27 @@ if python -c "import json,sys;d=json.load(open(sys.argv[1]));sys.exit(0 if d['da
 else bad "mutation proof" "result.json missing or non-zero mutations"; fi
 # a blocked run must NOT be marked completed (it must stay retryable)
 [ "$(mq_get "$V2X" status)" != "completed" ] && ok "blocked run stays retryable (not marked completed)" || bad "blocked" "marked completed"
+teardown
+
+echo "== 12b. A genuine credential blocker IS labelled an auth failure =="
+setup
+# eSIM's prompt IS installed, so the only remaining blocker is the empty cred dir.
+export MQ_NOW_EPOCH="$(E "2026-09-01 01:30:00")"
+bash "$DIR/run_measurement_queue.sh" >/dev/null 2>&1
+vd="$(mq_get "$ES" verdict)"
+case "$vd" in *"AUTHENTICATED DATA SOURCE UNAVAILABLE"*) ok "missing credentials -> auth verdict";;
+  *) bad "auth verdict" "expected AUTHENTICATED DATA SOURCE UNAVAILABLE, got '$vd'";; esac
+# The log line must not stutter "BLOCKED — BLOCKED —".
+if grep -q "BLOCKED — BLOCKED" "$MQ_LOG" 2>/dev/null; then
+  bad "log prefix" "log line double-prefixes 'BLOCKED —'"
+else ok "log line carries exactly one BLOCKED prefix"; fi
+# state, evidence report and result.json must all agree on the verdict.
+ev="$(mq_get "$ES" evidence_dir)"
+if grep -q "AUTHENTICATED DATA SOURCE UNAVAILABLE" "$ev/REPORT.md" 2>/dev/null &&
+   grep -q "AUTHENTICATED DATA SOURCE UNAVAILABLE" "$ev/result.json" 2>/dev/null; then
+  ok "state, REPORT.md and result.json agree on the verdict"
+else bad "verdict consistency" "evidence disagrees with state for $ev"; fi
+[ "$(mq_get "$ES" status)" != "completed" ] && ok "auth-blocked run stays retryable" || bad "blocked" "marked completed"
 teardown
 
 echo "== 13. Standalone API layer: read-only by construction =="

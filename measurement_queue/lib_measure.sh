@@ -92,6 +92,9 @@ mq_evidence_dir() {  # deterministic per run_id
 }
 
 mq_notify() {  # mq_notify <id-suffix> <title> <content>   (§21 — detached, never holds stdout)
+  # The test harness must never post a real notification: a scenario test once
+  # overwrote the live phone banner with a temp-dir path from a fake clock.
+  [ "${MQ_NOTIFY_DISABLE:-0}" = "1" ] && return 0
   command -v termux-notification >/dev/null 2>&1 || return 0
   termux-notification --id "ambimat_measure_$1" --title "$2" --content "$3" \
     >/dev/null 2>&1 </dev/null || true

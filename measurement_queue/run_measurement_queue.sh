@@ -32,8 +32,8 @@ if mq_is_blackout; then
   exit 0
 fi
 
-write_blocked_evidence() {  # <run_id> <label> <prompt_path> <reason> <preflight_out>
-  local id="$1" label="$2" prompt="$3" reason="$4" pre="$5"
+write_blocked_evidence() {  # <run_id> <label> <prompt_path> <reason> <preflight_out> <verdict>
+  local id="$1" label="$2" prompt="$3" reason="$4" pre="$5" verdict="$6"
   local ev; ev="$(mq_evidence_dir "$id")"; mkdir -p "$ev/raw" 2>/dev/null
   local now_ist; now_ist="$(TZ=Asia/Kolkata date -d "@$(mq_now_epoch)" '+%FT%T%z')"
   local intended; intended="$(mq_get "$id" intended_ist)"
@@ -43,6 +43,7 @@ write_blocked_evidence() {  # <run_id> <label> <prompt_path> <reason> <preflight
     echo "| Field | Value |"; echo "| --- | --- |"
     echo "| run_id | \`$id\` |"
     echo "| status | **BLOCKED** |"
+    echo "| verdict | $verdict |"
     echo "| intended (IST) | $intended |"
     echo "| actual (IST) | $now_ist |"
     echo "| device | $(getprop ro.product.model 2>/dev/null) $(getprop ro.serialno 2>/dev/null) |"
@@ -58,11 +59,10 @@ write_blocked_evidence() {  # <run_id> <label> <prompt_path> <reason> <preflight
     echo; echo "No measurement data was collected, inferred or fabricated."
   } > "$ev/REPORT.md"
   printf '%s\n' "$pre" > "$ev/raw/preflight_auth.txt"
-  python - "$ev" "$id" "$label" "$now_ist" "$intended" "$reason" "$psha" <<'PY' 2>/dev/null
+  python - "$ev" "$id" "$label" "$now_ist" "$intended" "$reason" "$psha" "$verdict" <<'PY' 2>/dev/null
 import json,sys
-ev,rid,label,now,intended,reason,psha = sys.argv[1:8]
-json.dump({"run_id":rid,"label":label,"status":"BLOCKED","verdict":
-           "BLOCKED — AUTHENTICATED DATA SOURCE UNAVAILABLE",
+ev,rid,label,now,intended,reason,psha,verdict = sys.argv[1:9]
+json.dump({"run_id":rid,"label":label,"status":"BLOCKED","verdict":verdict,
            "intended_ist":intended,"actual_ist":now,"timezone":"Asia/Kolkata",
            "blocker":reason,"prompt_sha256":psha,
            "mutations":{"production":0,"ga4":0,"gsc":0,"bing":0,"outreach":0,"indexing_requests":0},
@@ -94,22 +94,28 @@ while IFS=$'\t' read -r id due dep prompt_file label sources; do
   pre="$(bash "$DIR/preflight_auth.sh" "$sources" 2>&1)"; pre_rc=$?
   executor="$(mq_get "$id" executor "${MQ_EXECUTOR_CMD:-}")"
 
-  reason=""
-  [ ! -f "$prompt_path" ] && reason="Source prompt not installed at \`$prompt_path\`. The immutable copy was never supplied, so there is nothing authoritative to execute."
-  if [ -z "$reason" ] && [ "$pre_rc" -ne 0 ]; then
-    reason="BLOCKED — AUTHENTICATED DATA SOURCE UNAVAILABLE. One or more required sources ($sources) cannot be reached unattended from this device."
-  fi
-  if [ -z "$reason" ] && [ -z "$executor" ]; then
+  # Each blocker reports its OWN cause. A missing prompt or a missing executor is
+  # NOT an authentication failure, and must never be labelled as one — that sent
+  # the owner hunting for expired credentials that were never the problem.
+  reason=""; verdict=""
+  if [ ! -f "$prompt_path" ]; then
+    verdict="BLOCKED — SOURCE PROMPT NOT INSTALLED"
+    reason="Source prompt not installed at \`$prompt_path\`. The immutable copy was never supplied, so there is nothing authoritative to execute."
+  elif [ "$pre_rc" -ne 0 ]; then
+    verdict="BLOCKED — AUTHENTICATED DATA SOURCE UNAVAILABLE"
+    reason="One or more required sources ($sources) cannot be reached unattended from this device."
+  elif [ -z "$executor" ]; then
+    verdict="BLOCKED — NO EXECUTOR CONFIGURED"
     reason="No executor configured. This device has no agent/browser runtime, so it can gate and hand off but cannot interpret a measurement prompt itself. Set MQ_EXECUTOR_CMD or <run_id>.executor."
   fi
 
   if [ -n "$reason" ]; then
-    ev="$(write_blocked_evidence "$id" "$label" "$prompt_path" "$reason" "$pre")"
-    mq_set "$id" status blocked; mq_set "$id" verdict "BLOCKED — AUTHENTICATED DATA SOURCE UNAVAILABLE"
+    ev="$(write_blocked_evidence "$id" "$label" "$prompt_path" "$reason" "$pre" "$verdict")"
+    mq_set "$id" status blocked; mq_set "$id" verdict "$verdict"
     mq_set "$id" evidence_dir "$ev"
     mq_set "$id" actual_end "$(TZ=Asia/Kolkata date -d "@$(mq_now_epoch)" '+%FT%T%z')"
-    amb_log "$MQ_LOG" "$id: BLOCKED — $reason"
-    mq_notify "$id" "$label — BLOCKED" "Authenticated data source unavailable. $ev"
+    amb_log "$MQ_LOG" "$id: ${verdict} — $reason"
+    mq_notify "$id" "$label — ${verdict#BLOCKED — }" "$reason $ev"
     ran_any=1; continue
   fi
 

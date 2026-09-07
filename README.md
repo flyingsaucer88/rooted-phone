@@ -59,6 +59,8 @@ silently skip a day.
 ├── README.md                     # this file
 ├── .gitignore                    # excludes secrets, APKs, raw reports, caches
 ├── rooted_android_phone_playbook.md   # full narrative build log / device playbook
+├── phone/seo_tracker_config.yaml # authoritative SEO-tracker domain list (deployed to the phone)
+├── tests/test_site_inventory.py  # guard: the eight mandatory sites must stay in both inventories
 ├── site_monitor/                 # the daily site-monitor (runnable, Termux)
 │   ├── config/sites.yaml         # site list + crawl policy + alert thresholds
 │   ├── run_site_monitor.py       # crawler / analyzer / report writer
@@ -111,7 +113,10 @@ deps are the only application dependencies of the crawler; it otherwise uses the
 - **Sites & crawl policy:** [site_monitor/config/sites.yaml](site_monitor/config/sites.yaml).
   It lists the monitored sites and the crawl/alert policy. The monitored production domains are:
   `ambimat.com`, `ambisecure.ambimat.com`, `ambiautomation.ambimat.com`, `esim.ambimat.com`,
-  `ambipower.ambimat.com`, `orders.ambimat.com`, `roboracer.ambimat.com` (7 sites).
+  `ambipower.ambimat.com`, `orders.ambimat.com`, `roboracer.ambimat.com`, `v2x.ambimat.com`,
+  `ai.ambimat.com` (9 sites). `v2x` and `ai` were added 2026-09-07 — they were live but
+  monitored by neither job. `tests/test_site_inventory.py` now fails if any of the eight
+  mandatory production sites goes missing from either inventory.
   Notable keys: `max_pages_per_site`, `max_internal_link_checks_per_site`, `max_seconds_per_site`,
   `global_max_seconds`, `delay_between_requests_seconds`, `connect_timeout_seconds` /
   `read_timeout_seconds`, `check_external_links`, `external_check_skip_hosts` (social/CDN hosts that
@@ -161,8 +166,9 @@ The SEO tracker is device-resident under `~/seo_tracker/phone/` (not in this rep
 bash ~/seo_tracker/phone/run_daily.sh          # run the SEO workflow now (the 11:00 job entry point)
 ```
 
-It covers the **same 7 domains** as the site monitor (its domain list is
-`~/seo_tracker/phone/config.yaml`). A read-only snapshot of the SEO config used at verification time
+It covers the **same 9 domains** as the site monitor. Its domain list lives on the device at
+`~/seo_tracker/phone/config.yaml`; the authoritative, version-controlled copy is
+[phone/seo_tracker_config.yaml](phone/seo_tracker_config.yaml) (deploy instructions are in its header). A read-only snapshot of the SEO config used at verification time
 is committed at
 [reports/scheduler_verification/phone_scripts_snapshot/seo_config.yaml](reports/scheduler_verification/phone_scripts_snapshot/seo_config.yaml).
 

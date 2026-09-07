@@ -18,6 +18,10 @@ sites:
     base_url: https://orders.ambimat.com
   - name: RoboRacer
     base_url: https://roboracer.ambimat.com
+  - name: V2X
+    base_url: https://v2x.ambimat.com
+  - name: AI Tools
+    base_url: https://ai.ambimat.com
 
 crawl:
   # FULL COVERAGE (approved 2026-07-27): crawl every crawlable internal page per site.
@@ -27,7 +31,7 @@ crawl:
   request_timeout_seconds: 10
   connect_timeout_seconds: 5
   read_timeout_seconds: 10
-  # 0.5s keeps the crawl polite while making full coverage (~1100 pages across 7 sites) feasible.
+  # 0.5s keeps the crawl polite while making full coverage (~1170 pages across 9 sites) feasible.
   delay_between_requests_seconds: 0.5
   user_agent: "RootedPhoneSiteMonitor/0.1 (+Ambimat internal monitoring)"
   respect_robots_txt: true

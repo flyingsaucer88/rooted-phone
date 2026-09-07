@@ -1,0 +1,189 @@
+# AUTHORITATIVE copy of the phone-resident SEO tracker's domain config.
+#
+# Deployed to the phone at ~/seo_tracker/phone/config.yaml. It lives here (rather
+# than only on the device) because the device copy silently drifted from
+# site_monitor/config/sites.yaml — v2x and ai were live and monitored by neither.
+# tests/test_site_inventory.py now guards both files against that drift.
+#
+# Deploy:  scp -i ~/.ssh/id_moto_playground -P 8022 phone/seo_tracker_config.yaml \
+#            u0_a122@127.0.0.1:seo_tracker/phone/config.yaml
+# Ambimat ecosystem SEO tracker — PHONE (crawl-only) config.
+#
+# Used by ../phone_seo.py. Pure data: no OAuth, no Search Console, no keys.
+# This is the phone-friendly counterpart to the desktop config.py — the domain
+# definitions mirror config.example.py's MULTI_DOMAIN_CONFIG so the analyses
+# (clusters, topical authority, cannibalisation) behave the same, minus GSC.
+
+domains:
+  - name: Ambimat
+    slug: ambimat
+    domain: ambimat.com
+    site_url: https://ambimat.com/
+    sitemap_url: https://ambimat.com/sitemap.xml
+    seed_keywords:
+      - IoT solutions
+      - Embedded systems
+      - Electronics manufacturing
+      - OEM electronics
+      - Industrial IoT
+      - Smart devices
+      - Hardware design
+    primary_clusters:
+      - IoT identity / OEM
+
+  - name: AmbiSecure
+    slug: ambisecure
+    domain: ambisecure.ambimat.com
+    site_url: https://ambisecure.ambimat.com/
+    sitemap_url: https://ambisecure.ambimat.com/sitemap.xml
+    seed_keywords:
+      - FIDO2
+      - WebAuthn
+      - Passkeys
+      - PIV
+      - JavaCard
+      - Secure Elements
+      - ePassport
+      - PKI
+      - X.509
+      - DESFire
+      - SCP03
+      - APDU
+      - IoT Security
+      - Device Identity
+      - Passwordless Authentication
+    primary_clusters:
+      - FIDO / WebAuthn / Passkeys
+      - PIV / FIPS 201 / Smart card
+      - JavaCard / GlobalPlatform
+      - Secure Elements / MFF2 / Embedded SE
+      - PKI / X.509 / PKCS
+      - ePassport / ICAO 9303
+      - DESFire / Transit
+      - MFA / Phishing-resistant
+
+  - name: eSIM
+    slug: esim
+    domain: esim.ambimat.com
+    site_url: https://esim.ambimat.com/
+    sitemap_url: https://esim.ambimat.com/sitemap.xml
+    seed_keywords:
+      - eSIM
+      - eUICC
+      - SGP.22
+      - SGP.32
+      - RSP
+      - remote SIM provisioning
+      - IoT SIM
+      - M2M SIM
+      - consumer eSIM
+      - iSIM
+    primary_clusters:
+      - eSIM / eUICC / SGP.22
+
+  - name: AmbiPower
+    slug: ambipower
+    domain: ambipower.ambimat.com
+    site_url: https://ambipower.ambimat.com/
+    sitemap_url: https://ambipower.ambimat.com/sitemap.xml
+    seed_keywords:
+      - smart energy
+      - energy monitoring
+      - smart metering
+      - power monitoring
+      - energy management
+      - IoT energy
+    primary_clusters:
+      - Energy / power / metering
+
+  - name: AmbiAutomation
+    slug: ambiautomation
+    domain: ambiautomation.ambimat.com
+    site_url: https://ambiautomation.ambimat.com/
+    sitemap_url: https://ambiautomation.ambimat.com/sitemap.xml
+    seed_keywords:
+      - industrial automation
+      - factory automation
+      - PLC
+      - SCADA
+      - industrial IoT
+      - machine monitoring
+    primary_clusters:
+      - Industrial automation
+
+  - name: Orders
+    slug: orders
+    domain: orders.ambimat.com
+    site_url: https://orders.ambimat.com/
+    sitemap_url: https://orders.ambimat.com/sitemap.xml
+    seed_keywords:
+      - order management
+      - online ordering
+      - ecommerce portal
+      - product catalog
+      - buy electronics online
+    primary_clusters:
+      - Ordering / ecommerce portal
+
+  - name: RoboRacer
+    slug: roboracer
+    domain: roboracer.ambimat.com
+    site_url: https://roboracer.ambimat.com/
+    sitemap_url: https://roboracer.ambimat.com/sitemap.xml
+    seed_keywords:
+      - autonomous racing
+      - RoboRacer
+      - 1:10 scale autonomous car
+      - robotic racing platform
+      - F1TENTH
+      - autonomy kit
+      - self-driving RC car
+    primary_clusters:
+      - Autonomous racing / robotics kit
+
+  - name: V2X
+    slug: v2x
+    domain: v2x.ambimat.com
+    site_url: https://v2x.ambimat.com/
+    sitemap_url: https://v2x.ambimat.com/sitemap.xml
+    seed_keywords:
+      - V2X
+      - vehicle to everything
+      - C-V2X
+      - DSRC
+      - on-board unit
+      - roadside unit
+      - OBU
+      - RSU
+      - V2V
+      - V2I
+      - connected vehicle
+      - V2X security
+    primary_clusters:
+      - V2X / connected vehicle
+      - OBU / RSU development kits
+
+  - name: AI Tools
+    slug: ai
+    domain: ai.ambimat.com
+    site_url: https://ai.ambimat.com/
+    sitemap_url: https://ai.ambimat.com/sitemap.xml
+    seed_keywords:
+      - PDF to Markdown
+      - merge PDF
+      - images to PDF
+      - Markdown to PDF
+      - AI prompt library
+      - browser-based tools
+      - private file conversion
+    primary_clusters:
+      - Browser-based AI/PDF tools
+      - Prompt library
+
+# Crawl politeness + phone-safety budgets. Keep max pages modest on a 2016
+# device; the crawler is polite and bounded either way.
+crawl:
+  max_pages_per_domain: 800   # FULL COVERAGE (approved 2026-07-27); largest site ~697 pages
+  request_timeout_seconds: 15
+  delay_between_requests_seconds: 0.5
+  user_agent: "Ambimat-SEO-Tracker-Phone/1.0 (+https://ambimat.com; daily crawl-only)"

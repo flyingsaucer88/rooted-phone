@@ -1,0 +1,3 @@
+phone_source_path,archive,archive_sha256,files_in_archive,bytes
+/data/data/com.termux/files/home/,raw/phone_home_subset.tar.gz,b6711b1620fe045a59ba787dc4a09eb9d67f31e845f10cb9dc4cae29104adbb5,179,485780
+/data/data/com.termux/files/home/,raw/phone_reports.tar.gz,16627595ffc286db45695fd84207cf95538784711f812251fc250dd92d956a0f,1799,13942673

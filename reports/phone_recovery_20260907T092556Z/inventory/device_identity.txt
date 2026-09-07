@@ -1,0 +1,70 @@
+USB forward active: localhost:8022 -> phone:8022
+### device_identity
+model=Moto G (4)
+device=athene_f
+android=7.0 sdk=24
+serial_prefix=ZY22****REDACTED
+timezone_prop=Asia/Calcutta
+date_local=Mon Sep  7 14:56:47 IST 2026
+date_utc=Mon Sep  7 09:26:47 UTC 2026
+offset=+0530
+uptime_proc=8612.38 49187.24
+/data/data/com.termux/files/usr/bin/bash: line 9:  $(date +%s) - ${$(cat /proc/uptime)%%.*} : bad substitution
+boot_time=
+uptime= 14:56:47 up  2:23,  load average: 4.20, 4.14, 3.84
+termux_user=u0_a122 uid=10122
+### battery
+{
+  "present": true,
+  "technology": "Li-ion",
+  "health": "GOOD",
+  "plugged": "PLUGGED_AC",
+  "status": "CHARGING",
+  "temperature": 34.5,
+  "voltage": 4210,
+  "current": -1106866,
+  "current_average": 0,
+  "percentage": 62,
+  "level": 62,
+  "scale": 100,
+  "charge_counter": 1741803
+}
+### network
+{
+  "bssid": "REDACTED",
+  "frequency_mhz": 2432,
+  "ip": "REDACTED-private",
+  "link_speed_mbps": 72,
+  "mac_address": "REDACTED",
+  "network_id": 0,
+  "rssi": -56,
+  "ssid": "REDACTED",
+  "ssid_hidden": false,
+  "supplicant_state": "COMPLETED"
+}
+connectivity: 200
+### storage
+Filesystem                             Size  Used Avail Use% Mounted on
+/dev/block/bootdevice/by-name/userdata  25G  5.6G   20G  23% /data
+### crontab
+0 12 * * * /data/data/com.termux/files/home/cache_monitor/run_cache_monitor_daily.sh >> /data/data/com.termux/files/home/cache_monitor_reports/cron.log 2>&1 # ambimat-cache-monitor
+0 10 * * * /data/data/com.termux/files/home/seo_tracker/phone/run_site_monitor_daily.sh >> /data/data/com.termux/files/home/site_monitor_reports/cron.log 2>&1 # ambimat-site-monitor
+0 11 * * * /data/data/com.termux/files/home/seo_tracker/phone/run_daily.sh >> /data/data/com.termux/files/home/seo_tracker_reports/cron.log 2>&1 # ambimat-seo-tracker
+*/30 * * * * /data/data/com.termux/files/home/seo_tracker/phone/ensure_scheduler.sh >> /data/data/com.termux/files/home/ambimat_job_logs/scheduler_watchdog.log 2>&1 # ambimat-scheduler-watchdog
+### processes
+ 5094   601    02:23:01 com.termux.api
+ 7897   601    02:22:22 com.termux
+ 8091     1    02:22:20 crond
+ 8096     1    02:22:20 sshd
+20159  8096       00:04 /data/data/com.termux/files/usr/libexec/sshd-session -R
+20161 20159       00:04 /data/data/com.termux/files/usr/libexec/sshd-session -R
+### locks
+no locks held
+### packages
+crond
+python
+python3
+sshd
+termux-notification
+termux-toast
+termux-wake-lock

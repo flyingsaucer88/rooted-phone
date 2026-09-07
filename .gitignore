@@ -53,3 +53,7 @@ reports/full_coverage_crawl_*/report_full_coverage.*
 **/bing_api_key
 **/linkedin_oauth.json
 *.pem
+
+# Phone recovery evidence: the hand-authored analysis and manifests ARE committed;
+# the raw device archives (~14 MB of runtime crawl output) stay on disk only.
+reports/phone_recovery_*/raw/
