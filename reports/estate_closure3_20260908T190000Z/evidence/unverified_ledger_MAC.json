@@ -1,0 +1,42 @@
+{
+ "http://www.openscdp.org/scsh3/card.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://sanctionscanner.com/blog/6-identity-verification-methods-272": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-network-blocked"
+ },
+ "https://www.iso.org/standard/77180.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.maximintegrated.com/en/design/technical-documents/tutorials/5/5522.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-timeout"
+ },
+ "https://www.nytimes.com/2018/03/15/us/politics/russia-cyberattacks.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.nytimes.com/2019/07/25/us/politics/russian-hacking-elections.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.weforum.org/agenda/2022/12/aviation-net-zero-emissions/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.wvu.edu/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ }
+}

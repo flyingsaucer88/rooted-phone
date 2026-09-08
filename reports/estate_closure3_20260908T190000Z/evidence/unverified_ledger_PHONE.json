@@ -1,0 +1,67 @@
+{
+ "http://www.openscdp.org/sse4e/crypto.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://blog.erepublic.com/govtech-market-insights-september-2020-6b1171c7e362": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-network-blocked"
+ },
+ "https://robo-racer.slack.com/signup": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.gsma.com/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.gsma.com/solutions-and-impact/technologies/esim/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.iso.org/standard/54089.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.itsinternational.com/ettifos-joins-arizona-v2x-deployment/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.jhu.edu/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.kmu.ac.kr/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-tls-chain"
+ },
+ "https://www.nytimes.com/2018/03/15/us/politics/russia-cyberattacks.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.nytimes.com/2019/07/25/us/politics/russian-hacking-elections.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.theinsightpartners.com/reports/ultra-wideband-uwb-market": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.volvocars.com/intl/media/press-releases/E28D7256E60891F8/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ }
+}

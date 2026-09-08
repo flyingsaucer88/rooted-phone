@@ -1,0 +1,21 @@
+pages: 53 errors: 0
+== (link-other)
+     53  https://fonts.googleapis.com   e.g. https://orders.ambimat.com/
+     53  https://fonts.gstatic.com   e.g. https://orders.ambimat.com/
+     53  https://gmpg.org   e.g. https://orders.ambimat.com/
+     53  https://static.addtoany.com   e.g. https://orders.ambimat.com/
+      1  http://gmpg.org   e.g. https://orders.ambimat.com/contact/
+      1  https://ambimat.com   e.g. https://orders.ambimat.com/contact/
+== (preconnect)
+      1  http://pagead2.googlesyndication.com   e.g. https://orders.ambimat.com/contact/
+      1  http://www.googletagmanager.com   e.g. https://orders.ambimat.com/contact/
+== img-src
+      1  https://ambimat.com   e.g. https://orders.ambimat.com/electronic-manufacturing/
+== script-src
+     53  https://static.addtoany.com   e.g. https://orders.ambimat.com/
+     53  https://www.googletagmanager.com   e.g. https://orders.ambimat.com/
+      1  http://ambimat.com   e.g. https://orders.ambimat.com/contact/
+      1  https://pagead2.googlesyndication.com   e.g. https://orders.ambimat.com/contact/
+== style-src
+      1  http://ambimat.com   e.g. https://orders.ambimat.com/contact/
+      1  https://fonts.googleapis.com   e.g. https://orders.ambimat.com/contact/
