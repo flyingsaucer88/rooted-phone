@@ -1,0 +1,830 @@
+{
+ "ambimat": [
+  {
+   "url": "https://ambimat.com/rfid-key-fobs-for-ev-charging-stations/",
+   "sequence": "h1 h3 h4 h4 h4 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "RFID KEY FOBS FOR EV CHARGING STATIONS",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-based-on-performance-needs/",
+   "sequence": "h1 h4 h5 h5 h5 h5 h5 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Performance Needs",
+     "where": "content"
+    }
+   ],
+   "n_headings": 10
+  },
+  {
+   "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-based-on-cost-and-availability/",
+   "sequence": "h1 h4 h5 h5 h5 h5 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Cost and Availability",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-based-on-application/",
+   "sequence": "h1 h4 h5 h5 h5 h5 h5 h5 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Understand Your Requirements",
+     "where": "content"
+    }
+   ],
+   "n_headings": 11
+  },
+  {
+   "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-our-offerings/",
+   "sequence": "h1 h4 h5 h5 h5 h5 h5 h5 h5 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Popular Surface Finish Options",
+     "where": "content"
+    }
+   ],
+   "n_headings": 12
+  },
+  {
+   "url": "https://ambimat.com/cellular-network-based-wide-area-networks/",
+   "sequence": "h1 h4 h3 h4 h4 h2 h3 h4 h4 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 15
+  },
+  {
+   "url": "https://ambimat.com/the-transformation-of-city-street-lighting/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/non-cellular-network-based-wide-area-networks-1/",
+   "sequence": "h1 h4 h3 h2 h3 h2 h3 h2 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 13
+  },
+  {
+   "url": "https://ambimat.com/securing-your-iiot-infrastructure/",
+   "sequence": "h1 h4 h3 h3 h3 h4 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 12
+  },
+  {
+   "url": "https://ambimat.com/mqtt-sn-lowering-the-cost-of-iot-at-scale/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 12
+  },
+  {
+   "url": "https://ambimat.com/what-is-ultra-wideband-and-how-does-it-work/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/5g-and-iot-the-future-of-5g-communications/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/rise-of-uwb-and-the-impact-on-different-industry-verticals/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/an-introduction-to-java-card-technology/",
+   "sequence": "h1 h4 h3 h3 h4 h4 h4 h4 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 13
+  },
+  {
+   "url": "https://ambimat.com/cold-chain-logistics-effective-vaccine-management/",
+   "sequence": "h1 h4 h3 h3 h4 h4 h4 h4 h4 h4 h4 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 15
+  },
+  {
+   "url": "https://ambimat.com/e-passport-and-its-application/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 11
+  },
+  {
+   "url": "https://ambimat.com/e-passport-and-how-will-chip-based-e-passports-work/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/cold-chain-logistics-solutions-benefits/",
+   "sequence": "h1 h4 h3 h3 h3 h4 h4 h4 h4 h4 h4 h4 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 17
+  },
+  {
+   "url": "https://ambimat.com/the-great-semiconductor-shortage/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/ipa-file-format/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/acquiring-bank/",
+   "sequence": "h1 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 7
+  },
+  {
+   "url": "https://ambimat.com/an-introduction-to-mifarea-cards-a-beginners-guide-from-digital-id/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 20
+  },
+  {
+   "url": "https://ambimat.com/an-introduction-to-nfc-standards/",
+   "sequence": "h1 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 5
+  },
+  {
+   "url": "https://ambimat.com/ip-rating-table/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/difference-between-central-bank-digital-currency-cbdc-and-upi/",
+   "sequence": "h1 h2 h4 h3 h3 h3 h3 h3 h4 h3 h3 h4 h3 h3 h3 h4 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "What is the Difference Between Central Bank Digital Currency",
+     "where": "content"
+    }
+   ],
+   "n_headings": 19
+  },
+  {
+   "url": "https://ambimat.com/triple-des-or-3des/",
+   "sequence": "h1 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "About Triple DES or 3DES",
+     "where": "content"
+    }
+   ],
+   "n_headings": 8
+  },
+  {
+   "url": "https://ambimat.com/usb-power-delivery/",
+   "sequence": "h1 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 8
+  },
+  {
+   "url": "https://ambimat.com/whats-the-difference-between-a-hico-loco-magstripe-card/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/sms-based-otp-authentication-and-its-disadvantages/",
+   "sequence": "h1 h4 h4 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 11
+  },
+  {
+   "url": "https://ambimat.com/public-transport-ticketing-2/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 11
+  },
+  {
+   "url": "https://ambimat.com/public-transport-ticketing-system-part-3/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/contactless-emv-payments-in-public-transportation/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/public-transport-ticketing-system-part-1/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Reader,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 15
+  },
+  {
+   "url": "https://ambimat.com/cold-chain-logistics/",
+   "sequence": "h1 h4 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h4",
+     "text": "Dear Readers,",
+     "where": "content"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://ambimat.com/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h3 h3 h2 h2 h2 h3 h3 h3 h3 h3 h3 h2 h4 h4 h4 h2 h2 h3 h3 h3 h2 h2 h3 h3 h3 h3 h3 h2",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Mesh Network Security Hardening for IoT (Zigbee &#038; BLE)",
+     "where": "template"
+    }
+   ],
+   "n_headings": 35
+  },
+  {
+   "url": "https://ambimat.com/careers/",
+   "sequence": "h1 h2 h2 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h2 h4 h4 h4 h3 h4 h4 h2",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h5",
+     "text": "Job Description",
+     "where": "template"
+    },
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "An Introduction to Java Card Technology",
+     "where": "template"
+    }
+   ],
+   "n_headings": 40
+  },
+  {
+   "url": "https://ambimat.com/by-industry/",
+   "sequence": "h1 h5 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h5",
+     "text": "Smart Devices",
+     "where": "template"
+    }
+   ],
+   "n_headings": 4
+  },
+  {
+   "url": "https://ambimat.com/about/ambimat-history/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h5",
+     "text": "April, 1982",
+     "where": "content"
+    }
+   ],
+   "n_headings": 58
+  },
+  {
+   "url": "https://ambimat.com/f1tenth/",
+   "sequence": "h1 h2 h2 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h4 h4 h2",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "What is FITENTH Program?",
+     "where": "template"
+    }
+   ],
+   "n_headings": 16
+  },
+  {
+   "url": "https://ambimat.com/design/design-by-technology/machine-2-machine-m2m/",
+   "sequence": "h1 h3 h2 h2 h2 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "HVAC (Heating ventilation and air conditioning)",
+     "where": "template"
+    }
+   ],
+   "n_headings": 16
+  },
+  {
+   "url": "https://ambimat.com/by-technologies/",
+   "sequence": "h1 h5 h5 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h5",
+     "text": "Wi-fi",
+     "where": "template"
+    }
+   ],
+   "n_headings": 5
+  },
+  {
+   "url": "https://ambimat.com/products/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "AmbiCon Wireless Beacon",
+     "where": "template"
+    }
+   ],
+   "n_headings": 18
+  },
+  {
+   "url": "https://ambimat.com/success-stories/education-microprocessor-trainer-i-f-board/",
+   "sequence": "h1 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Requirement / Observation &#8211; Time Frame",
+     "where": "content"
+    }
+   ],
+   "n_headings": 8
+  },
+  {
+   "url": "https://ambimat.com/success-stories/embedded-firmware-verification-medical-infusion-device/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Context",
+     "where": "content"
+    }
+   ],
+   "n_headings": 11
+  },
+  {
+   "url": "https://ambimat.com/success-stories/hvac-systems/",
+   "sequence": "h1 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Problem:",
+     "where": "content"
+    }
+   ],
+   "n_headings": 6
+  },
+  {
+   "url": "https://ambimat.com/success-stories/manufacturing/",
+   "sequence": "h1 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Challenge:",
+     "where": "content"
+    }
+   ],
+   "n_headings": 6
+  },
+  {
+   "url": "https://ambimat.com/success-stories/power-grid-and-utilities/",
+   "sequence": "h1 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Challenge:",
+     "where": "content"
+    }
+   ],
+   "n_headings": 6
+  },
+  {
+   "url": "https://ambimat.com/products/smart-label/",
+   "sequence": "h1 h3 h3 h3 h2 h2 h2",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Smart Label is Flexible, Durable and as thin as a paper",
+     "where": "content"
+    }
+   ],
+   "n_headings": 7
+  }
+ ],
+ "orders": [
+  {
+   "url": "https://orders.ambimat.com/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://orders.ambimat.com/privacy-policy/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h4 h4",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Introduction",
+     "where": "content"
+    }
+   ],
+   "n_headings": 13
+  },
+  {
+   "url": "https://orders.ambimat.com/shipping-policy/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h4 h4",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "Shipping Timeframe",
+     "where": "content"
+    }
+   ],
+   "n_headings": 13
+  },
+  {
+   "url": "https://orders.ambimat.com/terms-and-conditions/",
+   "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h4",
+   "skips": [
+    {
+     "from": "h1",
+     "to": "h3",
+     "text": "AGREEMENT TO TERMS",
+     "where": "content"
+    }
+   ],
+   "n_headings": 41
+  },
+  {
+   "url": "https://orders.ambimat.com/electronic-manufacturing/",
+   "sequence": "h1 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 4
+  },
+  {
+   "url": "https://orders.ambimat.com/contact/",
+   "sequence": "h1 h2 h3 h4 h3 h4 h4 h3 h4 h4 h2 h5 h5 h5 h5 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h5",
+     "text": "Works",
+     "where": "content"
+    },
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 18
+  },
+  {
+   "url": "https://orders.ambimat.com/product/roboracer-power-board-multi-qty-non-rohs-compliant/",
+   "sequence": "h1 h2 h2 h2 h4 h4 h2 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "F1Tenth Power Board User Manual",
+     "where": "content"
+    },
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 16
+  },
+  {
+   "url": "https://orders.ambimat.com/product/roboracer-power-board-multi-qty-rohs-compliant/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 15
+  },
+  {
+   "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty-non-rohs-compliant/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 15
+  },
+  {
+   "url": "https://orders.ambimat.com/product/roboracer-power-board-1-qty-rohs-compliant/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 15
+  },
+  {
+   "url": "https://orders.ambimat.com/product/roboracer-core-kit-pro/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 13
+  },
+  {
+   "url": "https://orders.ambimat.com/product/roboracer-core-kit/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 13
+  },
+  {
+   "url": "https://orders.ambimat.com/brand/ambimat-electronics/",
+   "sequence": "h1 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 9
+  },
+  {
+   "url": "https://orders.ambimat.com/product-category/pcb-board/",
+   "sequence": "h1 h2 h2 h3 h3 h2 h2 h2 h2 h2 h2 h2 h4 h4",
+   "skips": [
+    {
+     "from": "h2",
+     "to": "h4",
+     "text": "Follow Us On",
+     "where": "template"
+    }
+   ],
+   "n_headings": 14
+  }
+ ]
+}

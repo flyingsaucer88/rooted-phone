@@ -1,0 +1,192 @@
+[
+ {
+  "url": "https://ambimat.com/cellular-network-based-wide-area-networks/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 15,
+  "images": 11
+ },
+ {
+  "url": "https://ambimat.com/ipa-file-format/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 9,
+  "images": 10
+ },
+ {
+  "url": "https://ambimat.com/rfid-key-fobs-for-ev-charging-stations/",
+  "issues": [
+   "skip h2->h4",
+   "no <main> landmark"
+  ],
+  "headings": 9,
+  "images": 10
+ },
+ {
+  "url": "https://ambimat.com/emv-certification-in-a-nutshell/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 13,
+  "images": 10
+ },
+ {
+  "url": "https://ambimat.com/an-introduction-to-mifarea-cards-a-beginners-guide-from-digital-id/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 20,
+  "images": 10
+ },
+ {
+  "url": "https://ambimat.com/emv-connection-a-smart-card-alliance-site/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 10,
+  "images": 10
+ },
+ {
+  "url": "https://ambimat.com/design/design-services/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 14,
+  "images": 5
+ },
+ {
+  "url": "https://ambimat.com/products/",
+  "issues": [
+   "skip h1->h3",
+   "no <main> landmark"
+  ],
+  "headings": 18,
+  "images": 20
+ },
+ {
+  "url": "https://ambimat.com/contact/",
+  "issues": [
+   "5/5 iframe without title",
+   "13 unlabelled form control(s)",
+   "1 link(s) with no accessible name",
+   "no <main> landmark"
+  ],
+  "headings": 21,
+  "images": 5
+ },
+ {
+  "url": "https://ambimat.com/",
+  "issues": [
+   "skip h2->h4",
+   "1/1 iframe without title",
+   "1 unlabelled form control(s)",
+   "no <main> landmark"
+  ],
+  "headings": 35,
+  "images": 40
+ },
+ {
+  "url": "https://orders.ambimat.com/",
+  "issues": [],
+  "headings": 8,
+  "images": 7
+ },
+ {
+  "url": "https://orders.ambimat.com/privacy-policy/",
+  "issues": [
+   "skip h1->h3"
+  ],
+  "headings": 12,
+  "images": 1
+ },
+ {
+  "url": "https://orders.ambimat.com/contact/",
+  "issues": [
+   "skip h2->h5"
+  ],
+  "headings": 17,
+  "images": 1
+ },
+ {
+  "url": "https://orders.ambimat.com/product/roboracer-core-kit/",
+  "issues": [],
+  "headings": 12,
+  "images": 7
+ },
+ {
+  "url": "https://orders.ambimat.com/brand/ambimat-electronics/",
+  "issues": [],
+  "headings": 8,
+  "images": 7
+ },
+ {
+  "url": "https://ai.ambimat.com/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 5,
+  "images": 0
+ },
+ {
+  "url": "https://ai.ambimat.com/contact/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 2,
+  "images": 0
+ },
+ {
+  "url": "https://ai.ambimat.com/tools/merge-pdf/",
+  "issues": [
+   "no <main> landmark"
+  ],
+  "headings": 7,
+  "images": 0
+ },
+ {
+  "url": "https://v2x.ambimat.com/services/v2x-commissioning-and-service-tools/",
+  "issues": [],
+  "headings": 16,
+  "images": 0
+ },
+ {
+  "url": "https://v2x.ambimat.com/",
+  "issues": [],
+  "headings": 54,
+  "images": 1
+ },
+ {
+  "url": "https://ambisecure.ambimat.com/",
+  "issues": [],
+  "headings": 37,
+  "images": 2
+ },
+ {
+  "url": "https://ambipower.ambimat.com/",
+  "issues": [],
+  "headings": 20,
+  "images": 4
+ },
+ {
+  "url": "https://ambiautomation.ambimat.com/",
+  "issues": [],
+  "headings": 44,
+  "images": 2
+ },
+ {
+  "url": "https://roboracer.ambimat.com/",
+  "issues": [],
+  "headings": 25,
+  "images": 3
+ },
+ {
+  "url": "https://esim.ambimat.com/",
+  "issues": [
+   "1/1 iframe without title"
+  ],
+  "headings": 42,
+  "images": 2
+ }
+]
