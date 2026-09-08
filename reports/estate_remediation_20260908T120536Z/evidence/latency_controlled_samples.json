@@ -1,0 +1,210 @@
+{
+ "SLOW": [
+  {
+   "url": "https://ambimat.com/rfid-key-fobs-for-ev-charging-stations/",
+   "n": 5,
+   "med_ttfb": 1279,
+   "min_ttfb": 1233,
+   "max_ttfb": 1299,
+   "med_total": 1773,
+   "kb": 125,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/complete-list-of-emv-nfc-tags/",
+   "n": 5,
+   "med_ttfb": 1287,
+   "min_ttfb": 1252,
+   "max_ttfb": 1307,
+   "med_total": 2291,
+   "kb": 507,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/cold-chain-logistics-effective-vaccine-management/",
+   "n": 5,
+   "med_ttfb": 1248,
+   "min_ttfb": 1233,
+   "max_ttfb": 1264,
+   "med_total": 1752,
+   "kb": 127,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/emv-ca-cryptomathic/",
+   "n": 5,
+   "med_ttfb": 1286,
+   "min_ttfb": 1237,
+   "max_ttfb": 1296,
+   "med_total": 1793,
+   "kb": 122,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/difference-between-central-bank-digital-currency-cbdc-and-upi/",
+   "n": 5,
+   "med_ttfb": 1263,
+   "min_ttfb": 1245,
+   "max_ttfb": 1431,
+   "med_total": 1762,
+   "kb": 133,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/smart-card-standard-iso7816-part-4-section-1-scope/",
+   "n": 5,
+   "med_ttfb": 1285,
+   "min_ttfb": 1254,
+   "max_ttfb": 1898,
+   "med_total": 1845,
+   "kb": 141,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/design/design-by-technology/lora-and-sigfox/",
+   "n": 5,
+   "med_ttfb": 1278,
+   "min_ttfb": 1249,
+   "max_ttfb": 1904,
+   "med_total": 1828,
+   "kb": 144,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/products/ambicon-wireless-beacon/",
+   "n": 5,
+   "med_ttfb": 1370,
+   "min_ttfb": 1298,
+   "max_ttfb": 1581,
+   "med_total": 1964,
+   "kb": 127,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/categories/retail/",
+   "n": 5,
+   "med_ttfb": 1353,
+   "min_ttfb": 1339,
+   "max_ttfb": 1758,
+   "med_total": 1926,
+   "kb": 121,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambisecure.ambimat.com/blog/archive/",
+   "n": 5,
+   "med_ttfb": 142,
+   "min_ttfb": 48,
+   "max_ttfb": 370,
+   "med_total": 214,
+   "kb": 44,
+   "codes": [
+    "200"
+   ]
+  }
+ ],
+ "CTRL": [
+  {
+   "url": "https://ambimat.com/",
+   "n": 5,
+   "med_ttfb": 1405,
+   "min_ttfb": 1314,
+   "max_ttfb": 1451,
+   "med_total": 2080,
+   "kb": 177,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/products/",
+   "n": 5,
+   "med_ttfb": 1423,
+   "min_ttfb": 1375,
+   "max_ttfb": 1462,
+   "med_total": 1984,
+   "kb": 157,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/contact/",
+   "n": 5,
+   "med_ttfb": 1426,
+   "min_ttfb": 1281,
+   "max_ttfb": 2096,
+   "med_total": 2234,
+   "kb": 179,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambimat.com/developer-resources/",
+   "n": 5,
+   "med_ttfb": 1366,
+   "min_ttfb": 1348,
+   "max_ttfb": 2022,
+   "med_total": 1946,
+   "kb": 139,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambisecure.ambimat.com/",
+   "n": 5,
+   "med_ttfb": 44,
+   "min_ttfb": 42,
+   "max_ttfb": 49,
+   "med_total": 62,
+   "kb": 34,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambisecure.ambimat.com/contact/",
+   "n": 5,
+   "med_ttfb": 44,
+   "min_ttfb": 42,
+   "max_ttfb": 72,
+   "med_total": 60,
+   "kb": 23,
+   "codes": [
+    "200"
+   ]
+  },
+  {
+   "url": "https://ambisecure.ambimat.com/blog/",
+   "n": 5,
+   "med_ttfb": 44,
+   "min_ttfb": 42,
+   "max_ttfb": 70,
+   "med_total": 62,
+   "kb": 38,
+   "codes": [
+    "200"
+   ]
+  }
+ ]
+}

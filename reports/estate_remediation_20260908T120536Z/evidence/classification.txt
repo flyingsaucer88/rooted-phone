@@ -1,0 +1,54 @@
+==============================================================================
+SITE MONITOR — 593 warnings
+==============================================================================
+   512  E. MONITOR_FALSE_POSITIVE          suspicious-pattern (hidden CSS)
+     2  E. MONITOR_FALSE_POSITIVE          suspicious-pattern (system( in prose)
+     4  E. MONITOR_FALSE_POSITIVE          suspicious-pattern (owned by/hacked by dup)
+    55  E. MONITOR_FALSE_POSITIVE          external-iframe (GTM/reCAPTCHA/Maps)
+    10  E. MONITOR_FALSE_POSITIVE          defacement-marker-in-content (editorial)
+     3  E. MONITOR_FALSE_POSITIVE          japanese-spam (English word 'betting')
+     2  E. MONITOR_FALSE_POSITIVE          suspicious-external-link (pharma/crypto substring)
+     1  G. INTENTIONAL_SITE_BEHAVIOR       offsite-redirect (documented 301)
+     1  F. TRANSIENT_NETWORK_EVENT         fetch-error (ConnectionReset, 200 on retry)
+     1  A. TRUE_SITE_DEFECT                security-headers ai.ambimat.com
+     1  A. TRUE_SITE_DEFECT                security-headers orders.ambimat.com
+     1  H. OWNER_DECISION_REQUIRED         security-headers ambimat.com (CSP)
+   593  TOTAL
+
+==============================================================================
+EXTERNAL LINKS — 24 unverified
+==============================================================================
+    12  D. EXPECTED_EXTERNAL_BEHAVIOR      AddToAny share widgets (mailto: 302 + rate-limit)
+     5  E. MONITOR_FALSE_POSITIVE          facebook.com x4 + in.linkedin.com x1 (skip-list bug)
+     1  D. EXPECTED_EXTERNAL_BEHAVIOR      iso.org 403 (anti-bot, GET 403 not 404)
+     1  D. EXPECTED_EXTERNAL_BEHAVIOR      cisa.gov 403 to phone / 200 to browser
+     1  D. EXPECTED_EXTERNAL_BEHAVIOR      robo-racer.slack.com 403 to phone / 200 to browser
+     4  F. TRANSIENT_NETWORK_EVENT         fime/5gaa/sanctionscanner/erepublic (LAN appliance)
+
+==============================================================================
+SEO AUDIT — 3 medium + 85 low
+==============================================================================
+     1  A. TRUE_SITE_DEFECT                ambimat dup meta description (2701/5071)
+     1  A. TRUE_SITE_DEFECT                orders dup meta description (/ + /brand/)
+     1  C. CONTENT/SEO_QUALITY_OPPORTUNITY ai /contact/ thin (a contact page is short)
+     7  A. TRUE_SITE_DEFECT                ai og:image missing x7
+     1  G. INTENTIONAL_SITE_BEHAVIOR       ambipower /privacy/ og (documented NO_IMAGE)
+     1  H. OWNER_DECISION_REQUIRED         ambimat /category/uncategorized/ og:description
+     9  E. MONITOR_FALSE_POSITIVE          ambimat slow x9 (controls are SLOWER)
+     1  F. TRANSIENT_NETWORK_EVENT         ambisecure /blog/archive/ slow (142ms median)
+    62  C. CONTENT/SEO_QUALITY_OPPORTUNITY skipped heading levels (ambimat 48 + orders 14)
+     2  C. CONTENT/SEO_QUALITY_OPPORTUNITY duplicate H1 x2 (distinct titles + canonicals)
+     1  C. CONTENT/SEO_QUALITY_OPPORTUNITY ambimat /ambi-space/ low alt coverage
+     1  C. CONTENT/SEO_QUALITY_OPPORTUNITY ai 'No FAQPage schema' (score-chasing, refused)
+
+==============================================================================
+TOTALS BY CLASS
+==============================================================================
+    11  A. TRUE_SITE_DEFECT
+    67  C. CONTENT/SEO_QUALITY_OPPORTUNITY
+    15  D. EXPECTED_EXTERNAL_BEHAVIOR
+   602  E. MONITOR_FALSE_POSITIVE
+     6  F. TRANSIENT_NETWORK_EVENT
+     2  G. INTENTIONAL_SITE_BEHAVIOR
+     2  H. OWNER_DECISION_REQUIRED
+   705  ALL FINDINGS CLASSIFIED
