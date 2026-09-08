@@ -1,0 +1,38 @@
+{
+ "ai": {
+  "median_ms": 79,
+  "slow_urls": []
+ },
+ "ambiautomation": {
+  "median_ms": 92,
+  "slow_urls": []
+ },
+ "ambimat": {
+  "median_ms": 1129,
+  "slow_urls": []
+ },
+ "ambipower": {
+  "median_ms": 91,
+  "slow_urls": []
+ },
+ "ambisecure": {
+  "median_ms": 76,
+  "slow_urls": []
+ },
+ "esim": {
+  "median_ms": 109,
+  "slow_urls": []
+ },
+ "orders": {
+  "median_ms": 82,
+  "slow_urls": []
+ },
+ "roboracer": {
+  "median_ms": 71,
+  "slow_urls": []
+ },
+ "v2x": {
+  "median_ms": 88,
+  "slow_urls": []
+ }
+}

@@ -1,0 +1,333 @@
+[
+ {
+  "url": "https://ambimat.com/rfid-key-fobs-for-ev-charging-stations/",
+  "sequence": "h1 h2 h4 h4 h4 h3 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "THE NEED FOR RFID IN EV CHARGING STATIONS",
+    "cls": "",
+    "container": "",
+    "pos": 60935,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 9
+ },
+ {
+  "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-based-on-performance-needs/",
+  "sequence": "h1 h2 h5 h5 h5 h5 h5 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 5,
+    "text": "1. Importance of Surface Smoothness in High-Frequency Applications",
+    "cls": "",
+    "container": "",
+    "pos": 60875,
+    "skip": "h2->h5",
+    "in_body": true
+   }
+  ],
+  "n": 10
+ },
+ {
+  "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-based-on-cost-and-availability/",
+  "sequence": "h1 h2 h5 h5 h5 h5 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 5,
+    "text": "1. Understanding the Costs of PCB Finishes",
+    "cls": "",
+    "container": "",
+    "pos": 61040,
+    "skip": "h2->h5",
+    "in_body": true
+   }
+  ],
+  "n": 9
+ },
+ {
+  "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-based-on-application/",
+  "sequence": "h1 h4 h5 h5 h5 h5 h5 h5 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "Understand Your Requirements",
+    "cls": "",
+    "container": "entry-content",
+    "pos": 59342,
+    "skip": "h1->h4",
+    "in_body": true
+   }
+  ],
+  "n": 11
+ },
+ {
+  "url": "https://ambimat.com/choosing-the-right-surface-finish-for-your-pcb-project-our-offerings/",
+  "sequence": "h1 h2 h5 h5 h5 h5 h5 h5 h5 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 5,
+    "text": "1. HAL (Hot Air Leveling):",
+    "cls": "",
+    "container": "entry-content",
+    "pos": 59934,
+    "skip": "h2->h5",
+    "in_body": true
+   }
+  ],
+  "n": 12
+ },
+ {
+  "url": "https://ambimat.com/difference-between-central-bank-digital-currency-cbdc-and-upi/",
+  "sequence": "h1 h2 h4 h3 h3 h3 h3 h3 h4 h3 h3 h4 h3 h3 h3 h4 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "What is the Difference Between Central Bank Digital Currency (CBDC) an",
+    "cls": "wp-block-heading",
+    "container": "",
+    "pos": 60420,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 19
+ },
+ {
+  "url": "https://ambimat.com/triple-des-or-3des/",
+  "sequence": "h1 h3 h3 h3 h3 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 3,
+    "text": "About Triple DES or 3DES",
+    "cls": "wp-block-heading",
+    "container": "",
+    "pos": 58723,
+    "skip": "h1->h3",
+    "in_body": true
+   }
+  ],
+  "n": 8
+ },
+ {
+  "url": "https://ambimat.com/usb-power-delivery/",
+  "sequence": "h1 h3 h3 h3 h3 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 3,
+    "text": "Dear Readers,",
+    "cls": "page-header",
+    "container": "entry-content",
+    "pos": 57259,
+    "skip": "h1->h3",
+    "in_body": true
+   }
+  ],
+  "n": 8
+ },
+ {
+  "url": "https://ambimat.com/sms-based-otp-authentication-and-its-disadvantages/",
+  "sequence": "h1 h2 h4 h3 h3 h3 h3 h3 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "Multi-Factor Authentication",
+    "cls": "",
+    "container": "",
+    "pos": 59971,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 11
+ },
+ {
+  "url": "https://ambimat.com/",
+  "sequence": "h1 h2 h2 h2 h2 h2 h2 h3 h3 h2 h2 h2 h3 h3 h3 h3 h3 h3 h2 h4 h4 h4 h2 h2 h3 h3 h3 h2 h2 h3 h3 h3 h3 h3 h2",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "Mesh Network Security Hardening for IoT (Zigbee &#038; BLE)",
+    "cls": "pmd-card-title-text",
+    "container": "pmd-card-body",
+    "pos": 101488,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 35
+ },
+ {
+  "url": "https://ambimat.com/careers/",
+  "sequence": "h1 h2 h2 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h5 h2 h4 h4 h4 h3 h4 h4 h2",
+  "skips": [
+   {
+    "lvl": 5,
+    "text": "Job Description",
+    "cls": "",
+    "container": "panel-body",
+    "pos": 85034,
+    "skip": "h2->h5",
+    "in_body": true
+   },
+   {
+    "lvl": 4,
+    "text": "An Introduction to Java Card Technology",
+    "cls": "pmd-card-title-text",
+    "container": "pmd-card-body",
+    "pos": 105141,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 40
+ },
+ {
+  "url": "https://ambimat.com/by-industry/",
+  "sequence": "h1 h2 h3 h2 h2",
+  "skips": [],
+  "n": 5
+ },
+ {
+  "url": "https://ambimat.com/about/ambimat-history/",
+  "sequence": "h1 h2 h2 h2 h2 h2 h5 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2",
+  "skips": [
+   {
+    "lvl": 5,
+    "text": "April, 1982",
+    "cls": "",
+    "container": "timeline-entry-content",
+    "pos": 86198,
+    "skip": "h2->h5",
+    "in_body": true
+   }
+  ],
+  "n": 58
+ },
+ {
+  "url": "https://ambimat.com/f1tenth/",
+  "sequence": "h1 h2 h2 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h4 h4 h2",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "What is FITENTH Program?",
+    "cls": "",
+    "container": "text-center",
+    "pos": 86236,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 16
+ },
+ {
+  "url": "https://ambimat.com/design/design-by-technology/machine-2-machine-m2m/",
+  "sequence": "h1 h3 h2 h2 h2 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h2",
+  "skips": [
+   {
+    "lvl": 3,
+    "text": "HVAC (Heating ventilation and air conditioning)",
+    "cls": "ambi-product-card__title",
+    "container": "ambi-product-card__body",
+    "pos": 81759,
+    "skip": "h1->h3",
+    "in_body": true
+   }
+  ],
+  "n": 16
+ },
+ {
+  "url": "https://ambimat.com/by-technologies/",
+  "sequence": "h1 h2 h3 h3 h2 h2",
+  "skips": [],
+  "n": 6
+ },
+ {
+  "url": "https://ambimat.com/products/",
+  "sequence": "h1 h2 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h2 h2",
+  "skips": [],
+  "n": 19
+ },
+ {
+  "url": "https://orders.ambimat.com/privacy-policy/",
+  "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3",
+  "skips": [
+   {
+    "lvl": 3,
+    "text": "Introduction",
+    "cls": "h2",
+    "container": "col-md-8 col-sm-12 col-xs-12 innerpages",
+    "pos": 142429,
+    "skip": "h1->h3",
+    "in_body": true
+   }
+  ],
+  "n": 12
+ },
+ {
+  "url": "https://orders.ambimat.com/shipping-policy/",
+  "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3",
+  "skips": [
+   {
+    "lvl": 3,
+    "text": "Shipping Timeframe",
+    "cls": "",
+    "container": "col-md-8 col-sm-12 col-xs-12 innerpages",
+    "pos": 142764,
+    "skip": "h1->h3",
+    "in_body": true
+   }
+  ],
+  "n": 12
+ },
+ {
+  "url": "https://orders.ambimat.com/terms-and-conditions/",
+  "sequence": "h1 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3 h3",
+  "skips": [
+   {
+    "lvl": 3,
+    "text": "AGREEMENT TO TERMS",
+    "cls": "",
+    "container": "col-md-8 col-sm-12 col-xs-12 innerpages",
+    "pos": 142517,
+    "skip": "h1->h3",
+    "in_body": true
+   }
+  ],
+  "n": 40
+ },
+ {
+  "url": "https://orders.ambimat.com/contact/",
+  "sequence": "h1 h2 h3 h4 h3 h4 h4 h3 h4 h4 h2 h5 h5 h5 h5 h2 h3",
+  "skips": [
+   {
+    "lvl": 5,
+    "text": "Works",
+    "cls": "",
+    "container": "media-body",
+    "pos": 188870,
+    "skip": "h2->h5",
+    "in_body": true
+   }
+  ],
+  "n": 17
+ },
+ {
+  "url": "https://orders.ambimat.com/product/roboracer-power-board-multi-qty-non-rohs-compliant/",
+  "sequence": "h1 h2 h2 h2 h4 h4 h2 h2 h2 h2 h2 h2 h2 h2 h3",
+  "skips": [
+   {
+    "lvl": 4,
+    "text": "F1Tenth Power Board User Manual",
+    "cls": "",
+    "container": "text-center",
+    "pos": 161795,
+    "skip": "h2->h4",
+    "in_body": true
+   }
+  ],
+  "n": 15
+ }
+]

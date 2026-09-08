@@ -1,0 +1,34 @@
+pages: 346 errors: 0
+== (link-other)
+    346  http://gmpg.org   e.g. https://ambimat.com/
+    346  https://fonts.googleapis.com   e.g. https://ambimat.com/
+    346  https://fonts.gstatic.com   e.g. https://ambimat.com/
+    345  https://i0.wp.com   e.g. https://ambimat.com/
+    345  https://pagead2.googlesyndication.com   e.g. https://ambimat.com/
+    345  https://www.google.com   e.g. https://ambimat.com/
+    345  https://www.googletagmanager.com   e.g. https://ambimat.com/
+      1  http://i0.wp.com   e.g. http://ambimat.com/contact/
+      1  http://pagead2.googlesyndication.com   e.g. http://ambimat.com/contact/
+      1  http://www.google.com   e.g. http://ambimat.com/contact/
+      1  http://www.googletagmanager.com   e.g. http://ambimat.com/contact/
+== frame-src
+      5  https://www.google.com   e.g. https://ambimat.com/
+      2  https://www.pcisecuritystandards.org   e.g. https://ambimat.com/official-pci-security-standards-council-document-libary/
+      2  https://maps.google.com   e.g. https://ambimat.com/contact/
+      1  https://idtechproducts.com   e.g. https://ambimat.com/how-to-parse-tlvs-in-javascript/
+      1  https://www.tech-faq.com   e.g. https://ambimat.com/data-layout-on-magnetic-stripe-cards/
+      1  https://paylosophy.com   e.g. https://ambimat.com/emv-certification-in-a-nutshell/
+      1  https://www.encryptionconsulting.com   e.g. https://ambimat.com/triple-des-or-3des/
+      1  https://www.idwholesaler.com   e.g. https://ambimat.com/whats-the-difference-between-a-hico-loco-magstripe-card/
+== img-src
+    346  https://i0.wp.com   e.g. https://ambimat.com/
+      1  https://upload.wikimedia.org   e.g. https://ambimat.com/barcode/
+      1  https://qph.cf2.quoracdn.net   e.g. https://ambimat.com/step-by-step-how-does-a-emv-contact-card-payment-work/
+== script-src
+    346  https://cdn-cookieyes.com   e.g. https://ambimat.com/
+    346  https://pagead2.googlesyndication.com   e.g. https://ambimat.com/
+    346  https://stats.wp.com   e.g. https://ambimat.com/
+    346  https://www.google.com   e.g. https://ambimat.com/
+    346  https://www.googletagmanager.com   e.g. https://ambimat.com/
+== style-src
+    346  https://fonts.googleapis.com   e.g. https://ambimat.com/

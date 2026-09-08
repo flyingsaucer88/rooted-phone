@@ -1,0 +1,16 @@
+HTTP/2 200 
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: https://www.googletagmanager.com https://cdn-cookieyes.com https://directory.cookieyes.com https://log.cookieyes.com https://www.google.com https://www.gstatic.com https://stats.wp.com https://pagead2.googlesyndication.com https://js.driftt.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://i0.wp.com https://i1.wp.com https://i2.wp.com https://stats.wp.com https://pixel.wp.com https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.google.co.in https://maps.gstatic.com https://cdn-cookieyes.com https://qph.cf2.quoracdn.net; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://stats.wp.com https://log.cookieyes.com https://directory.cookieyes.com https://cdn-cookieyes.com https://csp.withgoogle.com; frame-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com https://www.youtube-nocookie.com https://js.driftt.com https://paylosophy.com https://www.pcisecuritystandards.org https://www.encryptionconsulting.com https://www.tech-faq.com https://idtechproducts.com https://www.idwholesaler.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+last-modified: Tue, 08 Sep 2026 11:49:25 GMT
+etag: "2c62d-65af7539545a0"
+accept-ranges: bytes
+content-length: 181805
+vary: Accept-Encoding
+content-type: text/html; charset=UTF-8
+date: Tue, 08 Sep 2026 12:08:27 GMT
+server: Apache
+

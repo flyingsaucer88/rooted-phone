@@ -1,0 +1,27 @@
+{
+ "http://www.revvx.com/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-network-blocked"
+ },
+ "https://www.iso.org/standard/77180.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.itsinternational.com/ettifos-joins-arizona-v2x-deployment/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ },
+ "https://www.kmu.ac.kr/": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-tls-chain"
+ },
+ "https://www.nytimes.com/2019/07/25/us/politics/russian-hacking-elections.html": {
+  "days_unverified": 0,
+  "first_unverified": "2026-09-08",
+  "last_classification": "unverified-expected-antibot"
+ }
+}
