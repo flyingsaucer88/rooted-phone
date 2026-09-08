@@ -34,8 +34,11 @@ for _name in ("requests", "bs4", "yaml"):
 
 
 class FakeResponse:
-    def __init__(self, status_code):
+    def __init__(self, status_code, url="https://example.com/final"):
         self.status_code = status_code
+        # requests.Response.url is the FINAL url after redirects; _status_only returns it so
+        # callers can spot a remote that answers its own 404 page with a 200.
+        self.url = url
 
     def close(self):
         pass
@@ -91,42 +94,42 @@ def main():
 
     # The real AddToAny behaviour: HEAD 403, GET 302 -> not broken.
     s = FakeSession(403, 302)
-    st, err = _crawler(s)._status_only("https://www.addtoany.com/add_to/twitter?x=1")
+    st, err, _final = _crawler(s)._status_only("https://www.addtoany.com/add_to/twitter?x=1")
     failures += check("HEAD 403 + GET 302 reports 302, not 403", st, 302)
     failures += check("  and it actually issued the GET", s.calls, ["HEAD", "GET"])
 
     # A genuinely dead link must still be reported broken.
     s = FakeSession(404, 404)
-    st, _ = _crawler(s)._status_only("https://example.com/gone")
+    st, _, _final = _crawler(s)._status_only("https://example.com/gone")
     failures += check("HEAD 404 + GET 404 stays 404", st, 404)
 
     # A host refusing HEAD but also refusing GET is genuinely forbidden.
     s = FakeSession(403, 403)
-    st, _ = _crawler(s)._status_only("https://example.com/forbidden")
+    st, _, _final = _crawler(s)._status_only("https://example.com/forbidden")
     failures += check("HEAD 403 + GET 403 stays 403", st, 403)
 
     # A healthy link costs exactly one request — no extra GET.
     s = FakeSession(200, 200)
-    st, _ = _crawler(s)._status_only("https://example.com/ok")
+    st, _, _final = _crawler(s)._status_only("https://example.com/ok")
     failures += check("HEAD 200 stays 200", st, 200)
     failures += check("  and no wasteful second request", s.calls, ["HEAD"])
 
     # 405 Method Not Allowed keeps working as before.
     s = FakeSession(405, 200)
-    st, _ = _crawler(s)._status_only("https://example.com/no-head")
+    st, _, _final = _crawler(s)._status_only("https://example.com/no-head")
     failures += check("HEAD 405 + GET 200 reports 200", st, 200)
 
     # The fallback must not become a blanket amnesty: a host that refuses HEAD and
     # then 404s the GET is genuinely dead, and GET is the answer that counts.
     s = FakeSession(403, 404)
-    st, _ = _crawler(s)._status_only("https://example.com/blocked-then-gone")
+    st, _, _final = _crawler(s)._status_only("https://example.com/blocked-then-gone")
     failures += check("HEAD 403 + GET 404 reports 404, not 403", st, 404)
     failures += check("  and 404 is classified broken, not unverified",
                       _classify_external(404), "broken")
 
     # Same shape for a server error behind a HEAD refusal.
     s = FakeSession(403, 503)
-    st, _ = _crawler(s)._status_only("https://example.com/blocked-then-down")
+    st, _, _final = _crawler(s)._status_only("https://example.com/blocked-then-down")
     failures += check("HEAD 403 + GET 503 reports 503", st, 503)
     failures += check("  and 503 is classified broken", _classify_external(503), "broken")
 

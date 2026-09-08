@@ -89,6 +89,15 @@ alerts:
     - adult
   # TLS certificate warning threshold.
   cert_expiry_warn_days: 21
+  # How long a link may stay UNVERIFIED before a human is asked to look at it.
+  #
+  # Classifying an anti-bot 403 as "not broken" is correct and must not turn into "trusted
+  # for ever": a page that genuinely disappears behind a WAF would otherwise sit in the
+  # unverified bucket permanently with nobody re-checking it. Every unverified URL carries the
+  # date it first failed, and at this age the monitor warns. Verifying on any later run drops
+  # it from the ledger and restarts the clock, so this is a re-verification schedule rather
+  # than an allowlist, and it cannot be satisfied by leaving things alone.
+  unverified_stale_days: 30
   # External social/CDN hosts that commonly reject bot HEAD/GET (return None/403) — do NOT
   # report these as "broken external links" (they are false positives, not site problems).
   # Matched on the host SUFFIX at a dot boundary, so "facebook.com" also covers

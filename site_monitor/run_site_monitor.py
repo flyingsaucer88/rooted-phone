@@ -204,6 +204,46 @@ def term_in_text(term, text_lower):
 # Only ever applied to EXTERNAL links: an internal 401/403 is a real finding about our site.
 EXTERNAL_BLOCKING_CODES = {401, 403, 429}
 
+# A 2xx whose FINAL url is the remote's own not-found page. fime.com serves its 404 with
+# HTTP 200, so two dead references on ambimat.com passed every status check ever run against
+# them; they were only caught by reading where the redirect landed. Matched on the final path
+# only, anchored, so a real article at /404-explained/ is not swept up.
+_SOFT_404_PATHS = re.compile(r"^/(404|not[-_]?found|page[-_]?not[-_]?found|error[-_]?404)/?$", re.I)
+
+# Error-shape -> classification for a link that could not be verified. The point is that
+# "unverified" stops being one undifferentiated bucket: an anti-bot 403 is a permanent
+# property of the remote, a connect-refusal from this vantage point says nothing about the
+# remote at all, and a read timeout is usually transient. Reporting them identically is what
+# made 7 links look like 7 possible dead links.
+_UNVERIFIED_SHAPES = (
+    ("unverified-tls-chain",
+     ("certificate_verify_failed", "unable to get local issuer", "sslcertverificationerror",
+      "certificate verify failed")),
+    ("unverified-network-blocked",
+     ("connecttimeouterror", "connection refused", "econnrefused", "newconnectionerror",
+      "name or service not known", "nodename nor servname", "failed to resolve",
+      "temporary failure in name resolution", "connect timeout")),
+    ("unverified-timeout",
+     ("read timed out", "readtimeout", "timed out")),
+)
+
+
+def classify_unverified(status, error):
+    """Name the REASON a link could not be verified, instead of leaving every failure as one
+    anonymous 'unverified'.
+
+    Deliberately not an allowlist: every value returned here still counts as unverified and
+    still ages in the staleness ledger. It only stops an anti-bot 403 and a LAN appliance
+    swallowing the connection from reading as 'this link may be dead'."""
+    if status in EXTERNAL_BLOCKING_CODES:
+        return "unverified-expected-antibot"
+    blob = (error or "").lower()
+    for label, needles in _UNVERIFIED_SHAPES:
+        if any(n in blob for n in needles):
+            return label
+    return "unverified-unknown"
+
+
 # An iframe src using one of these executes script or inlines a document instead of loading a
 # page. Nothing on this estate legitimately does that, so it is an alert wherever it appears.
 _DANGEROUS_SCHEMES = {"javascript", "data", "vbscript", "blob"}
@@ -295,7 +335,8 @@ class SiteCrawler:
                 time.sleep(1.0)
 
     def _status_only(self, url):
-        """HEAD, confirmed with GET on any failure; retried once. Returns (status:int|None, error).
+        """HEAD, confirmed with GET on any failure; retried once.
+        Returns (status:int|None, error, final_url:str|None).
         A None status means 'could not verify' (connection error/timeout — e.g. transient rate
         limiting during a request burst), NOT necessarily a broken link. Callers treat None as
         UNVERIFIED, distinct from a real failing status code.
@@ -312,17 +353,17 @@ class SiteCrawler:
                 if r.status_code in self.fail_codes or r.status_code >= 400:
                     r = self.session.get(url, timeout=self.timeout, allow_redirects=True, stream=True)
                     r.close()
-                return r.status_code, None
+                return r.status_code, None, r.url
             except Exception:
                 try:
                     r = self.session.get(url, timeout=self.timeout, allow_redirects=True, stream=True)
                     r.close()
-                    return r.status_code, None
+                    return r.status_code, None, r.url
                 except Exception as e2:
                     last_err = str(e2)
             if attempt == 0:
                 time.sleep(1.0)  # brief backoff, then one retry (rides out transient throttling)
-        return None, last_err
+        return None, last_err, None
 
     # ---- discovery -----------------------------------------------------
     def _load_robots(self):
@@ -670,13 +711,19 @@ class SiteCrawler:
             if self._out_of_time():
                 self.skipped.append(f"internal link check stopped early ({checked_int}/{len(to_check)} checked)")
                 break
-            st, err = self._status_only(u)
+            st, err, final = self._status_only(u)
             checked_int += 1
             rec = {"url": u, "status": st, "found_on": self.link_sources.get(u)}
             if st is None:
                 rec["error"] = err
+                rec["classification"] = classify_unverified(st, err)
                 unverified_internal.append(rec)
             elif st in self.fail_codes:
+                broken_internal.append(rec)
+            elif self._is_soft_404(final):
+                rec["final_url"] = final
+                rec["error"] = f"HTTP {st}, but the redirect landed on the remote's not-found page"
+                rec["classification"] = "soft-404"
                 broken_internal.append(rec)
             time.sleep(delay)
 
@@ -694,11 +741,12 @@ class SiteCrawler:
             if self._out_of_time():
                 self.skipped.append(f"external link check stopped early ({checked_ext}/{len(externals)} checked)")
                 break
-            st, err = self._status_only(u)
+            st, err, final = self._status_only(u)
             checked_ext += 1
             rec = {"url": u, "status": st, "found_on": self.link_sources.get(u)}
             if st is None:
                 rec["error"] = err
+                rec["classification"] = classify_unverified(st, err)
                 unverified_external.append(rec)
             elif st in EXTERNAL_BLOCKING_CODES:
                 # A third party refusing an automated client is not a broken link, and it is
@@ -708,12 +756,29 @@ class SiteCrawler:
                 # genuinely was (an NXP page returning a real 404) under five that were not.
                 # 404/410/5xx stay broken: those ARE actionable dead outbound links.
                 rec["error"] = f"external host refused an automated request (HTTP {st})"
-                rec["classification"] = "external-blocking"
+                rec["classification"] = classify_unverified(st, err)
                 unverified_external.append(rec)
             elif st in self.fail_codes:
                 broken_external.append(rec)
+            elif self._is_soft_404(final):
+                # fime.com answers every dead path with HTTP 200 on /404. Two references on
+                # ambimat.com survived every status check this monitor ever ran because of it.
+                rec["final_url"] = final
+                rec["error"] = f"HTTP {st}, but the redirect landed on the remote's not-found page"
+                rec["classification"] = "soft-404"
+                broken_external.append(rec)
             time.sleep(delay)
         return broken_internal, broken_external, unverified_internal, unverified_external
+
+    @staticmethod
+    def _is_soft_404(final_url):
+        """True when a 2xx response finished on the remote's own not-found page."""
+        if not final_url:
+            return False
+        try:
+            return bool(_SOFT_404_PATHS.match(urlparse(final_url).path))
+        except Exception:
+            return False
 
     def _seo_summary(self):
         missing_title, missing_desc, missing_h1, missing_canon, noindex = [], [], [], [], []
@@ -797,6 +862,79 @@ class SiteCrawler:
             "title_drift": drift,
             "pages": self.pages,
         }
+
+
+LEDGER_NAME = "unverified_ledger.json"
+
+
+def load_ledger(output_dir):
+    path = os.path.join(output_dir, LEDGER_NAME)
+    if os.path.isfile(path):
+        try:
+            with open(path) as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+
+def age_unverified_links(site_reports, output_dir, stale_days, today=None):
+    """Age every still-unverified link, and warn once it has been unverified too long.
+
+    An anti-bot 403 is correctly not a broken link, but "correctly not broken" must not become
+    "trusted forever". A resource that genuinely disappears behind a WAF would otherwise sit in
+    the unverified bucket for the rest of time with nobody ever looking at it again.
+
+    So each unverified URL carries the date it FIRST failed to verify, and any URL that has
+    been unverified for `stale_days` raises a warning asking for a human check. A URL that
+    verifies on any later run is dropped from the ledger, which resets its clock - so this is
+    a re-verification schedule, not an allowlist, and it cannot be satisfied by doing nothing.
+
+    Returns the ledger to persist."""
+    ledger = load_ledger(output_dir)
+    now = today or _dt.datetime.now(_dt.timezone.utc).date()
+    seen = set()
+    for site in site_reports:
+        recs = list(site.get("unverified_external_links", [])) + \
+               list(site.get("unverified_internal_links", []))
+        for rec in recs:
+            url = rec.get("url")
+            if not url:
+                continue
+            seen.add(url)
+            entry = ledger.get(url) or {}
+            first = entry.get("first_unverified") or now.isoformat()
+            entry["first_unverified"] = first
+            entry["last_classification"] = rec.get("classification", "unverified-unknown")
+            try:
+                days = (now - _dt.date.fromisoformat(first)).days
+            except Exception:
+                days = 0
+            entry["days_unverified"] = days
+            ledger[url] = entry
+            rec["first_unverified"] = first
+            rec["days_unverified"] = days
+            if days >= stale_days:
+                rec["stale"] = True
+                site.setdefault("warnings", []).append({
+                    "type": "external-link-unverified-too-long",
+                    "detail": (f"{url} has been unverified for {days} days "
+                               f"({rec.get('classification', 'unverified-unknown')}); "
+                               f"confirm by hand that it still resolves"),
+                    "url": rec.get("found_on") or url,
+                })
+    # A link that verified this run leaves the ledger, which restarts its clock.
+    for url in [u for u in ledger if u not in seen]:
+        del ledger[url]
+    return ledger
+
+
+def save_ledger(ledger, output_dir):
+    try:
+        with open(os.path.join(output_dir, LEDGER_NAME), "w") as f:
+            json.dump(ledger, f, indent=1, sort_keys=True)
+    except Exception:
+        pass
 
 
 def load_prev_titles(output_dir):
@@ -942,6 +1080,9 @@ def main():
         interrupted = True
         print("[monitor] interrupted — writing partial report.", file=sys.stderr, flush=True)
     finally:
+        stale_days = int(alerts_cfg.get("unverified_stale_days", 30))
+        save_ledger(age_unverified_links(site_reports, args.output_dir, stale_days),
+                    args.output_dir)
         totals = {
             "sites_total": len(cfg.get("sites", [])),
             "sites_reported": len(site_reports),
