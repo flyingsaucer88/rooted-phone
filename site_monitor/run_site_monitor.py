@@ -100,6 +100,23 @@ DEFACEMENT_MARKERS = [
 # that no one writes by accident.
 WEAK_DEFACEMENT_MARKERS = {"owned by", "was here"}
 
+# Vocabulary that only a page ABOUT security uses. A defacer writes "Hacked By ShadowTeam" and
+# leaves; they do not also write 2,000 words about attack vectors, patching and forensics.
+# Used to tell an article that DISCUSSES an attack from a page that IS one — the 2026-09-08
+# estate crawl's last editorial false positive was
+# /blog/archive/cyber-attacks-in-india-part-1/, a 1,168-word account of Indian bank breaches
+# that contains the sentence "…ATM details were hacked by attackers…".
+SECURITY_EDITORIAL_TERMS = (
+    "vulnerability", "vulnerabilities", "attacker", "attackers", "attack", "breach", "breaches",
+    "malware", "ransomware", "phishing", "exploit", "patch", "patched", "cyber", "cybersecurity",
+    "security", "encryption", "authentication", "credential", "credentials", "firewall",
+    "incident", "forensic", "threat", "mitigation", "compromised", "data leak",
+)
+# How many distinct such terms make a page credibly editorial.
+SECURITY_EDITORIAL_MIN_TERMS = 4
+# ...and how much text. A short page with security words is still a defacement candidate.
+SECURITY_EDITORIAL_MIN_WORDS = 400
+
 HIDDEN_CSS_HINTS = [
     "display:none", "display: none", "visibility:hidden", "visibility: hidden",
     "font-size:0", "font-size: 0", "text-indent:-9999", "left:-9999", "opacity:0",
@@ -187,6 +204,10 @@ def term_in_text(term, text_lower):
 # Only ever applied to EXTERNAL links: an internal 401/403 is a real finding about our site.
 EXTERNAL_BLOCKING_CODES = {401, 403, 429}
 
+# An iframe src using one of these executes script or inlines a document instead of loading a
+# page. Nothing on this estate legitimately does that, so it is an alert wherever it appears.
+_DANGEROUS_SCHEMES = {"javascript", "data", "vbscript", "blob"}
+
 
 class SiteCrawler:
     def __init__(self, site, crawl_cfg, alerts_cfg, sec_headers, keywords, prev_titles, verbose=False):
@@ -204,7 +225,11 @@ class SiteCrawler:
         self.fail_codes = set(alerts_cfg.get("fail_on_status_codes", []))
         self.susp_domains = [d.lower() for d in alerts_cfg.get("suspicious_external_domains", [])]
         self.ext_skip_hosts = [h.lower() for h in alerts_cfg.get("external_check_skip_hosts", [])]
-        self.known_iframe_hosts = [h.lower() for h in alerts_cfg.get("known_iframe_hosts", [])]
+        self.expected_iframe_hosts = [h.lower() for h in
+                                      alerts_cfg.get("expected_iframe_hosts",
+                                                     alerts_cfg.get("known_iframe_hosts", []))]
+        self.expected_embeds = []   # verified-expected frames: reported, never warned
+        self.editorial_security_pages = []  # defacement marker judged editorial, with evidence
 
         # (connect, read) timeout tuple — a hung TCP connect or a slow body can never block forever.
         conn = crawl_cfg.get("connect_timeout_seconds", crawl_cfg.get("request_timeout_seconds", 10))
@@ -413,14 +438,32 @@ class SiteCrawler:
                 src = (t.get(attr) or "").strip()
                 if not src:
                     continue
+                # A frame whose src is script or an inline document is never legitimate here.
+                # Test the RAW attribute: urljoin() would resolve these into something that
+                # looks like an ordinary URL.
+                if tag_name == "iframe" and src.split(":", 1)[0].strip().lower() in _DANGEROUS_SCHEMES:
+                    self._alert("iframe-dangerous-scheme",
+                                f"iframe with a script/data src: {src[:120]}", url)
+                    continue
                 full = urljoin(base, src)
                 host = urlparse(full).netloc.lower()
                 if host and host != self.host:
                     if set(host.split(".")) & set(self.susp_domains):
                         self._alert("injected-external",
                                     f"{tag_name} loading from suspicious external domain: {full}", url)
-                    elif tag_name == "iframe" and not host_matches(host, self.known_iframe_hosts):
-                        self._warn("external-iframe", f"iframe from external domain: {full}", url)
+                    elif tag_name == "iframe":
+                        # THE IFRAME INVARIANT: only reviewed origins may be framed on this
+                        # estate. An expected host is recorded as VERIFIED — it is not
+                        # "suspicious" and must not sit in a warning bucket run after run.
+                        # Anything else is an ALERT: an unexplained third-party frame is one of
+                        # the clearest signatures of an injection, and "nobody approved this
+                        # origin" is exactly the condition worth surfacing loudly.
+                        if host_matches(host, self.expected_iframe_hosts):
+                            self.expected_embeds.append({"url": url, "host": host, "src": full})
+                        else:
+                            self._alert("unexpected-iframe-host",
+                                        "iframe from an origin absent from expected_iframe_hosts: "
+                                        f"{full}", url)
 
         for element in soup(["script", "style", "noscript"]):
             element.decompose()
@@ -443,9 +486,23 @@ class SiteCrawler:
                 where = "title/H1" if in_prominent else f"very short page ({word_count} words)"
                 self._alert("defacement", f"defacement marker {marker_hit!r} in {where}", url)
             elif marker_hit not in WEAK_DEFACEMENT_MARKERS:
-                self._warn("defacement-marker-in-content",
-                           f"defacement-style phrase {marker_hit!r} in page text — likely editorial "
-                           f"(title looks normal, {word_count} words); verify manually", url)
+                # Body-only hit on a normal, long page. Before warning, ask whether this reads
+                # like security WRITING rather than a takeover. A defaced page is short, loses
+                # its real title, and says nothing else; a security article is long, keeps its
+                # title (already checked above) and is dense with the vocabulary of the subject.
+                sec_terms = {t for t in SECURITY_EDITORIAL_TERMS if term_in_text(t, visible_lower)}
+                editorial = (word_count >= SECURITY_EDITORIAL_MIN_WORDS
+                             and len(sec_terms) >= SECURITY_EDITORIAL_MIN_TERMS)
+                if editorial:
+                    self.editorial_security_pages.append({
+                        "url": url, "marker": marker_hit, "words": word_count,
+                        "security_terms": sorted(sec_terms)[:8],
+                    })
+                else:
+                    self._warn("defacement-marker-in-content",
+                               f"defacement-style phrase {marker_hit!r} in page text — title looks "
+                               f"normal ({word_count} words) but the page does not read as security "
+                               f"writing ({len(sec_terms)} topic terms); verify manually", url)
 
         # A Japanese keyword hack injects JAPANESE SCRIPT. The romaji/English variants in the
         # keyword file ("betting", "casino", "replica", "loan"…) are ordinary English words that
@@ -735,6 +792,8 @@ class SiteCrawler:
             "broken_external_links": broken_external,
             "unverified_internal_links": unverified_internal,
             "unverified_external_links": unverified_external,
+            "expected_embeds": self.expected_embeds,
+            "editorial_security_pages": self.editorial_security_pages,
             "title_drift": drift,
             "pages": self.pages,
         }

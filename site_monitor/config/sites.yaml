@@ -107,19 +107,41 @@ alerts:
     # /add_to/<network> rate-limits automated clients. Checking it measures AddToAny's
     # bot policy, never whether the Orders site is healthy.
     - addtoany.com
-  # Iframe embeds from these hosts are expected site furniture (tag manager, reCAPTCHA, maps,
-  # video), not injected markup. Matched on the host suffix like external_check_skip_hosts.
-  # Everything NOT on this list still raises an external-iframe warning, so a genuinely
-  # injected third-party frame is still surfaced.
-  known_iframe_hosts:
-    - googletagmanager.com
-    - google.com
-    - gstatic.com
-    - youtube.com
+  # THE IFRAME INVARIANT.
+  #
+  # This list is the whole security model for frames on the estate: "only these origins may be
+  # embedded". It is not an exemption list and must not be treated as one. A frame from a host
+  # that is NOT here raises an ALERT, not a warning — an unexplained third-party frame appearing
+  # on a page is one of the clearest signatures of an injection, and the only way that signal
+  # stays meaningful is if the expected set is small, explicit and reviewed.
+  #
+  # Adding a host here is a decision to trust it with a frame on our pages. Do it deliberately,
+  # with the reason, in the group it belongs to.
+  #
+  # Matched on the host suffix at a dot boundary, so "google.com" covers www.google.com but
+  # never google.com.evil.tld.
+  expected_iframe_hosts:
+    # --- Group 1: site infrastructure we deploy on purpose -------------------
+    - googletagmanager.com      # GTM/GA4 <noscript> frame, on every page of several sites
+    - google.com                # reCAPTCHA challenge frame on the contact forms
+    - gstatic.com               # reCAPTCHA static assets
+    - maps.google.com           # embedded office location maps
+    - youtube.com               # product/《how-to》 video embeds
     - youtube-nocookie.com
     - youtu.be
     - vimeo.com
     - openstreetmap.org
+    # --- Group 2: publisher oEmbeds approved editorially (ambimat.com) --------
+    # Each is an industry source quoted in a specific article. Reviewed 2026-09-08: every one
+    # was confirmed to still serve its embed. Two more were removed in the same review because
+    # their remotes were dead (digitalid.co.uk 500, emv-connection.com Cloudflare 522) — those
+    # articles now carry plain reference links instead of a broken frame.
+    - paylosophy.com            # /emv-certification-in-a-nutshell/
+    - pcisecuritystandards.org  # /pci-ssc-data-security-standards-overview/, /official-pci-...-libary/
+    - encryptionconsulting.com  # /triple-des-or-3des/
+    - tech-faq.com              # /data-layout-on-magnetic-stripe-cards/
+    - idtechproducts.com        # /how-to-parse-tlvs-in-javascript/
+    - idwholesaler.com          # /whats-the-difference-between-a-hico-loco-magstripe-card/
 
 security_headers:
   # Headers we check for presence on each site's homepage (missing = warning, not alert).
