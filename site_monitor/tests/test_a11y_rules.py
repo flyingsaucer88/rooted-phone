@@ -138,6 +138,46 @@ check("the real /contact/ control set reports ZERO unlabelled controls (was 13)"
 check("  and one genuinely unnamed control added to it is still found",
       count(CONTACT + '<input type="text" name="orphan">'), 1)
 
+# ---------------------------------------------------------------- inert headings
+# A heading the browser never paints is not in anyone's outline. But "hidden" has to mean
+# hidden, not "hidden right now" — a tab panel is display:none until its tab is opened, and
+# those headings are read by real people.
+ORDERS_DEAD_BLOCK = ('<h2>Contact Details</h2>'
+                     '<div class="col-sm-5 col-xs-12 form-section" style="display:none">'
+                     '<div class="media-body"><h5>Works</h5></div>'
+                     '<div class="media-body"><h5>Local Inquiry</h5></div></div>')
+check("headings inside an inline display:none block are not counted",
+      issues(ORDERS_DEAD_BLOCK), [])
+check("  nor do they leave a phantom H1 problem",
+      audit_html("<html lang='en'><body><main><h1>T</h1>" + ORDERS_DEAD_BLOCK
+                 + "</main></body></html>")["issues"], [])
+check("headings under [hidden] are not counted",
+      issues('<h2>S</h2><div hidden><h5>Label</h5></div>'), [])
+check("headings under aria-hidden are not counted",
+      issues('<h2>S</h2><div aria-hidden="true"><h5>Label</h5></div>'), [])
+check("visibility:hidden counts as inert too",
+      issues('<h2>S</h2><div style="visibility:hidden"><h5>L</h5></div>'), [])
+
+# The careers page: 29 job-field headings hidden by a CSS CLASS that JS reveals. These are
+# real headings a real reader meets, and the skip they cause must still be reported.
+CAREERS_TABS = ('<h2>JOIN US</h2>'
+                '<div class="tab-pane" id="job1" role="tabpanel" aria-labelledby="tab1">'
+                '<div class="panel-body"><h5>Job Description</h5><h5>Skill Required</h5></div></div>')
+check("a heading hidden only by a CSS class IS still counted",
+      issues(CAREERS_TABS), ["skip h2->h5"])
+check("  and once promoted to h3 it passes",
+      issues(CAREERS_TABS.replace("<h5>", "<h3>").replace("</h5>", "</h3>")), [])
+
+# Inert headings must not be silently discarded from the record either.
+r = audit_html("<html lang='en'><body><main><h1>T</h1><h2>S</h2>"
+               '<div style="display:none"><h5>X</h5></div></main></body></html>')
+check("the inert count is reported, not hidden", (r["headings"], r["headings_inert"]), (2, 1))
+
+# A real defect on visible content is still found next to an inert block.
+check("an inert block cannot mask a real skip elsewhere",
+      issues('<h2>A</h2><div style="display:none"><h5>hidden</h5></div><h4>visible</h4>'),
+      ["skip h2->h4"])
+
 print()
 print("%s: %d failed" % ("FAILURES" if failures else "all assertions passed", failures))
 sys.exit(1 if failures else 0)

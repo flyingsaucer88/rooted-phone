@@ -94,7 +94,7 @@ class A11yParser(HTMLParser):
             self.controls.append((tag, a, self._in("label"), self._hidden_depth(),
                                   self._in("noscript")))
         if re.fullmatch(r"h[1-6]", tag):
-            self._heading = (int(tag[1]), [])
+            self._heading = (int(tag[1]), [], self._hidden_depth() or self._in("noscript"))
         if tag == "a":
             self._link = (a, [], [], False)
         elif self._link is not None and tag not in ("br", "wbr"):
@@ -111,7 +111,8 @@ class A11yParser(HTMLParser):
 
     def handle_endtag(self, tag):
         if re.fullmatch(r"h[1-6]", tag) and self._heading:
-            self.headings.append((self._heading[0], "".join(self._heading[1]).strip()))
+            self.headings.append((self._heading[0], "".join(self._heading[1]).strip(),
+                                  self._heading[2]))
             self._heading = None
         if tag == "a" and self._link is not None:
             self.links.append(self._link)
@@ -144,13 +145,28 @@ def audit_html(html):
     p.feed(html)
     issues = []
 
-    h1s = [h for h in p.headings if h[0] == 1]
+    # A heading the browser never paints is not part of the outline anyone is given, so it is
+    # not counted — the same rule already applied to form controls and to <noscript>.
+    #
+    # 2026-09-08: orders.ambimat.com/contact/ reported an h2->h5 skip for four labels sitting
+    # inside <div class="col-sm-5 col-xs-12 form-section" style="display:none"> — a leftover
+    # form block that renders at NO viewport (measured: offsetParent null, 0x0 box, document
+    # height unchanged with and without them).
+    #
+    # Deliberately keyed on INLINE hiding only (style/hidden/aria-hidden on an ancestor), never
+    # on a CSS class. ambimat.com/careers/ hides 29 job-field headings behind .tab-pane, which
+    # JavaScript reveals when a visitor opens that job — those are real headings a real reader
+    # meets, and they must keep being checked.
+    live = [h for h in p.headings if not h[2]]
+    inert = len(p.headings) - len(live)
+
+    h1s = [h for h in live if h[0] == 1]
     if not h1s:
         issues.append("no H1")
     elif len(h1s) > 1:
         issues.append("%d H1s" % len(h1s))
     prev = None
-    for lvl, _text in p.headings:
+    for lvl, _text, _inert in live:
         if prev is not None and lvl > prev + 1:
             issues.append("skip h%d->h%d" % (prev, lvl))
         prev = lvl
@@ -196,7 +212,8 @@ def audit_html(html):
     if not p.html_lang:
         issues.append("no html lang")
 
-    return {"issues": issues, "headings": len(p.headings), "images": len(p.images)}
+    return {"issues": issues, "headings": len(live), "headings_inert": inert,
+            "images": len(p.images)}
 
 
 def audit(url):
