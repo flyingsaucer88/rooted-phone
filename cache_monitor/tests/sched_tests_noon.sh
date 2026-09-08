@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Controlled scenario tests for the 12:00 cache-monitor scheduling behaviour.
+# Controlled scenario tests for the 10:00 cache-monitor scheduling behaviour.
 #
 # Runs the REAL run_cache_monitor_daily.sh and the REAL lib_common.sh against an
 # ISOLATED temp AMBIMAT_HOME, with a stub inspection engine. It touches no real
@@ -97,7 +97,7 @@ ok "offline -> engine NOT invoked" "[ $(calls) -eq 0 ]"
 ok "offline -> marker NOT set (watchdog retries)" "[ ! -f $MARKER ]"
 ok "offline -> exit 0 (a deferral, not a failure)" "[ $rc -eq 0 ]"
 
-echo "=== E. global maintenance lock (never collide with 10:00 / 11:00) ==="
+echo "=== E. global maintenance lock (never collide with 08:00 / 09:00) ==="
 for other in site_run seo_run; do
   reset
   mkdir -p "$LOGDIR/.${other}.lock"; echo "$$" > "$LOGDIR/.${other}.lock/pid"
@@ -110,7 +110,7 @@ done
 reset
 mkdir -p "$LOGDIR/.site_run.lock"; echo "999999" > "$LOGDIR/.site_run.lock/pid"   # dead owner
 bash "$RUNNER" >/dev/null 2>&1
-ok "dead 10:00 lock owner -> not treated as held" "[ $(calls) -eq 1 ]"
+ok "dead 08:00 lock owner -> not treated as held" "[ $(calls) -eq 1 ]"
 rm -rf "$LOGDIR/.site_run.lock"
 
 echo "=== F. dedicated non-blocking lock ==="

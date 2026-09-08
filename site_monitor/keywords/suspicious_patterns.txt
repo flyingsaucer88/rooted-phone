@@ -1,21 +1,24 @@
 # Suspicious HTML/JS patterns often seen in injected/cloaked content.
 # One pattern per line; # = comment. Case-insensitive substring match on the RAW HTML source.
-# WARNING-level only: every one of these has legitimate uses (analytics, lazy CSS, etc.),
-# so they are reported as warnings to investigate, NOT as confirmed compromise.
-
-# --- Hidden-content CSS (classic cloaked-link/keyword-stuffing tricks) ---
-display:none
-display: none
-visibility:hidden
-visibility: hidden
-font-size:0
-font-size: 0
-opacity:0
-text-indent:-9999
-position:absolute;left:-9999
-left:-9999
-height:1px;width:1px
-width:0;height:0
+# WARNING-level only: these are reported as warnings to investigate, NOT as confirmed compromise.
+#
+# 2026-09-08 — TWO GROUPS WERE REMOVED FROM THIS FILE. Both were pure noise here and both are
+# already covered by a stricter rule elsewhere in run_site_monitor.py. Do not put them back.
+#
+#   1. Hidden-content CSS (display:none, visibility:hidden, opacity:0, font-size:0,
+#      height:1px;width:1px, left:-9999, …). A raw substring match for these fires on virtually
+#      every modern page: dropdown menus, modals, accordions, screen-reader-only text, CSS
+#      animation start states, lazy-load placeholders and analytics pixels all legitimately use
+#      them. They produced 512 of the 593 warnings on the 2026-09-08 estate run — every single
+#      one a false positive — which is exactly how a real finding gets buried.
+#      THE REAL THREAT (a cloaked link hidden from users but fed to crawlers) is detected
+#      precisely by the `hidden-link` rule, which flags an EXTERNAL link only when it or an
+#      ancestor actually carries a hiding style. That rule is intact and reported 0 hits.
+#
+#   2. Defacement calling-cards (hacked by, owned by, defaced by, …). These live in
+#      DEFACEMENT_MARKERS in run_site_monitor.py, which checks VISIBLE text (not raw HTML) and
+#      corroborates: title/H1 or an abnormally short page => ALERT; body-only on a normal page
+#      => advisory. Matching them here too re-reported the same pages with none of that context.
 
 # --- Obfuscation / dynamic code execution ---
 base64_decode
@@ -38,17 +41,12 @@ top.location=
 meta http-equiv="refresh"
 
 # --- PHP/webshell leftovers accidentally rendered into HTML ---
+# `<?php` is the decisive one: if PHP is leaking into served HTML the interpreter is not running,
+# so a real webshell leftover carries it. Bare `system(` was removed 2026-09-08 — it matched the
+# ordinary prose "Data Encryption System(DES)" on ambimat.com. The `$`-suffixed form below keeps
+# the realistic webshell shape (system($_GET[...])) without matching English sentences.
 <?php
 passthru(
 shell_exec(
-system(
+system($
 gzinflate(
-
-# --- Defacement calling-cards (appear in title/body of defaced pages) ---
-hacked by
-owned by
-defaced by
-pwned by
-h4ck3d
-was here
-greetz to

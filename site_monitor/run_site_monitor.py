@@ -92,6 +92,14 @@ DEFACEMENT_MARKERS = [
     "your site has been hacked", "greetz to", "we are legion",
 ]
 
+# Markers above that are also ordinary English. In the TITLE/H1 of a page, or on an abnormally
+# short one, "owned by" is still damning and still raises the ALERT — that path is unchanged.
+# In the body of a normal, long page it is just prose: "Devices owned by infrastructure
+# operators", "owned by one engineering organisation". Those produced 10 advisory warnings on
+# 2026-09-08, all editorial, none actionable, so the body-only ADVISORY is limited to markers
+# that no one writes by accident.
+WEAK_DEFACEMENT_MARKERS = {"owned by", "was here"}
+
 HIDDEN_CSS_HINTS = [
     "display:none", "display: none", "visibility:hidden", "visibility: hidden",
     "font-size:0", "font-size: 0", "text-indent:-9999", "left:-9999", "opacity:0",
@@ -142,6 +150,22 @@ def has_skip_ext(url, skip_exts):
 _TERM_RE_CACHE = {}
 
 
+def host_matches(host, patterns):
+    """True if `host` equals one of `patterns` or is a subdomain of one.
+
+    2026-09-08: external_check_skip_hosts was compared with `netloc not in list`, an exact
+    match. "facebook.com" therefore did not cover www.facebook.com, and "linkedin.com" did not
+    cover in.linkedin.com, so five social links were reported unverified on every run despite
+    being explicitly listed as bot-hostile. Suffix matching is anchored at a dot boundary so
+    "notfacebook.com" still does NOT match."""
+    h = (host or "").lower().strip(".")
+    for p in patterns:
+        p = p.lower().strip(".")
+        if h == p or h.endswith("." + p):
+            return True
+    return False
+
+
 def term_in_text(term, text_lower):
     """Match a spam term in already-lowercased text.
 
@@ -180,6 +204,7 @@ class SiteCrawler:
         self.fail_codes = set(alerts_cfg.get("fail_on_status_codes", []))
         self.susp_domains = [d.lower() for d in alerts_cfg.get("suspicious_external_domains", [])]
         self.ext_skip_hosts = [h.lower() for h in alerts_cfg.get("external_check_skip_hosts", [])]
+        self.known_iframe_hosts = [h.lower() for h in alerts_cfg.get("known_iframe_hosts", [])]
 
         # (connect, read) timeout tuple — a hung TCP connect or a slow body can never block forever.
         conn = crawl_cfg.get("connect_timeout_seconds", crawl_cfg.get("request_timeout_seconds", 10))
@@ -216,14 +241,33 @@ class SiteCrawler:
     def _out_of_time(self):
         return _STOP or (self.deadline is not None and time.monotonic() > self.deadline)
 
+    # Connection-level failures that are worth exactly one retry: the peer dropped or timed out
+    # the socket without answering. These are the shapes a shared-host hiccup takes, and they are
+    # indistinguishable at the first attempt from a real outage — the retry is what tells them
+    # apart. A page that answers on the second try was never down; a page that is genuinely
+    # broken fails both times and still reports. Deliberately does NOT retry an HTTP error
+    # response: a 404 or a 500 is an answer, and re-asking cannot change it.
+    _TRANSIENT_FETCH_ERRORS = ("connectionreset", "connection reset", "connection aborted",
+                               "remotedisconnected", "connection broken", "timed out",
+                               "readtimeout", "protocolerror")
+
     def _get(self, url, allow_redirects=True):
         maxb = self.cfg.get("max_body_bytes", 3000000)
-        r = self.session.get(url, timeout=self.timeout, allow_redirects=allow_redirects, stream=True)
-        content = r.raw.read(maxb + 1, decode_content=True)  # bounded read protects memory
-        r._content = content[:maxb]
-        r._content_consumed = True
-        r.close()
-        return r
+        for attempt in range(2):
+            try:
+                r = self.session.get(url, timeout=self.timeout,
+                                     allow_redirects=allow_redirects, stream=True)
+                content = r.raw.read(maxb + 1, decode_content=True)  # bounded read protects memory
+                r._content = content[:maxb]
+                r._content_consumed = True
+                r.close()
+                return r
+            except Exception as exc:
+                blob = f"{type(exc).__name__} {exc}".lower()
+                transient = any(t in blob for t in self._TRANSIENT_FETCH_ERRORS)
+                if attempt == 1 or not transient:
+                    raise
+                time.sleep(1.0)
 
     def _status_only(self, url):
         """HEAD, confirmed with GET on any failure; retried once. Returns (status:int|None, error).
@@ -372,10 +416,10 @@ class SiteCrawler:
                 full = urljoin(base, src)
                 host = urlparse(full).netloc.lower()
                 if host and host != self.host:
-                    if any(sd in host for sd in self.susp_domains):
+                    if set(host.split(".")) & set(self.susp_domains):
                         self._alert("injected-external",
                                     f"{tag_name} loading from suspicious external domain: {full}", url)
-                    elif tag_name == "iframe":
+                    elif tag_name == "iframe" and not host_matches(host, self.known_iframe_hosts):
                         self._warn("external-iframe", f"iframe from external domain: {full}", url)
 
         for element in soup(["script", "style", "noscript"]):
@@ -398,13 +442,22 @@ class SiteCrawler:
             if in_prominent or short_page:
                 where = "title/H1" if in_prominent else f"very short page ({word_count} words)"
                 self._alert("defacement", f"defacement marker {marker_hit!r} in {where}", url)
-            else:
+            elif marker_hit not in WEAK_DEFACEMENT_MARKERS:
                 self._warn("defacement-marker-in-content",
                            f"defacement-style phrase {marker_hit!r} in page text — likely editorial "
                            f"(title looks normal, {word_count} words); verify manually", url)
 
+        # A Japanese keyword hack injects JAPANESE SCRIPT. The romaji/English variants in the
+        # keyword file ("betting", "casino", "replica", "loan"…) are ordinary English words that
+        # occur in normal writing, so on their own they prove nothing: on 2026-09-08 the only
+        # three hits estate-wide were the phrase "without betting on which specific transit chip
+        # survives" and two EMV application-identifier listings. Require real corroboration —
+        # any CJK term (the actual signature), or at least two DISTINCT English variants
+        # co-occurring, which is what an injected spam block looks like and what a sentence of
+        # English prose does not.
         jp_hits = [t for t in self.kw["japanese"] if term_in_text(t, visible_lower)][:15]
-        if jp_hits:
+        cjk_hits = [t for t in jp_hits if not t.isascii()]
+        if cjk_hits or len(jp_hits) >= 2:
             self._warn("japanese-spam", f"possible Japanese-SEO-spam terms: {', '.join(jp_hits)}", url)
         spam_hits = [t for t in self.kw["spam"] if term_in_text(t, visible_lower)][:15]
         if spam_hits:
@@ -415,7 +468,7 @@ class SiteCrawler:
 
         for ext in external_here:
             ehost = urlparse(ext).netloc.lower()
-            if any(sd in ehost for sd in self.susp_domains):
+            if set(ehost.split(".")) & set(self.susp_domains):
                 self._warn("suspicious-external-link", f"link to suspicious external domain: {ext}", url)
 
         self.pages.append({
@@ -575,7 +628,7 @@ class SiteCrawler:
             return broken_internal, broken_external, unverified_internal, unverified_external
 
         externals = [u for u in self.external_links
-                     if urlparse(u).netloc.lower() not in self.ext_skip_hosts][:max_ext]
+                     if not host_matches(urlparse(u).netloc, self.ext_skip_hosts)][:max_ext]
         skipped_hosts = len(self.external_links) - len(externals)
         if skipped_hosts > 0:
             self.skipped.append(f"{skipped_hosts} external links skipped (bot-hostile social/CDN hosts)")

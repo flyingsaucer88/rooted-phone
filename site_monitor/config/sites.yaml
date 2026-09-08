@@ -72,7 +72,13 @@ crawl:
 
 alerts:
   fail_on_status_codes: [400, 401, 403, 404, 410, 429, 500, 502, 503, 504]
-  # Substrings that, if present in an EXTERNAL link's host, are treated as suspicious.
+  # Spam-domain labels. Matched against the EXTERNAL link host's DOT-SEPARATED LABELS, whole
+  # label only — NOT as a free substring. 2026-09-08: substring matching flagged two legitimate
+  # industry sources as suspicious domains — "pharma" inside pharmaceuticalcommerce.com and
+  # "crypto" inside cryptomathic.com (an EMV key-management vendor). On a payments/cryptography
+  # site those substrings appear in ordinary vendor names, so whole-label matching is the only
+  # workable rule. A genuine spam injection points at casino.example / buy-viagra.example,
+  # whose labels still match.
   suspicious_external_domains:
     - casino
     - pharma
@@ -85,6 +91,10 @@ alerts:
   cert_expiry_warn_days: 21
   # External social/CDN hosts that commonly reject bot HEAD/GET (return None/403) — do NOT
   # report these as "broken external links" (they are false positives, not site problems).
+  # Matched on the host SUFFIX at a dot boundary, so "facebook.com" also covers
+  # www.facebook.com and "linkedin.com" covers in.linkedin.com. (2026-09-08: this was an exact
+  # netloc match, so every www./country-subdomain form slipped past the list and five social
+  # links were reported unverified every single run.)
   external_check_skip_hosts:
     - twitter.com
     - x.com
@@ -93,6 +103,23 @@ alerts:
     - instagram.com
     - youtube.com
     - youtu.be
+    # Share-widget endpoint, not site content: /add_to/email 302s to a mailto: URL and
+    # /add_to/<network> rate-limits automated clients. Checking it measures AddToAny's
+    # bot policy, never whether the Orders site is healthy.
+    - addtoany.com
+  # Iframe embeds from these hosts are expected site furniture (tag manager, reCAPTCHA, maps,
+  # video), not injected markup. Matched on the host suffix like external_check_skip_hosts.
+  # Everything NOT on this list still raises an external-iframe warning, so a genuinely
+  # injected third-party frame is still surfaced.
+  known_iframe_hosts:
+    - googletagmanager.com
+    - google.com
+    - gstatic.com
+    - youtube.com
+    - youtube-nocookie.com
+    - youtu.be
+    - vimeo.com
+    - openstreetmap.org
 
 security_headers:
   # Headers we check for presence on each site's homepage (missing = warning, not alert).

@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# Install (or show) the daily 10:00 AM crontab entry for the Ambimat site monitor.
+# Install (or show) the daily 08:00 IST crontab entry for the Ambimat site monitor.
 # Run this INSIDE Termux. It does NOT install Termux:Boot (see README limitation:
 # cron only runs while crond is alive; it does not auto-start after reboot).
 #

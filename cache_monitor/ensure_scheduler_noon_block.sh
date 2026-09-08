@@ -7,9 +7,9 @@
 #
 # amb_run_if_due already provides everything the noon job needs:
 #   - runs at most once per Asia/Kolkata day (the front_page_cache marker)
-#   - never runs before 12:00 local
+#   - never runs before 10:00 local
 #   - defers while the network is down
-#   - after a reboot at any time past noon, the watchdog's next tick (or the
+#   - after a reboot at any time past 10:00, the watchdog's next tick (or the
 #     Termux:Boot startup call) runs it exactly once — and only for today, never
 #     replaying missed historical dates
 #
@@ -20,7 +20,7 @@ if [ -x "$CACHE_RUNNER" ]; then
   # Self-heal the cache-monitor crontab line the same way the others are healed.
   if command -v crontab >/dev/null 2>&1; then
     if ! crontab -l 2>/dev/null | grep -q 'ambimat-cache-monitor'; then
-      amb_log "$WLOG" "crontab missing the 12:00 cache-monitor line — reinstalling"
+      amb_log "$WLOG" "crontab missing the 10:00 cache-monitor line — reinstalling"
       bash "$CACHE_HOME/install_noon_job.sh" install >> "$WLOG" 2>&1
     fi
   fi

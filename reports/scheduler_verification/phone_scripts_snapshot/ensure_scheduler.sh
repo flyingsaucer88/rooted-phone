@@ -4,7 +4,7 @@
 #   1. single-flights (won't stack)
 #   2. (Termux) holds a wake-lock so Android is less likely to kill Termux/crond
 #   3. (Termux) restarts crond if it died, and reinstalls crontab lines if missing
-#   4. catches up the 10:00 site-monitor and 11:00 SEO jobs if they're due & unrun
+#   4. catches up the 08:00 site-monitor and 09:00 SEO jobs if they're due & unrun
 #
 # This is what makes the schedule survive Termux being killed WITHOUT a reboot:
 # as long as any watchdog tick runs (cron while alive, or boot), crond is revived.
@@ -44,23 +44,23 @@ else
   amb_log "$WLOG" "crond not found — crontab self-heal skipped (non-Termux host?)"
 fi
 
-# 4. catch up due jobs — site (10:00) before SEO (11:00) so heavy runs stagger.
+# 4. catch up due jobs — site (08:00) before SEO (09:00) so heavy runs stagger.
 SITE_RUNNER="${AMBIMAT_SITE_RUNNER_CMD:-$DIR/run_site_monitor_daily.sh}"
 SEO_RUNNER="${AMBIMAT_SEO_RUNNER_CMD:-$DIR/run_daily.sh}"
 amb_run_if_due site_monitor 0800 "$SITE_RUNNER" "$WLOG"
 amb_run_if_due seo          0900 "$SEO_RUNNER"  "$WLOG"
 
-# --- ambimat-cache-monitor: 12:00 catch-up (added 2026-07-31) ------------------
+# --- ambimat-cache-monitor: 10:00 catch-up (added 2026-07-31; 12:00 -> 10:00 2026-09-07) ---
 #
 # This is the EXACT block appended to ~/seo_tracker/phone/ensure_scheduler.sh, kept
 # here as the versioned copy of that edit. It is additive: it changes nothing about
-# the 10:00 site-monitor or the 11:00 SEO job, which run above it unchanged.
+# the 08:00 site-monitor or the 09:00 SEO job, which run above it unchanged.
 #
 # amb_run_if_due already provides everything the noon job needs:
 #   - runs at most once per Asia/Kolkata day (the front_page_cache marker)
-#   - never runs before 12:00 local
+#   - never runs before 10:00 local
 #   - defers while the network is down
-#   - after a reboot at any time past noon, the watchdog's next tick (or the
+#   - after a reboot at any time past 10:00, the watchdog's next tick (or the
 #     Termux:Boot startup call) runs it exactly once — and only for today, never
 #     replaying missed historical dates
 #
@@ -71,7 +71,7 @@ if [ -x "$CACHE_RUNNER" ]; then
   # Self-heal the noon crontab line the same way the three existing lines are healed.
   if command -v crontab >/dev/null 2>&1; then
     if ! crontab -l 2>/dev/null | grep -q 'ambimat-cache-monitor'; then
-      amb_log "$WLOG" "crontab missing the 12:00 cache-monitor line — reinstalling"
+      amb_log "$WLOG" "crontab missing the 10:00 cache-monitor line — reinstalling"
       bash "$CACHE_HOME/install_noon_job.sh" install >> "$WLOG" 2>&1
     fi
   fi

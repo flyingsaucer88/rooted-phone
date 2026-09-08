@@ -2,7 +2,7 @@
 # Daily site-monitor runner — PER-SITE PROCESSES (one fresh Python per site) so memory stays
 # bounded on the low-RAM phone (a single all-sites process OOM-killed at ~700 pages). Each site is
 # crawled in its own process writing per_site/<slug>/report_latest.json; a merge step then produces
-# one combined report_latest.{json,md,html}. Invoked by the 10:00 cron path
+# one combined report_latest.{json,md,html}. Invoked by the 08:00 cron path
 # (seo_tracker/phone/run_site_monitor_daily.sh) and by run_once.sh.
 #
 # Job success = "ran and produced a combined report". Per-site ALERTs (broken pages, etc.) are
