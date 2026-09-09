@@ -29,6 +29,20 @@ LIMITATION = (
 )
 
 
+def _seo_count(seo, total_key, indexable_key):
+    """Render an SEO count as "total (N indexable)".
+
+    Most missing-description / missing-canonical hits land on noindex pages,
+    where they cost nothing. Showing both keeps the raw finding visible while
+    telling the operator how many actually matter.
+    """
+    total = seo.get(total_key, [])
+    indexable = seo.get(indexable_key)
+    if indexable is None or len(indexable) == len(total):
+        return str(len(total))
+    return f"{len(total)} ({len(indexable)} indexable)"
+
+
 def _status_word(site):
     if not site.get("reachable", False):
         return "UNREACHABLE"
@@ -132,9 +146,9 @@ def render_markdown(report):
         a("")
         a("### SEO checks")
         a(f"- Missing title: {len(seo.get('pages_missing_title', []))}")
-        a(f"- Missing meta description: {len(seo.get('pages_missing_description', []))}")
+        a(f"- Missing meta description: {_seo_count(seo, 'pages_missing_description', 'indexable_missing_description')}")
         a(f"- Missing H1: {len(seo.get('pages_missing_h1', []))}")
-        a(f"- Missing canonical: {len(seo.get('pages_missing_canonical', []))}")
+        a(f"- Missing canonical: {_seo_count(seo, 'pages_missing_canonical', 'indexable_missing_canonical')}")
         a(f"- noindex pages: {len(seo.get('noindex_pages', []))}")
         a(f"- Duplicate titles: {len(seo.get('duplicate_titles', {}))}")
         a(f"- Duplicate descriptions: {len(seo.get('duplicate_descriptions', {}))}")
@@ -247,9 +261,9 @@ def render_html(report):
         seo = s.get("seo", {})
         a("<h3>SEO checks</h3><ul class='small'>")
         a(f"<li>Missing title: {len(seo.get('pages_missing_title',[]))}</li>")
-        a(f"<li>Missing description: {len(seo.get('pages_missing_description',[]))}</li>")
+        a(f"<li>Missing description: {_seo_count(seo, 'pages_missing_description', 'indexable_missing_description')}</li>")
         a(f"<li>Missing H1: {len(seo.get('pages_missing_h1',[]))}</li>")
-        a(f"<li>Missing canonical: {len(seo.get('pages_missing_canonical',[]))}</li>")
+        a(f"<li>Missing canonical: {_seo_count(seo, 'pages_missing_canonical', 'indexable_missing_canonical')}</li>")
         a(f"<li>noindex pages: {len(seo.get('noindex_pages',[]))}</li>")
         a(f"<li>Duplicate titles: {len(seo.get('duplicate_titles',{}))}</li>")
         a(f"<li>Duplicate descriptions: {len(seo.get('duplicate_descriptions',{}))}</li>")

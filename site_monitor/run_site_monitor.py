@@ -780,30 +780,51 @@ class SiteCrawler:
         except Exception:
             return False
 
+    @staticmethod
+    def _page_identity(page):
+        """The canonical identity of a crawled URL.
+
+        Two URLs that declare the same rel=canonical are the same page as far
+        as search engines are concerned: `https://x/a` and `https://x/a/`,
+        `http://` and `https://` variants, and query-string variants such as
+        WooCommerce's `?add-to-cart=15` all collapse here. Grouping by raw URL
+        instead reported those as duplicate titles/descriptions, which they are
+        not. Falls back to the URL when a page declares no canonical.
+        """
+        return ((page.get("canonical") or page.get("url") or "").strip().rstrip("/")
+                or (page.get("url") or ""))
+
     def _seo_summary(self):
         missing_title, missing_desc, missing_h1, missing_canon, noindex = [], [], [], [], []
-        title_map, desc_map = defaultdict(list), defaultdict(list)
+        # title/description -> {canonical identity: first URL seen for it}
+        title_map, desc_map = defaultdict(dict), defaultdict(dict)
         for p in self.pages:
+            ident = self._page_identity(p)
             if not p["title"]:
                 missing_title.append(p["url"])
             else:
-                title_map[p["title"].strip().lower()].append(p["url"])
+                title_map[p["title"].strip().lower()].setdefault(ident, p["url"])
             if not p["description"]:
                 missing_desc.append(p["url"])
             else:
-                desc_map[p["description"].strip().lower()].append(p["url"])
+                desc_map[p["description"].strip().lower()].setdefault(ident, p["url"])
             if not p["h1_count"]:
                 missing_h1.append(p["url"])
             if not p["canonical"]:
                 missing_canon.append(p["url"])
             if p["robots_meta"] and "noindex" in p["robots_meta"].lower():
                 noindex.append(p["url"])
-        dup_titles = {k: v for k, v in title_map.items() if len(v) > 1}
-        dup_desc = {k: v for k, v in desc_map.items() if len(v) > 1}
+        # A duplicate needs two DISTINCT canonical identities, not two URLs.
+        dup_titles = {k: sorted(v.values()) for k, v in title_map.items() if len(v) > 1}
+        dup_desc = {k: sorted(v.values()) for k, v in desc_map.items() if len(v) > 1}
         for url in missing_title:
             self._warn("missing-title", "page has no <title>", url)
         for url in missing_h1:
             self._warn("missing-h1", "page has no H1", url)
+        # A noindex page is never shown in search, so a missing description or
+        # canonical on one is not an SEO defect. Report both numbers rather than
+        # dropping the finding: the indexable count is the actionable one.
+        noindex_set = set(noindex)
         return {
             "pages_missing_title": missing_title,
             "pages_missing_description": missing_desc,
@@ -812,6 +833,8 @@ class SiteCrawler:
             "noindex_pages": noindex,
             "duplicate_titles": dup_titles,
             "duplicate_descriptions": dup_desc,
+            "indexable_missing_description": [u for u in missing_desc if u not in noindex_set],
+            "indexable_missing_canonical": [u for u in missing_canon if u not in noindex_set],
         }
 
     def _title_drift(self):
