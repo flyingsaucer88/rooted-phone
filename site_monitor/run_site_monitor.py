@@ -70,6 +70,7 @@ except ImportError:
     sys.exit(1)
 
 import render_report  # local module (same directory)
+import link_notes    # local module: notes about already-unverified external links
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -269,6 +270,10 @@ class SiteCrawler:
                                       alerts_cfg.get("expected_iframe_hosts",
                                                      alerts_cfg.get("known_iframe_hosts", []))]
         self.expected_embeds = []   # verified-expected frames: reported, never warned
+        # Notes about links whose verification is already known to be limited. Read-only
+        # metadata: it annotates records the crawler has already judged unverified and
+        # can never change that judgement. See link_notes.py.
+        self.link_notes = link_notes.load_notes()
         self.editorial_security_pages = []  # defacement marker judged editorial, with evidence
 
         # (connect, read) timeout tuple — a hung TCP connect or a slow body can never block forever.
@@ -717,7 +722,7 @@ class SiteCrawler:
             if st is None:
                 rec["error"] = err
                 rec["classification"] = classify_unverified(st, err)
-                unverified_internal.append(rec)
+                unverified_internal.append(link_notes.annotate(rec, self.link_notes))
             elif st in self.fail_codes:
                 broken_internal.append(rec)
             elif self._is_soft_404(final):
@@ -747,7 +752,7 @@ class SiteCrawler:
             if st is None:
                 rec["error"] = err
                 rec["classification"] = classify_unverified(st, err)
-                unverified_external.append(rec)
+                unverified_external.append(link_notes.annotate(rec, self.link_notes))
             elif st in EXTERNAL_BLOCKING_CODES:
                 # A third party refusing an automated client is not a broken link, and it is
                 # not something this site can fix. cisa.gov answers our crawler with 403 and
@@ -757,7 +762,7 @@ class SiteCrawler:
                 # 404/410/5xx stay broken: those ARE actionable dead outbound links.
                 rec["error"] = f"external host refused an automated request (HTTP {st})"
                 rec["classification"] = classify_unverified(st, err)
-                unverified_external.append(rec)
+                unverified_external.append(link_notes.annotate(rec, self.link_notes))
             elif st in self.fail_codes:
                 broken_external.append(rec)
             elif self._is_soft_404(final):

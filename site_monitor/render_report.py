@@ -29,6 +29,19 @@ LIMITATION = (
 )
 
 
+def _known_suffix(rec):
+    """Render whether an unverified link has already been investigated.
+
+    A note never changes the verdict — the link is unverified either way. It only separates
+    a finding somebody has already judged from one nobody has looked at yet, which is the
+    difference that decides whether a reader needs to act.
+    """
+    if rec.get("known_status") == "known":
+        since = rec.get("known_since")
+        return f" [known: {rec.get('known')}" + (f", confirmed {since}]" if since else "]")
+    return " [NEW / unclassified]"
+
+
 def _seo_count(seo, total_key, indexable_key):
     """Render an SEO count as "total (N indexable)".
 
@@ -172,8 +185,12 @@ def render_markdown(report):
         if uil or uel:
             a(f"- Unverified links (no definitive status — connection error/timeout, NOT confirmed "
               f"broken): {len(uil)} internal, {len(uel)} external")
-            for b in (uil + uel)[:20]:
-                a(f"  - (unverified) {b.get('url')} (on {b.get('found_on')})")
+            recs = uil + uel
+            nnew = sum(1 for r in recs if r.get("known_status") != "known")
+            if nnew:
+                a(f"  - {nnew} of these are NEW / unclassified — nobody has investigated them yet")
+            for b in recs[:20]:
+                a(f"  - (unverified) {b.get('url')} (on {b.get('found_on')}){_known_suffix(b)}")
 
         drift = s.get("title_drift", [])
         if drift:
@@ -274,7 +291,8 @@ def render_html(report):
         uel = s.get("unverified_external_links", [])
         a(f"<h3>Broken pages/links</h3><div class='small'>"
           f"pages: {len(bp)} · broken internal: {len(bil)} · broken external: {len(bel)}"
-          f" · unverified (not confirmed broken): {len(uil) + len(uel)}</div>")
+          f" · unverified (not confirmed broken): {len(uil) + len(uel)}"
+          f" (NEW/unclassified: {sum(1 for r in (uil + uel) if r.get('known_status') != 'known')})</div>")
         drift = s.get("title_drift", [])
         if drift:
             a(f"<h3 class='warn'>Title changes since last run ({len(drift)})</h3><ul class='small'>")

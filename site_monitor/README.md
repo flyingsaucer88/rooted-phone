@@ -59,6 +59,9 @@ site_monitor/
   config/sites.yaml          # site list + crawl policy + alert thresholds
   run_site_monitor.py        # the crawler / analyzer / report writer
   render_report.py           # JSON -> Markdown/HTML; also a standalone viewer
+  link_notes.py              # external-link classification registry (interpretation only)
+  config/external_link_notes.yaml  # the classifications themselves
+  prune_reports.py           # bounded report retention (dry-run by default)
   run_once.sh                # run one crawl now (foreground)
   run_daily.sh               # cron wrapper (sets PATH, logs, notifies)
   schedule_daily.sh          # install/show/remove the 10 AM cron entry
@@ -120,6 +123,76 @@ report_latest.md
 report_latest.html            # phone-friendly HTML
 daily_runner.log / cron.log   # scheduler logs
 ```
+
+## Report retention
+
+Report storage was never bounded; by 2026-09-10 it had reached 162 MB on a phone with limited
+space. `prune_reports.py` thins **dated** reports on a tiered schedule:
+
+| age | kept |
+|---|---|
+| 0–30 days | every report |
+| 31–90 days | one per ISO week |
+| 90+ days | one per calendar month |
+
+The weekly/monthly tiers are applied **independently to successful and to abnormal runs**, so a
+failure is never thinned away by the healthy runs that surround it, and the newest abnormal report
+is always kept whatever its age. Abnormal means: alert/warning raised, broken links, a crawl error,
+or a report that will not parse (a truncated file is itself the evidence that a run died).
+
+Never touched, at any age:
+
+- `report_latest.{json,md,html}` — `report_latest.json` is the title-drift baseline, so deleting it
+  would silently reset drift detection
+- `per_site/<slug>/unverified_ledger.json` — the staleness ledger
+- `seo_tracker_reports/history/` and `state/` — where SEO trends actually live
+- today's reports, and anything written in the last hour (a run may still be writing it)
+
+Dated reports have no consumers: nothing in this repo or the SEO tracker reads
+`report_YYYYMMDD_HHMMSS.*`. Thinning them costs no trend or audit function. A logical report is
+its whole `.json` + `.md` (+ `.html`) set, or a whole cache-inspection directory — deleted together
+or not at all, so no half-report is ever left behind.
+
+```bash
+python prune_reports.py            # DRY RUN — default; prints exactly what would go
+python prune_reports.py --apply    # actually delete
+```
+
+Runs **weekly** from `run_daily.sh` (stamp file `~/site_monitor_reports/.last_prune`, `-mtime +6`),
+only after a successful merge, and only ever as an extra step of the existing 08:00 job — no new
+cron entry. A prune failure is logged and non-fatal: monitoring never depends on housekeeping.
+Exit status is non-zero on a genuine error. Re-running is a no-op.
+
+## External-link classification registry
+
+`config/external_link_notes.yaml` records what was learned when a link could not be verified —
+per URL, one of `antibot`, `transient` or `upstream-failure`, with the date it was confirmed by
+hand and why.
+
+**It is not an allowlist and it does not suppress anything.** A note is attached *after* the
+crawler has already decided, on live evidence in that run, that a link is unverified. It cannot:
+
+- move a link out of `unverified_external`, or stop one entering `broken_external`
+- keep a link out of the staleness ledger
+- prevent the check from being made — every noted URL is fetched on every run, exactly as before
+
+If a noted URL answers 200 next run it is simply never recorded as unverified and the note never
+applies. If it starts answering 404/410/5xx, changes its redirect, fails DNS or fails certificate
+validation, it becomes a broken link exactly as it would with no note at all. Annotation is wired
+into the two `unverified_external` appends and the one `unverified_internal` append only;
+`broken_external` and `broken_internal` are deliberately never annotated.
+
+The only thing a note changes is what the report says:
+
+```
+- https://www.nytimes.com/... (403) [known: antibot, confirmed 2026-09-10]
+- https://brand-new.example/x (403) [NEW / unclassified]
+```
+
+...which is the difference between a finding somebody has already judged and one nobody has. The
+report also counts how many unverified links are NEW, so a genuinely new blocker stands out
+instead of hiding in a long familiar list. Adding an entry requires an actual manual check on the
+date recorded. `site_monitor/tests/test_link_notes.py` asserts the no-suppression properties.
 
 ## View on the phone
 

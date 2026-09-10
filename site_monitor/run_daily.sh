@@ -55,6 +55,22 @@ if command -v termux-notification >/dev/null 2>&1; then
     --content "${SUM:-daily run complete}" >/dev/null 2>&1 </dev/null || true
 fi
 
+# Weekly housekeeping. Runs only after a merge that actually succeeded, at most once every
+# 7 days, and never on its own schedule: report retention is maintenance, not monitoring, and
+# it must never be the reason a crawl is delayed or a cron slot is contended. Failure here is
+# logged and ignored — losing a prune must not fail the monitoring run that just succeeded.
+if [ "$mrc" -eq 0 ]; then
+  PRUNE_STAMP="$OUTDIR/.last_prune"
+  if [ ! -f "$PRUNE_STAMP" ] || [ -n "$(find "$PRUNE_STAMP" -mtime +6 2>/dev/null)" ]; then
+    echo "===== $(date '+%F %T %z') report retention (weekly) =====" >> "$LOG"
+    if python prune_reports.py --apply >> "$LOG" 2>&1; then
+      date '+%F %T %z' > "$PRUNE_STAMP"
+    else
+      echo "$(date '+%F %T %z') prune_reports failed (non-fatal; monitoring unaffected)" >> "$LOG"
+    fi
+  fi
+fi
+
 echo "===== $(date '+%F %T %z') daily run end (merge rc=$mrc) =====" >> "$LOG"
 # Exit reflects whether a combined report was produced, NOT whether findings exist.
 exit "$mrc"

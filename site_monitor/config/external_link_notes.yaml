@@ -1,0 +1,109 @@
+# External-link verification notes.
+#
+# WHAT THIS IS. A record of what we learned when a link could not be verified, so the next
+# reader does not re-investigate the same URL from scratch. Every entry here was confirmed by
+# hand on the date given.
+#
+# WHAT THIS IS NOT. It is not an allowlist, an ignore-list or an exemption. A note is attached
+# to a record that the crawler has ALREADY decided is unverified, on live evidence, in this run.
+# It cannot move a link out of `unverified_external`, cannot stop one entering
+# `broken_external`, and cannot keep one out of the staleness ledger. If a noted URL answers
+# 200 on the next run it is simply not recorded as unverified at all, and the note never
+# applies. If it starts answering 404/410/5xx, or its redirect lands on a not-found page, it
+# becomes a broken link exactly as it would without a note.
+#
+# The only thing a note changes is whether the report says
+#   "unverified — known anti-bot, confirmed 2026-09-09"
+# or
+#   "unverified — NEW / unclassified"
+# which is the difference between a finding someone has already judged and one nobody has.
+#
+# classes:
+#   antibot           third party serves browsers but refuses automated clients
+#   transient         failed once, verified healthy on manual retest
+#   upstream-failure  the remote host itself is down or resetting; URL believed correct
+#
+# Adding an entry requires evidence: an actual manual check on the date recorded.
+
+notes:
+  # --- anti-bot / WAF: 403 (or an equivalent refusal) to a non-browser client -------------
+  - url: https://www.nytimes.com/2018/03/15/us/politics/russia-cyberattacks.html
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 to non-browser clients; NYT blocks automated fetches"
+  - url: https://www.nytimes.com/2019/07/25/us/politics/russian-hacking-elections.html
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 to non-browser clients; NYT blocks automated fetches"
+  - url: https://apnews.com/article/dea73efc01594839957c3c9a6c962b8a
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://www.iso.org/standard/77180.html
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://www.cloudflare.com/learning/ssl/lava-lamp-encryption/
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://www.entrust.com/resources/hsm/faq/what-are-hardware-security-modules
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://www.entrust.com/digital-security/hsm/solutions/compliance/americas/hipaa
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://idtechproducts.com/technical-post/udemo/
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://www.theinsightpartners.com/reports/ultra-wideband-uwb-market
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 with WAF challenge body"
+  - url: https://www.gsma.com/
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 to every non-browser client"
+  - url: https://www.centralbank.ae/en/
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 after one redirect; refuses automated clients"
+  - url: https://www.jhu.edu/
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403 to non-browser clients"
+  - url: https://robo-racer.slack.com/signup
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "403; Slack refuses non-browser clients on signup"
+  - url: http://arrow.com/
+    class: antibot
+    confirmed: 2026-09-10
+    reason: "301 to www, then HTTP/2 INTERNAL_ERROR and a 30s stall on HTTP/1.1; bot mitigation"
+
+  # --- transient: failed a crawl, verified healthy by hand afterwards ---------------------
+  - url: https://international.jnu.ac.kr/IndexMain.aspx
+    class: transient
+    confirmed: 2026-09-10
+    reason: "200 with full page on manual retest"
+  - url: https://www.kmu.ac.kr/
+    class: transient
+    confirmed: 2026-09-10
+    reason: "200 with full page on manual retest"
+  - url: https://www.itsinternational.com/ettifos-joins-arizona-v2x-deployment/
+    class: transient
+    confirmed: 2026-09-10
+    reason: "200 with full page on manual retest"
+
+  # --- upstream failure: remote host down; the URL itself is believed correct -------------
+  - url: http://auminfotech.com/
+    class: upstream-failure
+    confirmed: 2026-09-10
+    reason: "Cloudflare 522 on 3/3 attempts; origin unreachable, CDN and DNS fine"
+  - url: https://www.openscdp.org/scripts/tutorial/emv/cardactionanalysis.html
+    class: upstream-failure
+    confirmed: 2026-09-10
+    reason: "TCP connects then resets, site root resets too; host not serving"
