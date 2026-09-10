@@ -249,13 +249,19 @@ handling) — harness: [cache_monitor/tests/sched_tests_noon.sh](cache_monitor/t
 - **Site-monitor reports (phone):** `~/site_monitor_reports/` — `report_latest.{json,md,html}`,
   timestamped `report_YYYYMMDD_HHMMSS.*`, per-site reports under `per_site/<slug>/`, and
   `daily_runner.log` / `cron.log`. `report_latest.json` also serves as the title-drift baseline.
-- **Retention (phone):** report directories are bounded — `site_monitor/prune_reports.py` keeps
-  every report for 30 days, one per ISO week to 90 days, one per month beyond, applied separately
-  to successful and to abnormal runs so failure evidence is never thinned away by the healthy runs
-  around it. `report_latest.*`, the staleness ledgers and the SEO `history/`+`state/` trend stores
-  are never touched. It runs **weekly as a step of the existing 08:00 job** (not a new cron entry),
-  is dry-run by default, and is non-fatal if it fails. See `site_monitor/README.md` for the full
-  policy. First run, 2026-09-10, freed 62.2 MB (162.8 MB -> 100.6 MB).
+- **Retention (phone):** report storage is bounded with a finite horizon —
+  `site_monitor/prune_reports.py` keeps every report for **30 days**, one per ISO week to
+  **90 days**, one per calendar month to **24 months**, and expires anything older. Weekly and
+  monthly thinning runs on independent success/abnormal tracks, so failure evidence is never
+  thinned away by the healthy runs around it. Two things outlive the horizon, both finite: the
+  newest abnormal report, and the onset of a still-unresolved incident. `report_latest.*`, the
+  staleness ledgers and the SEO `history/`+`state/` trend stores are never touched. Logs are
+  rotated at 1 MB keeping 2 generations (copy-and-truncate, so writers holding the file open are
+  unaffected), capping each at 3 MB. Runs **weekly as a step of the existing 08:00 job** (not a new
+  cron entry), dry-run by default, non-fatal if it fails. See `site_monitor/README.md` for the
+  policy and the boundedness argument. 2026-09-10: first run freed 62.2 MB (162.8 -> 100.6 MB); the
+  24-month horizon deletes nothing yet because the estate is only ~3 months old — it exists to make
+  future growth finite, not to reclaim disk today.
 - **External-link notes (phone/repo):** `site_monitor/config/external_link_notes.yaml` records
   hand-confirmed classifications (`antibot` / `transient` / `upstream-failure`) so reports can say
   "unverified — known anti-bot, confirmed <date>" instead of "unverified — NEW". It is **metadata

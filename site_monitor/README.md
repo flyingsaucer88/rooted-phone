@@ -127,18 +127,30 @@ daily_runner.log / cron.log   # scheduler logs
 ## Report retention
 
 Report storage was never bounded; by 2026-09-10 it had reached 162 MB on a phone with limited
-space. `prune_reports.py` thins **dated** reports on a tiered schedule:
+space. `prune_reports.py` thins **dated** reports on a tiered schedule with a finite horizon:
 
 | age | kept |
 |---|---|
 | 0–30 days | every report |
 | 31–90 days | one per ISO week |
-| 90+ days | one per calendar month |
+| 91 days – 24 months | one per calendar month |
+| older than 24 months | **expired** |
 
-The weekly/monthly tiers are applied **independently to successful and to abnormal runs**, so a
-failure is never thinned away by the healthy runs that surround it, and the newest abnormal report
-is always kept whatever its age. Abnormal means: alert/warning raised, broken links, a crawl error,
-or a report that will not parse (a truncated file is itself the evidence that a run died).
+The last row is what makes this a bound rather than a slow leak. "One per month, forever" still
+adds 24 files a year until the disk fills; `MAX_AGE_DAYS = 730` closes it.
+
+The weekly and monthly tiers are applied **independently to successful and to abnormal runs**, so
+a failure is never thinned away by the healthy runs that surround it. Abnormal means: alert/warning
+raised, broken links, a crawl error, or a report that will not parse (a truncated file is itself
+the evidence that a run died).
+
+Two things outlive the horizon, both finite and both deliberate:
+
+- **the newest abnormal report**, whatever its age — never lose the last evidence of a failure
+- **the onset of an unresolved incident.** If the most recent report is still abnormal, the run of
+  consecutive abnormal reports ending at it is an incident that is still open, and its first report
+  is the evidence of when it started. That report is kept past the horizon until a healthy report
+  lands and closes the incident. It is exactly one extra report per store.
 
 Never touched, at any age:
 
@@ -153,15 +165,54 @@ Dated reports have no consumers: nothing in this repo or the SEO tracker reads
 its whole `.json` + `.md` (+ `.html`) set, or a whole cache-inspection directory — deleted together
 or not at all, so no half-report is ever left behind.
 
+### Why the retained set is finite
+
+With `d`=30, `w`=90, `m`=730, `r` runs per day and 2 kinds (ok / abnormal), the retained count per
+store is at most
+
+```
+d*r  +  2*ceil((w-d)/7)  +  2*ceil((m-w)/30.44)  +  2
+```
+
+— the full-detail window, the weekly representatives, the monthly representatives, and the two
+evidence exemptions. At the current settings and `r ≤ 8` that is about **304 logical reports per
+store**, approached asymptotically and never exceeded. It does not depend on how long the estate
+keeps running, which is the property "one per month beyond 90" did not have.
+
+### Log rotation
+
+The logs were the only other store still growing without a limit: ~44 kB/day across 12 files,
+16 MB a year, forever. Every line is small, which is exactly why it went unnoticed. Once a `.log`
+in `ambimat_job_logs/`, `site_monitor_reports/`, `seo_tracker_reports/` or `cache_monitor_reports/`
+passes `LOG_MAX_BYTES` (1 MB) it is rotated, keeping `LOG_GENERATIONS` (2) historical copies — so
+each log costs at most 3 MB permanently.
+
+Rotation is **copy-and-truncate, not rename**. `run_daily.sh`, the wrapper above it and cron all
+hold their log open in append mode for the whole run — including the run that calls the pruner.
+Renaming would leave those writers appending to a file nobody reads. Copying the content to `.1`
+and truncating in place keeps every open descriptor valid: `O_APPEND` writes go to the new end of
+file, so nothing is lost and nothing is written to a ghost. The active log is never deleted, only
+emptied after its content is safely in `.1`. No `logrotate` dependency — it is not installed in
+Termux and is not needed.
+
 ```bash
 python prune_reports.py            # DRY RUN — default; prints exactly what would go
-python prune_reports.py --apply    # actually delete
+python prune_reports.py --apply    # actually delete / rotate
 ```
 
 Runs **weekly** from `run_daily.sh` (stamp file `~/site_monitor_reports/.last_prune`, `-mtime +6`),
 only after a successful merge, and only ever as an extra step of the existing 08:00 job — no new
 cron entry. A prune failure is logged and non-fatal: monitoring never depends on housekeeping.
 Exit status is non-zero on a genuine error. Re-running is a no-op.
+
+### Stores deliberately left alone
+
+| store | why no retention rule |
+|---|---|
+| `history/summary_history.json` | already hard-capped by the SEO tracker itself (`history[-60:]`); 60 records ≈ 14 kB, and `_trend_deltas()` reads only `history[-1]` |
+| `seo_tracker_reports/state/` | current-state only, 11 bytes |
+| `per_site/*/unverified_ledger.json` | garbage-collected every run against live crawl membership — a URL that stops being unverified, or stops existing, is deleted from the ledger the same run. Bounded by the number of currently governed URLs, not by time |
+| `config/external_link_notes.yaml` | curated metadata, added by hand. Never age-pruned |
 
 ## External-link classification registry
 
